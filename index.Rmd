@@ -14,7 +14,7 @@ The exercises complement the lecture and aim to improve your understanding of th
 
 ::: {#note-exp .note-header}
 ```{r, include=knitr::is_html_output(), echo=FALSE,}
-knitr::include_graphics("figures/infoicon.svg")
+knitr::include_graphics("assets/figures/infoicon.svg")
 ```
 **Note**
 :::
@@ -40,7 +40,7 @@ Master solutions will be provided sometime after each exercise session.
 
 ::: {#note-exp .warning-header}
 ```{r, include=knitr::is_html_output(), echo=FALSE,}
-knitr::include_graphics("figures/warningicon.svg")
+knitr::include_graphics("assets/figures/warningicon.svg")
 ```
 **Warning**
 :::

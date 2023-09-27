@@ -1,7 +1,7 @@
-name: "BioinformaticsII"
+name: "RNA Bioinformatics"
 output_dir: "docs"
 author: "@CARD"
-date: "SS2022"
+date: "WS2023"
 language: en
 output:
   html_document:
@@ -11,9 +11,9 @@ output:
     toc_float:
       collapsed: false
     theme: "cosmo"
-    css: "bioinf-style.css"
+    css: "assets/css/bioinf-style.css"
     includes:
-       in_header: header.html
+       in_header: html/header.html
   pdf_document:
     includes:
       in_header: "_tex/latex_commands.tex"
