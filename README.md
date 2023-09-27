@@ -1,1 +1,1 @@
-# V_RNA-pages
+# Github pages for the exercises in RNA bioinformatics
