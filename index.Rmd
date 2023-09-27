@@ -1,0 +1,63 @@
+---
+title: "RNA Bioinformatics exercises"
+---
+
+---------------------------------
+
+# Introduction
+
+All exercises for the lecture RNA Bioinformatics are provided on this web page.
+
+The exercises complement the lecture and aim to improve your understanding of the diverse topics of this course.
+
+:::: {#explaining .message-box }
+
+::: {#note-exp .note-header}
+```{r, include=knitr::is_html_output(), echo=FALSE,}
+knitr::include_graphics("figures/infoicon.svg")
+```
+**Note**
+:::
+::: {#note-exp .note-body}
+
+
+We highly recommend doing these exercises. It will help you to prepare for the
+exam.
+
+:::
+
+
+::::
+
+# Details
+
+Exercises are meant to be done during the weekly exercise session.
+During the same exercise session the results will be discussed.
+
+Master solutions will be provided sometime after each exercise session.
+
+:::: {#explaining .warning-box }
+
+::: {#note-exp .warning-header}
+```{r, include=knitr::is_html_output(), echo=FALSE,}
+knitr::include_graphics("figures/warningicon.svg")
+```
+**Warning**
+:::
+::: {#note-exp .note-body}
+
+You will find hints in the self learning materials which e.g. include information
+about the formulae or recursion that you have to use.
+However, in the exam we won't provide those formulae. You have to learn them by heart.
+
+:::
+
+
+::::
+
+
+```{r, include=knitr::is_html_output(), echo=FALSE,}
+knitr::asis_output('<div id="admin-panel"><a href="admin.html" class="fill-div"></a></div>')
+```
+
+
