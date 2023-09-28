@@ -1,0 +1,4 @@
+rmarkdown
+flextable
+officer
+tinytex
