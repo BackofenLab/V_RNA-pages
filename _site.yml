@@ -14,10 +14,7 @@ output:
     css: "assets/css/bioinf-style.css"
     includes:
        in_header: html/header.html
-  pdf_document:
-    includes:
-      in_header: "_tex/latex_commands.tex"
 urlcolor: blue
 linkcolor: blue
-exclude: ["*.tex", "*.log"]
+
 
