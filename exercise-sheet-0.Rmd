@@ -30,9 +30,9 @@ equally valid solutions.
 
 ##### Hide
 
-<div class="solution" style="display: none;">
-
 ##### Solution
+
+<div class="solution" style="display: none;">
 
 ::: {.answer data-latex=""}
 
@@ -71,10 +71,9 @@ unit on [RNA secondary structure]().
 
 ##### Hide
 
-<div class="solution" style="display: none;">
-
 ##### Solution
 
+<div class="solution" style="display: none;">
 ::: {.answer data-latex=""}
 
 ```{r, include=knitr::is_html_output(), echo=FALSE,}
@@ -102,9 +101,9 @@ is transcribed into RNA in humans?
 
 ##### Hide
 
-<div class="solution" style="display: none;">
-
 ##### Solution
+
+<div class="solution" style="display: none;">
 
 ::: {.answer data-latex=""}
 
