@@ -31,11 +31,11 @@ jobs:
           sudo apt-get install -y git
           git clone "https://token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" .
         shell: bash
-
+           
       - name: Setup R environment and install packages
         run: |
           sudo apt-get update
-          sudo apt-get install -y r-base
+          sudo apt-get install -y r-base pandoc
           mkdir -p ~/R/Library
           Rscript -e ".libPaths('~/R/Library'); install.packages(c('rmarkdown', 'flextable', 'officer'), repos='https://cloud.r-project.org/')"
         
