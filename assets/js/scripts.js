@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    fetch('/assets/timetable.json')
+    fetch('assets/timetable.json')
     .then(response => response.json())
     .then(releaseDates => {
         // Determine the current exercise sheet based on the filename
