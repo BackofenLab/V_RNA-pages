@@ -3,8 +3,11 @@ set -x
 
 # Install Miniforge
 wget -qO- https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh | bash
-source ~/miniforge3/bin/activate
+
 export PATH="$HOME/miniforge3/bin:$PATH"
+
+source ~/miniforge3/bin/activate
+
 
 # Install Mamba
 conda install mamba -c conda-forge
