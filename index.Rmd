@@ -34,6 +34,8 @@ exam.
 Exercises are meant to be done during the weekly exercise session.
 During the same exercise session the results will be discussed.
 
+Please read the course materials before the exercise session.
+
 Master solutions will be provided sometime after each exercise session.
 
 :::: {#explaining .warning-box }
