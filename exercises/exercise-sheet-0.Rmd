@@ -37,7 +37,7 @@ equally valid solutions.
 ::: {.answer data-latex=""}
 
 ```{r, include=knitr::is_html_output(), echo=FALSE,}
-knitr::include_graphics("/assets/figures/exercise-sheet-0/exercise1-sol.jpeg")
+knitr::include_graphics("../assets/figures/exercise-sheet-0/exercise1-sol.jpeg")
 ```
 
 :::
@@ -78,7 +78,7 @@ unit on [RNA secondary structure]().
 ::: {.answer data-latex=""}
 
 ```{r, include=knitr::is_html_output(), echo=FALSE,}
-knitr::include_graphics("/assets/figures/exercise-sheet-0/exercise2-sol.jpeg")
+knitr::include_graphics("../assets/figures/exercise-sheet-0/exercise2-sol.jpeg")
 ```
 
 :::
