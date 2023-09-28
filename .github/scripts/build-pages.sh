@@ -10,12 +10,12 @@ source ~/miniforge3/bin/activate
 
 
 # Install Mamba
-conda install mamba -c conda-forge
+#conda install -y conda-forge::mamba
 
-mamba create -n rmarkdown
-source ~/miniforge3/bin/activate rmarkdown
+conda create -n rmarkdown
+conda activate rmarkdown
 
-mamba install -c conda-forge r-base r-rmarkdown r-flextable r-officer pandoc
+conda install -c conda-forge r-base r-rmarkdown r-flextable r-officer pandoc
 
 pwd
 ls -lah
