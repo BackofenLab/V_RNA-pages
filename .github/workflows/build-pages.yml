@@ -37,6 +37,15 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y r-base pandoc
           mkdir -p ~/R/Library
+
+          # Install TinyTeX (Added this part)
+          Rscript -e "install.packages('tinytex', repos='https://cloud.r-project.org/')"
+          Rscript -e "tinytex::install_tinytex()"
+          export PATH="$PATH:$HOME/bin"
+
+          # Verify TinyTeX Installation (Added this part)
+          Rscript -e "tinytex:::is_tinytex()"
+          
           Rscript -e ".libPaths('~/R/Library'); install.packages(c('rmarkdown', 'flextable', 'officer'), repos='https://cloud.r-project.org/')"
         
       - name: Render Rmarkdown
@@ -50,4 +59,4 @@ jobs:
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v2 
