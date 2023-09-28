@@ -1,5 +1,6 @@
 name: "RNA Bioinformatics"
 output_dir: "docs"
+include: ["exercises/*.Rmd"]
 author: "@CARD"
 date: "WS2023"
 language: en
