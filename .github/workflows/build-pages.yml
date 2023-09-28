@@ -38,16 +38,18 @@ jobs:
           sudo apt-get install -y r-base pandoc
           mkdir -p ~/R/Library
 
-          # Specify custom library path for TinyTeX installation
-          Rscript -e ".libPaths('~/R/Library'); install.packages('tinytex', repos='https://cloud.r-project.org/')"
-          Rscript -e "tinytex::install_tinytex()"
+          # Set up the custom library path and then install TinyTeX package
+          Rscript -e ".libPaths('~/R/Library'); install.packages('tinytex', repos='https://cloud.r-project.org/', lib='~/R/Library')"
+          
+          # Load from the custom library path and then install TinyTeX distribution
+          Rscript -e ".libPaths('~/R/Library'); library(tinytex); install_tinytex()"
           export PATH="$PATH:$HOME/bin"
           
           # Verify TinyTeX Installation
-          Rscript -e "tinytex:::is_tinytex()"
+          Rscript -e ".libPaths('~/R/Library'); library(tinytex); tinytex:::is_tinytex()"
           
           # Install other R packages with custom library path
-          Rscript -e ".libPaths('~/R/Library'); install.packages(c('rmarkdown', 'flextable', 'officer'), repos='https://cloud.r-project.org/')"
+          Rscript -e ".libPaths('~/R/Library'); install.packages(c('rmarkdown', 'flextable', 'officer'), repos='https://cloud.r-project.org/', lib='~/R/Library')"
           
       - name: Render Rmarkdown
         run: Rscript -e ".libPaths('~/R/Library'); rmarkdown::render_site()"
