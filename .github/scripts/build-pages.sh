@@ -1,19 +1,19 @@
 #!/bin/bash
 set -x
 
-sudo apt-get update
-sudo apt install -y software-properties-common
-sudo apt-add-repository -y ppa:marutter/rrutter4.0
-sudo apt update
-sudo apt-get -y install r-base
+# Install Miniforge
+wget -qO- https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh | bash
+source ~/miniforge3/bin/activate
 
+# Install Mamba
+conda install mamba -c conda-forge
+
+mamba create -n rmarkdown
+conda activate rmarkdown
+
+mamba install -c conda-forge r-base r-rmarkdown r-flextable r-officer pandoc
 
 pwd ls -lah
-sudo Rscript -e "install.packages(c('rmarkdown', 'flextable', 'officer'))"
-
-# If you're rendering to PDF, you can install tinytex:
-sudo Rscript -e "install.packages('tinytex')"
-sudo Rscript -e "tinytex::install_tinytex()"
 
 #######################
 # BUILD DOCUMENTATION #
