@@ -33,10 +33,10 @@ jobs:
         shell: bash
         
       - name: Cache R packages
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ~/R/Library
-          key: r-packages-${{ runner.os }}-${{ hashFiles('**/*.Rmd', '**/*.R', 'DESCRIPTION') }}
+          key: r-libraries-${{ runner.os }}-${{ hashFiles('r-packages.txt') }}
           restore-keys: |
             r-packages-${{ runner.os }}-     
             
