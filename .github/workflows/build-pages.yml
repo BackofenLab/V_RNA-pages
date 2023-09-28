@@ -32,12 +32,23 @@ jobs:
           git clone "https://token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" .
         shell: bash
 
-      - name: Run build script for Rmarkdown GitHub Pages
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: ".github/scripts/build-pages.sh"
-        shell: bash
+      - name: Cache R Libraries
+        uses: actions/cache@v3
+        with:
+          path: ~/R/Library
+          key: ${{ runner.os }}-r-${{ hashFiles('**/DESCRIPTION') }}
+          restore-keys: |
+            ${{ runner.os }}-r-
 
+      - name: Setup R environment and install packages
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y r-base
+          Rscript -e "install.packages(c('rmarkdown', 'flextable', 'officer'), repos='https://cloud.r-project.org/')"
+        
+      - name: Render Rmarkdown
+        run: Rscript -e "rmarkdown::render_site()"
+        
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
