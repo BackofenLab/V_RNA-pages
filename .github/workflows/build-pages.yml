@@ -59,11 +59,8 @@ jobs:
           # Install other R packages with custom library path
           Rscript -e ".libPaths('~/R/Library'); install.packages(c('rmarkdown', 'flextable', 'officer'), repos='https://cloud.r-project.org/', lib='~/R/Library')"
           
-      - name: Render all Rmd files
-        run: |
-          find . -name "*.Rmd" | while read rmdfile; do
-            Rscript -e ".libPaths('~/R/Library'); rmarkdown::render('$rmdfile')"
-          done
+      - name: Render Rmd files
+        run: Rscript -e ".libPaths('~/R/Library'); rmarkdown::render_site()"
         
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
