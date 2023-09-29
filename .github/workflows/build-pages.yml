@@ -31,37 +31,19 @@ jobs:
           sudo apt-get install -y git
           git clone "https://token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" .
         shell: bash
-        
-      - name: Cache R packages
-        uses: actions/cache@v3
-        with:
-          path: ~/R/Library
-          key: r-libraries-${{ runner.os }}-${{ hashFiles('r-packages.txt') }}
-          restore-keys: |
-            r-packages-${{ runner.os }}-     
-            
-      - name: Setup R environment and install packages
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y r-base pandoc
-          mkdir -p ~/R/Library
 
-          # Set up the custom library path and then install TinyTeX package
-          Rscript -e ".libPaths('~/R/Library'); install.packages('tinytex', repos='https://cloud.r-project.org/', lib='~/R/Library')"
-          
-          # Load from the custom library path and then install TinyTeX distribution
-          Rscript -e ".libPaths('~/R/Library'); library(tinytex); install_tinytex()"
-          export PATH="$PATH:$HOME/bin"
-          
-          # Verify TinyTeX Installation
-          Rscript -e ".libPaths('~/R/Library'); library(tinytex); tinytex:::is_tinytex()"
-          
-          # Install other R packages with custom library path
-          Rscript -e ".libPaths('~/R/Library'); install.packages(c('rmarkdown', 'flextable', 'officer'), repos='https://cloud.r-project.org/', lib='~/R/Library')"
-          
+      - name: create environment with mamba
+        uses: conda-incubator/setup-miniconda@v2
+        with:
+          mamba-version: "*"
+          channels: conda-forge,defaults
+          auto-activate-base: false
+          activate-environment: rmarkdown-env
+          environment-file: .github/envs/environment.yml
+
       - name: Render Rmd files
-        run: Rscript -e ".libPaths('~/R/Library'); rmarkdown::render_site()"
-        
+        run: Rscript -e "rmarkdown::render_site()"
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
@@ -70,4 +52,4 @@ jobs:
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2 
+        uses: actions/deploy-pages@v2
