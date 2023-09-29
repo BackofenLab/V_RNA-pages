@@ -191,5 +191,33 @@ index_replace(sij_ft)
 
 ---------------------------------
 
+### 3.1
+
+::: {.question data-latex=""}
+
+Compute $Z$ via exhaustive structure space enumeration. (using the provided Boltzmann weights)
+
+:::
+
+#### {.tabset}
+
+##### Hide
+
+##### Solution
+
+::: {.answer data-latex=""}
+
+```{r, results="asis", include=knitr::is_html_output(), echo=FALSE}
+sij <- read.csv("assets/tables/es3-1.csv", check.names=FALSE, sep=";")
+sij_ft <- flextable(sij)
+sij_ft <- custom_theme(sij_ft)
+index_replace(sij_ft)
+```
+
+:::
+
+#### {-}
+
+---------------------------------
 
 <script src="assets/js/scripts.js"></script>
