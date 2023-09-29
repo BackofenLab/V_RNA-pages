@@ -41,16 +41,17 @@ jobs:
           activate-environment: rmarkdown-env
           environment-file: .github/envs/environment.yml
 
-      - name: Activate conda environment
+      - name: Test env
         run: |
           eval "$(conda shell.bash hook)"
           conda activate rmarkdown-env
-
-      - name: Test env
-        run: conda list
+          conda list
 
       - name: Render Rmd files
-        run: Rscript -e "rmarkdown::render_site()"
+        run: |
+          eval "$(conda shell.bash hook)"
+          conda activate rmarkdown-env
+          Rscript -e "rmarkdown::render_site()"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
