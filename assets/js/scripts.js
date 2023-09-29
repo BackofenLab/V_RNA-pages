@@ -8,16 +8,16 @@ document.addEventListener("DOMContentLoaded", function() {
         if (releaseDates[currentPage]) {
             const releaseTime = new Date(releaseDates[currentPage]);
 
-            // Grab all potential solution divs by selecting divs that start with 'solution' in their ID.
-            const solutionDivs = document.querySelectorAll("div[id^='solution']");
+            // Grab all potential solution tab headers by selecting h5 elements within divs that start with 'solution' in their ID.
+            const solutionTabHeaders = document.querySelectorAll("div[id^='solution'] > h5");
 
-            solutionDivs.forEach(div => {
+            solutionTabHeaders.forEach(header => {
                 // By default, deactivate all the solution tabs.
-                div.classList.add('deactivated-tab');
+                header.classList.add('deactivated-tab-header');
 
                 if (currentTime > releaseTime) {
                     // If the current time has passed the release time, activate the solution tab.
-                    div.classList.remove('deactivated-tab');
+                    header.classList.remove('deactivated-tab-header');
                 }
             });
         }
