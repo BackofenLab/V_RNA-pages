@@ -42,7 +42,7 @@ jobs:
           environment-file: .github/envs/environment.yml
 
       - name: Test env
-        run: conda info
+        run: conda list
 
       - name: Render Rmd files
         run: Rscript -e "rmarkdown::render_site()"
