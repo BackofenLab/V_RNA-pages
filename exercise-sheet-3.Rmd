@@ -42,11 +42,13 @@ Compute the entropy of the probability distribution $p(1) = \frac{1}{2},\, p(2) 
 
 ::: {.answer data-latex=""}
 
-$$
-    H(X) & = & p(1)\log(\frac{1}{p(1)}) + p(2)\log(\frac{1}{p(2)}) + p(3)\log(\frac{1}{p(3)}) + p(4)\log(\frac{1}{p(4)})\\
-         & = & \frac{1}{2} + \frac{2}{4} + \frac{3}{8} + \frac{3}{8}\\
-         & = & \frac{14}{8}
-$$
+\[
+\begin{align*}
+H(X) & = p(1)\log\left(\frac{1}{p(1)}\right) + p(2)\log\left(\frac{1}{p(2)}\right) + p(3)\log\left(\frac{1}{p(3)}\right) + p(4)\log\left(\frac{1}{p(4)}\right)\\
+& = \frac{1}{2} + \frac{2}{4} + \frac{3}{8} + \frac{3}{8}\\
+& = \frac{14}{8}
+\end{align*}
+\]
 
 :::
 
