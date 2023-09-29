@@ -32,8 +32,6 @@ equally valid solutions.
 
 ##### Solution
 
-<div class="solution" style="display: none;">
-
 ::: {.answer data-latex=""}
 
 ```{r, include=knitr::is_html_output(), echo=FALSE,}
@@ -41,7 +39,6 @@ knitr::include_graphics("assets/figures/exercise-sheet-0/exercise1-sol.jpeg")
 ```
 
 :::
-</div>
 
 #### {-}
 
@@ -73,7 +70,6 @@ unit on [RNA secondary structure]().
 
 ##### Solution
 
-<div class="solution" style="display: none;">
 ::: {.answer data-latex=""}
 
 ```{r, include=knitr::is_html_output(), echo=FALSE,}
@@ -81,7 +77,6 @@ knitr::include_graphics("assets/figures/exercise-sheet-0/exercise2-sol.jpeg")
 ```
 
 :::
-</div>
 
 #### {-}
 
@@ -103,14 +98,11 @@ is transcribed into RNA in humans?
 
 ##### Solution
 
-<div class="solution" style="display: none;">
-
 ::: {.answer data-latex=""}
 
 1% DNA -to- protein, 80 - 90% DNA -to- RNA
 
 :::
-</div>
 
 #### {-}
 

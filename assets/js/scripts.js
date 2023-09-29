@@ -2,22 +2,24 @@ document.addEventListener("DOMContentLoaded", function() {
     fetch('./assets/timetable.json')
     .then(response => response.json())
     .then(releaseDates => {
-        // Determine the current exercise sheet based on the filename
         const currentPage = window.location.pathname.split("/").pop().replace(".html", "");
-
-        // Get the current time
         const currentTime = new Date();
 
-        // Compare release time with current time for the current exercise sheet
         if (releaseDates[currentPage]) {
             const releaseTime = new Date(releaseDates[currentPage]);
-            if (currentTime > releaseTime) {
-                // Display all solutions for this exercise sheet
-                const solutions = document.querySelectorAll(".solution");
-                solutions.forEach(function(solution) {
-                    solution.style.display = "block";
-                });
-            }
+
+            // Grab all potential solution divs by selecting divs that start with 'solution' in their ID.
+            const solutionDivs = document.querySelectorAll("div[id^='solution']");
+
+            solutionDivs.forEach(div => {
+                // By default, deactivate all the solution tabs.
+                div.classList.add('deactivated-tab');
+
+                if (currentTime > releaseTime) {
+                    // If the current time has passed the release time, activate the solution tab.
+                    div.classList.remove('deactivated-tab');
+                }
+            });
         }
     })
     .catch(error => {
