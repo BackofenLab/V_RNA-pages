@@ -271,6 +271,27 @@ Implement the Nussinov algorithm as given in the lecture using a programming lan
         \end{cases}
    $$
 
+2. Implement the traceback for the computation of an optimal structure. Print the resulting structure in dot-bracket notation.
+
+3. Implement a modified traceback that counts the number of optimal structures.
+
 :::
+
+:::: {#explaining .message-box }
+
+::: {#note-exp .note-header}
+```{r, include=knitr::is_html_output(), echo=FALSE,}
+knitr::include_graphics("assets/figures/infoicon.svg")
+```
+**Note**
+:::
+::: {#note-exp .note-body}
+
+The implementation should be done at home!
+
+For checking if your implementation is correct, please use [https://rna.informatik.uni-freiburg.de/Teaching/index.jsp?toolName=Nussinov](our webserver).
+
+:::
+::::
 
 <script src="assets/js/scripts.js"></script>
