@@ -1,0 +1,102 @@
+---
+title: "Exercise sheet 3: structure probability"
+---
+
+---------------------------------
+
+# Exercise 1 - entropy
+
+We want to have a short look at the concept of entropy.
+Let $X$ be a discrete random variable with probabilities $p(i), (i=1,2,\ldots,n)$.
+The amount of information to be associated with an outcome of probability $p(i)$
+is defined as $I(p(i)) = \log_2(\frac{1}{p(i)})$.
+
+In information theory, the expected value of the information $I(X)$ for the random variable $X$ is called entropy.
+The entropy is given by
+
+$$H(X) = E[I(X)] = \sum_{i=1}^{n}p(i)\log_2(\frac{1}{p(i)}).$$
+
+Note that all logarithms in this exercise are base 2 (standard in information theory).
+
+---------------------------------
+
+### 1.1
+
+::: {.question data-latex=""}
+
+Compute the entropy of the probability distribution $p(1) = \frac{1}{2},\, p(2) = \frac{1}{4},\, p(3) = \frac{1}{8},\, p(4) = \frac{1}{8}$.
+
+:::
+
+#### {.tabset}
+
+##### Hide
+
+##### Solution
+
+::: {.answer data-latex=""}
+
+$$
+    H(X) & = & p(1)\log(\frac{1}{p(1)}) + p(2)\log(\frac{1}{p(2)}) + p(3)\log(\frac{1}{p(3)}) + p(4)\log(\frac{1}{p(4)})\\
+         & = & \frac{1}{2} + \frac{2}{4} + \frac{3}{8} + \frac{3}{8}\\
+         & = & \frac{14}{8}
+$$
+
+:::
+
+#### {-}
+
+---------------------------------
+
+### 1.2
+
+::: {.question data-latex=""}
+
+Compute the entropy of the distribution $p(i) = \frac{1}{4},\: (i= 1,2,3,4)$.
+
+:::
+
+#### {.tabset}
+
+##### Hide
+
+##### Solution
+
+::: {.answer data-latex=""}
+
+$$
+    H(X) & = & 4 \cdot p(i) \log(\frac{1}{p(i)})\\
+         & = & 2
+$$
+
+:::
+
+#### {-}
+
+---------------------------------
+
+### 1.3
+
+::: {.question data-latex=""}
+
+How can you explain the difference in entropy for both probability distributions?
+
+:::
+
+#### {.tabset}
+
+##### Hide
+
+##### Solution
+
+::: {.answer data-latex=""}
+
+For the probability distribution in part 1. the information content of the probability distribution is higher than for 2. as we get more information from the distribution itself (e.g. we know that we are more likely to observe i=1).\\
+The information content for the event is higher for part 2. as we can learn more from the event (see coin example from the lecture).
+
+This results in a higher entropy for the probability distribution in part 2..
+:::
+
+#### {-}
+
+---------------------------------
