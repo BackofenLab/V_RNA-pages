@@ -1,0 +1,76 @@
+---
+title: "Exercise sheet 1: Nussinov algorithm"
+---
+
+---------------------------------
+
+# Exercise 1
+
+Consider the RNA with sequence:
+
+```
+S = GGGCACAUGGGGCAGUGCAGCCACUGAGCC
+```
+
+$P = \{(1,30),(2,29),(4,17),(5,16),(6,15),(8,14),(9,13),(18,26),(19,25),(20,24)\}$
+
+
+### 1.
+
+::: {.question data-latex=""}
+
+Draw the structure in dot-bracket notation and as a graphical representation.
+
+:::
+
+#### {.tabset}
+
+##### Hide
+
+
+##### Solution
+
+::: {.answer data-latex=""}
+
+```{r, include=knitr::is_html_output(), echo=FALSE,}
+knitr::include_graphics("assets/figures/exercise-sheet-1/graph_represention_part1.svg")
+```
+
+:::
+
+#### {-}
+
+---------------------------------
+
+### 2.
+
+::: {.question data-latex=""}
+
+Consider the structure $P'=P\cup\{(11,22),(12,21)\}$ of sequence S.
+
+Modify your drawings, where possible, in order to show the new structure $P'$. Where does
+this fail and why?
+
+:::
+
+#### {.tabset}
+
+##### Hide
+
+##### Solution
+
+::: {.answer data-latex=""}
+Problem: pseudoknot
+
+```{r, include=knitr::is_html_output(), echo=FALSE,}
+knitr::include_graphics("assets/figures/exercise-sheet-1/graph_represention_part2.svg")
+```
+
+The new base pairs/arcs $(11, 22)$ and $(12, 21)$ result in a pseudoknot.
+The bracket-only dot-bracket notation can not display pseudoknots.
+One would need to introduce a different symbol eg using square brackets '\texttt{[]}' to indicate the opening and closing positions of the crossing base pairs.
+:::
+
+#### {-}
+
+<script src="assets/js/scripts.js"></script>
