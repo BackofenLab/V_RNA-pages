@@ -14,8 +14,9 @@ S = GGGCACAUGGGGCAGUGCAGCCACUGAGCC
 
 $P = \{(1,30),(2,29),(4,17),(5,16),(6,15),(8,14),(9,13),(18,26),(19,25),(20,24)\}$
 
+---------------------------------
 
-### 1.
+### 1.1
 
 ::: {.question data-latex=""}
 
@@ -26,7 +27,6 @@ Draw the structure in dot-bracket notation and as a graphical representation.
 #### {.tabset}
 
 ##### Hide
-
 
 ##### Solution
 
@@ -42,7 +42,7 @@ knitr::include_graphics("assets/figures/exercise-sheet-1/graph_represention_part
 
 ---------------------------------
 
-### 2.
+### 1.2
 
 ::: {.question data-latex=""}
 
@@ -72,5 +72,152 @@ One would need to introduce a different symbol eg using square brackets '\texttt
 :::
 
 #### {-}
+
+---------------------------------
+
+# Exercise 2
+
+For a variation of Nussinov algorithm with minimum loop length $1$, consider the following computed Nussinov matrix $N$ for the sequence `AUCACCGC`:
+
+```{r, include=knitr::is_html_output(), echo=FALSE,}
+knitr::include_graphics("assets/figures/exercise-sheet-1/nussinov-table.png")
+```
+
+---------------------------------
+
+### 2.1
+
+::: {.question data-latex=""}
+
+Compute the optimal structure according to the following recursion (considering loop length 1)!
+
+```{r, include=knitr::is_html_output(), echo=FALSE,}
+knitr::include_graphics("assets/figures/exercise-sheet-1/nussinov-recursion-unique.png")
+```
+
+:::
+
+#### {.tabset}
+
+##### Hide
+
+##### Solution
+
+::: {.answer data-latex=""}
+P = \{(5,7),(2,4)\}
+:::
+
+#### {-}
+
+---------------------------------
+
+### 2.2
+
+::: {.question data-latex=""}
+
+Is there more than one optimal structure?
+
+:::
+
+#### {.tabset}
+
+##### Hide
+
+##### Solution
+
+::: {.answer data-latex=""}
+
+No, there is just one optimal structure $P = \{(2,4),(5,7)\}$ when considering loop length 1.
+
+Apart from the pairs $(5,7)$ and $(2,4)$, only positions $(2,7)$ and $(3,7)$ are possible, which only are present in structures that have just one base pair and are therefore not optimal.
+
+:::
+
+#### {-}
+
+---------------------------------
+
+### 2.3
+
+::: {.question data-latex=""}
+
+Define all optimal tracebacks! Is there more than one optimal traceback?
+
+:::
+
+#### {.tabset}
+
+##### Hide
+
+##### Solution
+
+::: {.answer data-latex=""}
+
+There are 5 possible tracebacks (for the same optimal structure):
+
+\begin{enumerate}
+    \item \begin{itemize}
+        \vspace{-1mm}\item $N_{1,8} \rightarrow N_{1,1}+N_{2,8}$
+        \vspace{-1mm}\item $N_{1,1} \rightarrow $ STOP
+        \vspace{-1mm}\item $N_{2,8} \rightarrow N_{2,4}+N_{5,8}$
+        \vspace{-1mm}\item $N_{2,4} \rightarrow N_{3,3}+bp (2,4)$
+        \vspace{-1mm}\item $N_{3,3} \rightarrow $ STOP
+        \vspace{-1mm}\item $N_{5,8} \rightarrow N_{5,7}+N_{8,8}$
+        \vspace{-1mm}\item $N_{5,7} \rightarrow N_{6,6}+bp (5,7)$
+        \vspace{-1mm}\item $N_{6,6} \rightarrow $ STOP
+        \vspace{-1mm}\item $N_{8,8} \rightarrow $ STOP
+    \end{itemize}
+    \item \begin{itemize}
+        \vspace{-1mm}\item $N_{1,8} \rightarrow N_{1,1}+N_{2,8}$
+        \vspace{-1mm}\item $N_{1,1} \rightarrow $ STOP
+        \vspace{-1mm}\item $N_{2,8} \rightarrow N_{2,7}+N_{8,8}$
+        \vspace{-1mm}\item $N_{2,7} \rightarrow N_{2,4}+N_{5,7}$
+        \vspace{-1mm}\item $N_{2,4} \rightarrow N_{3,3}+bp (2,4)$
+        \vspace{-1mm}\item $N_{3,3} \rightarrow $ STOP
+        \vspace{-1mm}\item $N_{5,7} \rightarrow N_{6,6}+bp (5,7)$
+        \vspace{-1mm}\item $N_{6,6} \rightarrow $ STOP
+        \vspace{-1mm}\item $N_{8,8} \rightarrow $ STOP
+    \end{itemize}
+    \item \begin{itemize}
+        \vspace{-1mm}\item $N_{1,8} \rightarrow N_{1,4}+N_{5,8}$
+        \vspace{-1mm}\item $N_{1,4} \rightarrow N_{1,1}+N_{2,4}$
+        \vspace{-1mm}\item $N_{1,1} \rightarrow $ STOP
+        \vspace{-1mm}\item $N_{2,4} \rightarrow N_{3,3}+bp (2,4)$
+        \vspace{-1mm}\item $N_{3,3} \rightarrow $ STOP
+        \vspace{-1mm}\item $N_{5,8} \rightarrow N_{5,7}+N_{8,8}$
+        \vspace{-1mm}\item $N_{5,7} \rightarrow N_{6,6}+bp (5,7)$
+        \vspace{-1mm}\item $N_{6,6} \rightarrow $ STOP
+        \vspace{-1mm}\item $N_{8,8} \rightarrow $ STOP
+    \end{itemize}
+    \item \begin{itemize}
+        \vspace{-1mm}\item $N_{1,8} \rightarrow N_{1,7}+N_{8,8}$
+        \vspace{-1mm}\item $N_{1,7} \rightarrow N_{1,1}+N_{2,7}$
+        \vspace{-1mm}\item $N_{1,1} \rightarrow $ STOP
+        \vspace{-1mm}\item $N_{2,7} \rightarrow N_{2,4}+N_{5,7}$
+        \vspace{-1mm}\item $N_{2,4} \rightarrow N_{3,3}+bp (2,4)$
+        \vspace{-1mm}\item $N_{3,3} \rightarrow $ STOP
+        \vspace{-1mm}\item $N_{5,7} \rightarrow N_{6,6}+bp (5,7)$
+        \vspace{-1mm}\item $N_{6,6} \rightarrow $ STOP
+        \vspace{-1mm}\item $N_{8,8} \rightarrow $ STOP
+    \end{itemize}
+    \item \begin{itemize}
+        \vspace{-1mm}\item $N_{1,8} \rightarrow N_{1,7}+N_{8,8}$
+        \vspace{-1mm}\item $N_{1,7} \rightarrow N_{1,4}+N_{5,7}$
+        \vspace{-1mm}\item $N_{1,4} \rightarrow N_{1,1}+N_{2,4}$
+        \vspace{-1mm}\item $N_{1,1} \rightarrow $ STOP
+        \vspace{-1mm}\item $N_{2,4} \rightarrow N_{3,3}+bp (2,4)$
+        \vspace{-1mm}\item $N_{3,3} \rightarrow $ STOP
+        \vspace{-1mm}\item $N_{5,7} \rightarrow N_{6,6}+bp (5,7)$
+        \vspace{-1mm}\item $N_{6,6} \rightarrow $ STOP
+        \vspace{-1mm}\item $N_{8,8} \rightarrow $ STOP
+    \end{itemize}
+\end{enumerate}
+
+:::
+
+#### {-}
+
+
+
 
 <script src="assets/js/scripts.js"></script>
