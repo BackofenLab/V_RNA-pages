@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+window.onload = function() {
     fetch('./assets/timetable.json')
     .then(response => response.json())
     .then(releaseDates => {
@@ -8,16 +8,16 @@ document.addEventListener("DOMContentLoaded", function() {
         if (releaseDates[currentPage]) {
             const releaseTime = new Date(releaseDates[currentPage]);
 
-            // Grab all potential solution tab headers by selecting h5 elements within divs that start with 'solution' in their ID.
-            const solutionTabHeaders = document.querySelectorAll("div[id^='solution'] > h5");
+            // Grab all potential solution tab anchors by selecting 'a' elements with 'aria-controls' attributes that start with 'solution'.
+            const solutionTabs = document.querySelectorAll("a[aria-controls^='solution']");
 
-            solutionTabHeaders.forEach(header => {
+            solutionTabs.forEach(tab => {
                 // By default, deactivate all the solution tabs.
-                header.classList.add('deactivated-tab-header');
+                tab.classList.add('deactivated-tab');
 
                 if (currentTime > releaseTime) {
                     // If the current time has passed the release time, activate the solution tab.
-                    header.classList.remove('deactivated-tab-header');
+                    tab.classList.remove('deactivated-tab');
                 }
             });
         }
@@ -25,4 +25,4 @@ document.addEventListener("DOMContentLoaded", function() {
     .catch(error => {
         console.error("Error fetching the timetable:", error);
     });
-});
+};
