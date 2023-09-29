@@ -41,6 +41,9 @@ jobs:
           activate-environment: rmarkdown-env
           environment-file: .github/envs/environment.yml
 
+      - name: Test env
+        run: conda info
+
       - name: Render Rmd files
         run: Rscript -e "rmarkdown::render_site()"
 
