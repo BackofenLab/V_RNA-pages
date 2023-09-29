@@ -68,7 +68,7 @@ knitr::include_graphics("assets/figures/exercise-sheet-1/graph_represention_part
 
 The new base pairs/arcs $(11, 22)$ and $(12, 21)$ result in a pseudoknot.
 The bracket-only dot-bracket notation can not display pseudoknots.
-One would need to introduce a different symbol eg using square brackets '\texttt{[]}' to indicate the opening and closing positions of the crossing base pairs.
+One would need to introduce a different symbol eg using square brackets `[] to indicate the opening and closing positions of the crossing base pairs.
 :::
 
 #### {-}
@@ -79,7 +79,7 @@ One would need to introduce a different symbol eg using square brackets '\texttt
 
 For a variation of Nussinov algorithm with minimum loop length $1$, consider the following computed Nussinov matrix $N$ for the sequence `AUCACCGC`:
 
-```{r, include=knitr::is_html_output(), echo=FALSE,}
+```{r, include=knitr::is_html_output(), echo=FALSE, fig.align='center', out.width='50%'}
 knitr::include_graphics("assets/figures/exercise-sheet-1/nussinov-table.png")
 ```
 
@@ -155,63 +155,56 @@ Define all optimal tracebacks! Is there more than one optimal traceback?
 
 There are 5 possible tracebacks (for the same optimal structure):
 
-\begin{enumerate}
-    \item \begin{itemize}
-        \vspace{-1mm}\item $N_{1,8} \rightarrow N_{1,1}+N_{2,8}$
-        \vspace{-1mm}\item $N_{1,1} \rightarrow $ STOP
-        \vspace{-1mm}\item $N_{2,8} \rightarrow N_{2,4}+N_{5,8}$
-        \vspace{-1mm}\item $N_{2,4} \rightarrow N_{3,3}+bp (2,4)$
-        \vspace{-1mm}\item $N_{3,3} \rightarrow $ STOP
-        \vspace{-1mm}\item $N_{5,8} \rightarrow N_{5,7}+N_{8,8}$
-        \vspace{-1mm}\item $N_{5,7} \rightarrow N_{6,6}+bp (5,7)$
-        \vspace{-1mm}\item $N_{6,6} \rightarrow $ STOP
-        \vspace{-1mm}\item $N_{8,8} \rightarrow $ STOP
-    \end{itemize}
-    \item \begin{itemize}
-        \vspace{-1mm}\item $N_{1,8} \rightarrow N_{1,1}+N_{2,8}$
-        \vspace{-1mm}\item $N_{1,1} \rightarrow $ STOP
-        \vspace{-1mm}\item $N_{2,8} \rightarrow N_{2,7}+N_{8,8}$
-        \vspace{-1mm}\item $N_{2,7} \rightarrow N_{2,4}+N_{5,7}$
-        \vspace{-1mm}\item $N_{2,4} \rightarrow N_{3,3}+bp (2,4)$
-        \vspace{-1mm}\item $N_{3,3} \rightarrow $ STOP
-        \vspace{-1mm}\item $N_{5,7} \rightarrow N_{6,6}+bp (5,7)$
-        \vspace{-1mm}\item $N_{6,6} \rightarrow $ STOP
-        \vspace{-1mm}\item $N_{8,8} \rightarrow $ STOP
-    \end{itemize}
-    \item \begin{itemize}
-        \vspace{-1mm}\item $N_{1,8} \rightarrow N_{1,4}+N_{5,8}$
-        \vspace{-1mm}\item $N_{1,4} \rightarrow N_{1,1}+N_{2,4}$
-        \vspace{-1mm}\item $N_{1,1} \rightarrow $ STOP
-        \vspace{-1mm}\item $N_{2,4} \rightarrow N_{3,3}+bp (2,4)$
-        \vspace{-1mm}\item $N_{3,3} \rightarrow $ STOP
-        \vspace{-1mm}\item $N_{5,8} \rightarrow N_{5,7}+N_{8,8}$
-        \vspace{-1mm}\item $N_{5,7} \rightarrow N_{6,6}+bp (5,7)$
-        \vspace{-1mm}\item $N_{6,6} \rightarrow $ STOP
-        \vspace{-1mm}\item $N_{8,8} \rightarrow $ STOP
-    \end{itemize}
-    \item \begin{itemize}
-        \vspace{-1mm}\item $N_{1,8} \rightarrow N_{1,7}+N_{8,8}$
-        \vspace{-1mm}\item $N_{1,7} \rightarrow N_{1,1}+N_{2,7}$
-        \vspace{-1mm}\item $N_{1,1} \rightarrow $ STOP
-        \vspace{-1mm}\item $N_{2,7} \rightarrow N_{2,4}+N_{5,7}$
-        \vspace{-1mm}\item $N_{2,4} \rightarrow N_{3,3}+bp (2,4)$
-        \vspace{-1mm}\item $N_{3,3} \rightarrow $ STOP
-        \vspace{-1mm}\item $N_{5,7} \rightarrow N_{6,6}+bp (5,7)$
-        \vspace{-1mm}\item $N_{6,6} \rightarrow $ STOP
-        \vspace{-1mm}\item $N_{8,8} \rightarrow $ STOP
-    \end{itemize}
-    \item \begin{itemize}
-        \vspace{-1mm}\item $N_{1,8} \rightarrow N_{1,7}+N_{8,8}$
-        \vspace{-1mm}\item $N_{1,7} \rightarrow N_{1,4}+N_{5,7}$
-        \vspace{-1mm}\item $N_{1,4} \rightarrow N_{1,1}+N_{2,4}$
-        \vspace{-1mm}\item $N_{1,1} \rightarrow $ STOP
-        \vspace{-1mm}\item $N_{2,4} \rightarrow N_{3,3}+bp (2,4)$
-        \vspace{-1mm}\item $N_{3,3} \rightarrow $ STOP
-        \vspace{-1mm}\item $N_{5,7} \rightarrow N_{6,6}+bp (5,7)$
-        \vspace{-1mm}\item $N_{6,6} \rightarrow $ STOP
-        \vspace{-1mm}\item $N_{8,8} \rightarrow $ STOP
-    \end{itemize}
-\end{enumerate}
+a.
+    * N_{1,8} → N_{1,1}+N_{2,8}
+    * N_{1,1} → STOP
+    * N_{2,8} → N_{2,4}+N_{5,8}
+    * N_{2,4} → N_{3,3}+bp (2,4)
+    * N_{3,3} → STOP
+    * N_{5,8} → N_{5,7}+N_{8,8}
+    * N_{5,7} → N_{6,6}+bp (5,7)
+    * N_{6,6} → STOP
+    * N_{8,8} → STOP
+b.
+    * N_{1,8} → N_{1,1}+N_{2,8}
+    * N_{1,1} → STOP
+    * N_{2,8} → N_{2,7}+N_{8,8}
+    * N_{2,7} → N_{2,4}+N_{5,7}
+    * N_{2,4} → N_{3,3}+bp (2,4)
+    * N_{3,3} → STOP
+    * N_{5,7} → N_{6,6}+bp (5,7)
+    * N_{6,6} → STOP
+    * N_{8,8} → STOP
+c.
+    * N_{1,8} → N_{1,4}+N_{5,8}
+    * N_{1,4} → N_{1,1}+N_{2,4}
+    * N_{1,1} → STOP
+    * N_{2,4} → N_{3,3}+bp (2,4)
+    * N_{3,3} → STOP
+    * N_{5,8} → N_{5,7}+N_{8,8}
+    * N_{5,7} → N_{6,6}+bp (5,7)
+    * N_{6,6} → STOP
+    * N_{8,8} → STOP
+d.
+    * N_{1,8} → N_{1,7}+N_{8,8}
+    * N_{1,7} → N_{1,1}+N_{2,7}
+    * N_{1,1} → STOP
+    * N_{2,7} → N_{2,4}+N_{5,7}
+    * N_{2,4} → N_{3,3}+bp (2,4)
+    * N_{3,3} → STOP
+    * N_{5,7} → N_{6,6}+bp (5,7)
+    * N_{6,6} → STOP
+    * N_{8,8} → STOP
+e.
+    * N_{1,8} → N_{1,7}+N_{8,8}
+    * N_{1,7} → N_{1,4}+N_{5,7}
+    * N_{1,4} → N_{1,1}+N_{2,4}
+    * N_{1,1} → STOP
+    * N_{2,4} → N_{3,3}+bp (2,4)
+    * N_{3,3} → STOP
+    * N_{5,7} → N_{6,6}+bp (5,7)
+    * N_{6,6} → STOP
+    * N_{8,8} → STOP
 
 :::
 
