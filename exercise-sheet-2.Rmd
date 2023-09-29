@@ -1,0 +1,371 @@
+---
+title: "Exercise sheet 2: Zuker's algorithm"
+---
+
+---------------------------------
+
+# Exercise 1
+
+We specify a new dynamic programming algorithm -- a simplified variant of the Zuker algorithm -- that fills two matrices $W$ and $V$.
+The algorithm is specified by the following two recursion equations.
+As in the definition of the Zuker algorithm, we use functions $eH$, $eS$, $eL$ for loop energy contributions.
+
+For the matrix $W$, define for $i+m \leq j$
+
+  $W_{ij} = 0$
+
+and $i+m<j$
+
+$$
+  W_{ij} = \min
+  \begin{cases}
+    W_{i{j-1}}\\
+    W_{i+1{j}}\\
+    V_{ij}\\
+  \end{cases}
+$$
+
+For the matrix $V$, define for $i+m \leq j$
+
+  $V_{ij} = \infty$
+
+and $i+m<j$
+
+$$
+  V_{ij} = \min
+  \begin{cases}
+    eH(i,j)\\
+    V_{i+1{j-1}} + eS(i,j)\\
+    min_{i<i^{'}<j^{'}<j}V_{i^{'}{j^{'}}}+eL(i,j,i^{'},j^{'})\\
+  \end{cases}
+$$
+
+---------------------------------
+
+### 1.1
+
+::: {.question data-latex=""}
+
+What is represented by $m$ in the above recursion equations?
+
+:::
+
+#### {.tabset}
+
+##### Hide
+
+##### Solution
+
+::: {.answer data-latex=""}
+
+The minimal loop length.
+
+:::
+
+#### {-}
+
+---------------------------------
+
+### 1.2
+
+::: {.question data-latex=""}
+
+Can we reduce the initialization of $W$?
+
+:::
+
+#### {.tabset}
+
+##### Hide
+
+##### Solution
+
+::: {.answer data-latex=""}
+
+Yes, it is sufficient to initialize $W_{ii} = 0$.
+
+:::
+
+#### {-}
+
+---------------------------------
+
+### 1.3
+
+::: {.question data-latex=""}
+
+What is computed in $W_{1n}$?
+
+:::
+
+#### {.tabset}
+
+##### Hide
+
+##### Solution
+
+::: {.answer data-latex=""}
+
+The entry $W_{1n}$ contains the minimum free energy of all secondary structures containing hairpin, internal loops and stackings.
+
+:::
+
+#### {-}
+
+---------------------------------
+
+### 1.4
+
+::: {.question data-latex=""}
+
+What is the complexity for computing $W_{1n}$ by dynamic programming?
+
+:::
+
+#### {.tabset}
+
+##### Hide
+
+##### Solution
+
+::: {.answer data-latex=""}
+
+The complexity is $O(n^{4})$. For each of the $O(n^{2})$ matrix entries the minimum of $O(n^{2})$ internal loops has to be selected.
+
+:::
+
+#### {-}
+
+---------------------------------
+
+### 1.5
+
+::: {.question data-latex=""}
+
+Why is the time complexity of Zuker only $O(n^{3})$?
+How can you modify this recursion accordingly? Will the algorithm still solve exactly the same problem?
+How does the time complexity change?
+
+:::
+
+#### {.tabset}
+
+##### Hide
+
+##### Solution
+
+::: {.answer data-latex=""}
+
+The Zuker algorithm is restricted to secondary structures containing only internal loops up to a maximum size of L.
+That way for each matrix entry only $O(n)$ internal loops have to be checked, leading to a reduced complexity of $O(n^{3})$.
+The same modification can be done for this algorithm.
+By restricting the maximum size of internal loops the modified algorithm is working on a subset of the original structure ensemble, so the problem differ slightly.
+Time complexity goes down from $O(n^4)$ to $O(n^2)$.
+
+:::
+
+#### {-}
+
+---------------------------------
+
+### 1.7
+
+::: {.question data-latex=""}
+
+Modified versions of this simplified Zuker recursion are used in practice to search entire genomes ($n>10^6$) for stable hairpin loop structures.
+How can we further adapt the recursion in order to improve the runtime when looking for short hairpin loops in an entire genome?
+
+:::
+
+#### {.tabset}
+
+##### Hide
+
+##### Solution
+
+::: {.answer data-latex=""}
+
+As we are only interested in short, stable hairpin loops, we can restrict the hairpin size.
+
+This means that we can constraint the distance between $i$ and $j$.
+In other words, we can consider only a window from $i$ up to a constant length, which will make $j$ a constant value.
+Thus $j$ will not be considered in the time complexity calculation.
+The space complexity is reduced to $O(n * \text{constant})$ for our $W$ and $V$ matrices.
+(As we only need to consider a constant number of columns for each row of our matrix.)
+
+This reduces the overall time complexity to $O(n)$
+
+:::
+
+#### {-}
+
+---------------------------------
+
+# Exercise 2
+
+Now, modify the recursion for entries $V_{ij}$ for $i<j-m$:
+
+$$
+  V_{ij} = \min
+  \begin{cases}
+    eH(i,j)\\
+    V_{i+1{j-1}} + eS(i,j)\\
+    min_{i<i^{'}<j^{'}<j}V_{i^{'}{j^{'}}}+eL(i,j,i^{'},j^{'})\\
+    min_{i<i_{1}<j_{1}<i_{2}<j_{2}<j}V_{i_{1}{j_{1}}}+V_{i_{2}{j_{2}}}+eM(i,j,i_{1},j_{1},i_{2},j_{2})\\
+  \end{cases}
+$$
+
+---------------------------------
+
+### 2.1
+
+::: {.question data-latex=""}
+
+How does the recursion differ from the final $V$-recursion given in the lecture?
+Identify structures that can be predicted by the Zuker's algorithm but not by this algorithm.
+
+:::
+
+#### {.tabset}
+
+##### Hide
+
+##### Solution
+
+::: {.answer data-latex=""}
+
+In this recursion the computation of the multi-loop parts is not yet done in a separate recursion an the general multiloop energy model is used instead of the simplified one.
+The new algorithm is able to predict structures including stacking, hairpin loops, internal loops and multiloops having exactly $2$ inner base pairs within loop.
+For example it won't be possible to predict a structure having a multiloop with $3$ inner base pairs using this new algorithm.
+
+:::
+
+#### {-}
+
+---------------------------------
+
+### 2.2
+
+::: {.question data-latex=""}
+
+What is the time and space complexity of this algorithm?
+
+:::
+
+#### {.tabset}
+
+##### Hide
+
+##### Solution
+
+::: {.answer data-latex=""}
+
+Space: $O(n^{2})$. Time: $O(n^{6})$, for each entry in matrix $V O(n^{4})$ different multiloops have to be checked.
+
+:::
+
+#### {-}
+
+---------------------------------
+
+### 2.3
+
+::: {.question data-latex=""}
+
+Can you modify the $V$-recursion again to support 3-multiloops with an energy contribution of $eM(i,j,i_{1},j_{1},i_{2},j_{2},i_{3},j_{3})$?
+How does this generalize to $k$-multiloops for arbitrary $k$ and how does it correlate with time complexity?
+Why does the Zuker algorithm handle $k$-multiloops by introducing a further matrix $WM$ (and only approximate the multiloop energies)?
+
+:::
+
+#### {.tabset}
+
+##### Hide
+
+##### Solution
+
+::: {.answer data-latex=""}
+
+A modified $V$-recursion that supports 3-multiloops is:
+
+$$
+  V_{ij} = \min
+  \begin{cases}
+    eH(i,j)\\
+    V_{i+1{j-1}} + eS(i,j)\\
+    min_{i<i^{'}<j^{'}<j}V_{i^{'}{j^{'}}}+eL(i,j,i^{'},j^{'})\\
+    min_{i<i_{1}<j_{1}<i_{2}<j_{2}<i_{3}<j_{3}<j}V_{i_{1}{j_{1}}}+V_{i_{2}{j_{2}}}+V_{i_{3}{j_{3}}}+eM(i,j,i_{1},j_{1},i_{2},j_{2},i_{3},j_{3})\\
+     \end{cases}
+$$
+
+Thus, for each additional branch (enclosed helix), time complexity increases by $O(n^2)$, i.e. we get $O(n^2)\cdot O(n^{2k})$ overall time complexity for $V$ when considering multi loops with up to $k$ helices.
+By introducing the matrix $WM$ and only approximate the multiloop energies, Zuker can reduce its total runtime to $O(n^3)$.
+
+:::
+
+#### {-}
+
+---------------------------------
+
+# Exercise 3 - Loop decomposition and energy evaluation
+
+The Vienna RNAfold WebServer implements the Zuker algorithm for energy minimization of RNA secondary structures.
+Run the [http://rna.tbi.univie.ac.at/cgi-bin/RNAWebSuite/RNAfold.cgi](server) using the sample sequence.
+
+Feed the sequence-structure pair into the [http://rna.tbi.univie.ac.at/cgi-bin/RNAWebSuite/RNAeval.cgi](Vienna RNAeval WebServer) and compare your decomposition with the resulting one.
+
+---------------------------------
+
+### 3.1
+
+::: {.question data-latex=""}
+
+Study the energy contributions of the individual loops. Which loops have typically positive energy contributions?
+
+:::
+
+#### {.tabset}
+
+##### Hide
+
+##### Solution
+
+::: {.answer data-latex=""}
+
+Typically in unpaired regions (Hairpin loop, Multi loop)
+
+:::
+
+#### {-}
+
+---------------------------------
+
+### 3.2
+
+::: {.question data-latex=""}
+
+What is changing in the loop energy contribution if the temperature is stepwise increased (e.g. up to 70$^\circ$ Celsius)?
+
+:::
+
+#### {.tabset}
+
+##### Hide
+
+##### Solution
+
+::: {.answer data-latex=""}
+
+A temperature increase also increases the energy contributions. e.g.:
+
+	temp 37: Interior loop (  1, 73) GC; (  2, 72) GC:  -330
+	temp 50: Interior loop (  1, 73) GC; (  2, 72) GC:  -287
+	temp 70: Interior loop (  1, 73) GC; (  2, 72) GC:  -222
+
+:::
+
+#### {-}
+
+---------------------------------
+
+<script src="assets/js/scripts.js"></script>
