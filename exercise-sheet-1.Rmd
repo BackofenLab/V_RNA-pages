@@ -157,60 +157,96 @@ There are 5 possible tracebacks (for the same optimal structure):
 
 a.
     * $N_{1,8} \rightarrow N_{1,1}+N_{2,8}$
-    * $N_{1,1} \rightarrow STOP$
+    * $N_{1,1} \rightarrow $ STOP
     * $N_{2,8} \rightarrow N_{2,4}+N_{5,8}$
     * $N_{2,4} \rightarrow N_{3,3}+bp (2,4)$
-    * $N_{3,3} \rightarrow STOP$
+    * $N_{3,3} \rightarrow $ STOP
     * $N_{5,8} \rightarrow N_{5,7}+N_{8,8}$
     * $N_{5,7} \rightarrow N_{6,6}+bp (5,7)$
-    * $N_{6,6} \rightarrow STOP$
-    * $N_{8,8} \rightarrow STOP$
+    * $N_{6,6} \rightarrow $ STOP
+    * $N_{8,8} \rightarrow $ STOP
 b.
     * $N_{1,8} \rightarrow N_{1,1}+N_{2,8}$
-    * $N_{1,1} \rightarrow STOP$
+    * $N_{1,1} \rightarrow $ STOP
     * $N_{2,8} \rightarrow N_{2,7}+N_{8,8}$
     * $N_{2,7} \rightarrow N_{2,4}+N_{5,7}$
     * $N_{2,4} \rightarrow N_{3,3}+bp (2,4)$
-    * $N_{3,3} \rightarrow STOP$
+    * $N_{3,3} \rightarrow $ STOP
     * $N_{5,7} \rightarrow N_{6,6}+bp (5,7)$
-    * $N_{6,6} \rightarrow STOP$
-    * $N_{8,8} \rightarrow STOP$
+    * $N_{6,6} \rightarrow $ STOP
+    * $N_{8,8} \rightarrow $ STOP
 c.
     * $N_{1,8} \rightarrow N_{1,4}+N_{5,8}$
     * $N_{1,4} \rightarrow N_{1,1}+N_{2,4}$
-    * $N_{1,1} \rightarrow STOP$
+    * $N_{1,1} \rightarrow $ STOP
     * $N_{2,4} \rightarrow N_{3,3}+bp (2,4)$
-    * $N_{3,3} \rightarrow STOP$
+    * $N_{3,3} \rightarrow $ STOP
     * $N_{5,8} \rightarrow N_{5,7}+N_{8,8}$
     * $N_{5,7} \rightarrow N_{6,6}+bp (5,7)$
-    * $N_{6,6} \rightarrow STOP$
-    * $N_{8,8} \rightarrow STOP$
+    * $N_{6,6} \rightarrow $ STOP
+    * $N_{8,8} \rightarrow $ STOP
 d.
     * $N_{1,8} \rightarrow N_{1,7}+N_{8,8}$
     * $N_{1,7} \rightarrow N_{1,1}+N_{2,7}$
-    * $N_{1,1} \rightarrow STOP$
+    * $N_{1,1} \rightarrow $ STOP
     * $N_{2,7} \rightarrow N_{2,4}+N_{5,7}$
     * $N_{2,4} \rightarrow N_{3,3}+bp (2,4)$
-    * $N_{3,3} \rightarrow STOP$
+    * $N_{3,3} \rightarrow $ STOP
     * $N_{5,7} \rightarrow N_{6,6}+bp (5,7)$
-    * $N_{6,6} \rightarrow STOP$
-    * $N_{8,8} \rightarrow STOP$
+    * $N_{6,6} \rightarrow $ STOP
+    * $N_{8,8} \rightarrow $ STOP
 e.
     * $N_{1,8} \rightarrow N_{1,7}+N_{8,8}$
     * $N_{1,7} \rightarrow N_{1,4}+N_{5,7}$
     * $N_{1,4} \rightarrow N_{1,1}+N_{2,4}$
-    * $N_{1,1} \rightarrow STOP$
+    * $N_{1,1} \rightarrow $ STOP
     * $N_{2,4} \rightarrow N_{3,3}+bp (2,4)$
-    * $N_{3,3} \rightarrow STOP$
+    * $N_{3,3} \rightarrow $ STOP
     * $N_{5,7} \rightarrow N_{6,6}+bp (5,7)$
-    * $N_{6,6} \rightarrow STOP$
-    * $N_{8,8} \rightarrow STOP$
+    * $N_{6,6} \rightarrow $ STOP
+    * $N_{8,8} \rightarrow $ STOP
 
 :::
 
 #### {-}
 
+---------------------------------
 
+### 2.4
+
+::: {.question data-latex=""}
+
+Does the last answer still hold for the following recursion (considering loop length 1)? Identify the possible traceback(s)!
+
+```{r, include=knitr::is_html_output(), echo=FALSE,}
+knitr::include_graphics("assets/figures/exercise-sheet-1/nussinov-recursion-ambiguous.png")
+```
+
+:::
+
+#### {.tabset}
+
+##### Hide
+
+##### Solution
+
+::: {.answer data-latex=""}
+
+No, because the original Nussinov is not ambiguous.
+
+Only if a base pair is found the sequence is separated into two parts for the further recursion.
+In the first recursion, the sequence is always split unless there is a possible base pair. This generates several possible tracebacks for the same optimal sequence.
+
+a.
+    * $N_{1,8} \rightarrow N_{1,7}$
+    * $N_{1,7} \rightarrow N_{1,4}+N_{6,6}+ bp(5,7)$
+    * $N_{1,4} \rightarrow N_{1,1}+N_{3,3}+ bp(2,4)$
+    * $N_{1,1} \rightarrow $ STOP
+    * $N_{3,3} \rightarrow $ STOP
+    * $N_{6,6} \rightarrow $ STOP
+:::
+
+#### {-}
 
 
 <script src="assets/js/scripts.js"></script>
