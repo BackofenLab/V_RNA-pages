@@ -328,3 +328,7 @@ label, input, button {
   }
 }
 
+.deactivated-tab {
+  pointer-events: none;
+  opacity: 0.5;
+}
