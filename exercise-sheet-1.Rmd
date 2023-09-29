@@ -156,55 +156,55 @@ Define all optimal tracebacks! Is there more than one optimal traceback?
 There are 5 possible tracebacks (for the same optimal structure):
 
 a.
-    * N_{1,8} → N_{1,1}+N_{2,8}
-    * N_{1,1} → STOP
-    * N_{2,8} → N_{2,4}+N_{5,8}
-    * N_{2,4} → N_{3,3}+bp (2,4)
-    * N_{3,3} → STOP
-    * N_{5,8} → N_{5,7}+N_{8,8}
-    * N_{5,7} → N_{6,6}+bp (5,7)
-    * N_{6,6} → STOP
-    * N_{8,8} → STOP
+    * $N_{1,8} \rightarrow N_{1,1}+N_{2,8}$
+    * $N_{1,1} \rightarrow STOP$
+    * $N_{2,8} \rightarrow N_{2,4}+N_{5,8}$
+    * $N_{2,4} \rightarrow N_{3,3}+bp (2,4)$
+    * $N_{3,3} \rightarrow STOP$
+    * $N_{5,8} \rightarrow N_{5,7}+N_{8,8}$
+    * $N_{5,7} \rightarrow N_{6,6}+bp (5,7)$
+    * $N_{6,6} \rightarrow STOP$
+    * $N_{8,8} \rightarrow STOP$
 b.
-    * N_{1,8} → N_{1,1}+N_{2,8}
-    * N_{1,1} → STOP
-    * N_{2,8} → N_{2,7}+N_{8,8}
-    * N_{2,7} → N_{2,4}+N_{5,7}
-    * N_{2,4} → N_{3,3}+bp (2,4)
-    * N_{3,3} → STOP
-    * N_{5,7} → N_{6,6}+bp (5,7)
-    * N_{6,6} → STOP
-    * N_{8,8} → STOP
+    * $N_{1,8} \rightarrow N_{1,1}+N_{2,8}$
+    * $N_{1,1} \rightarrow STOP$
+    * $N_{2,8} \rightarrow N_{2,7}+N_{8,8}$
+    * $N_{2,7} \rightarrow N_{2,4}+N_{5,7}$
+    * $N_{2,4} \rightarrow N_{3,3}+bp (2,4)$
+    * $N_{3,3} \rightarrow STOP$
+    * $N_{5,7} \rightarrow N_{6,6}+bp (5,7)$
+    * $N_{6,6} \rightarrow STOP$
+    * $N_{8,8} \rightarrow STOP$
 c.
-    * N_{1,8} → N_{1,4}+N_{5,8}
-    * N_{1,4} → N_{1,1}+N_{2,4}
-    * N_{1,1} → STOP
-    * N_{2,4} → N_{3,3}+bp (2,4)
-    * N_{3,3} → STOP
-    * N_{5,8} → N_{5,7}+N_{8,8}
-    * N_{5,7} → N_{6,6}+bp (5,7)
-    * N_{6,6} → STOP
-    * N_{8,8} → STOP
+    * $N_{1,8} \rightarrow N_{1,4}+N_{5,8}$
+    * $N_{1,4} \rightarrow N_{1,1}+N_{2,4}$
+    * $N_{1,1} \rightarrow STOP$
+    * $N_{2,4} \rightarrow N_{3,3}+bp (2,4)$
+    * $N_{3,3} \rightarrow STOP$
+    * $N_{5,8} \rightarrow N_{5,7}+N_{8,8}$
+    * $N_{5,7} \rightarrow N_{6,6}+bp (5,7)$
+    * $N_{6,6} \rightarrow STOP$
+    * $N_{8,8} \rightarrow STOP$
 d.
-    * N_{1,8} → N_{1,7}+N_{8,8}
-    * N_{1,7} → N_{1,1}+N_{2,7}
-    * N_{1,1} → STOP
-    * N_{2,7} → N_{2,4}+N_{5,7}
-    * N_{2,4} → N_{3,3}+bp (2,4)
-    * N_{3,3} → STOP
-    * N_{5,7} → N_{6,6}+bp (5,7)
-    * N_{6,6} → STOP
-    * N_{8,8} → STOP
+    * $N_{1,8} \rightarrow N_{1,7}+N_{8,8}$
+    * $N_{1,7} \rightarrow N_{1,1}+N_{2,7}$
+    * $N_{1,1} \rightarrow STOP$
+    * $N_{2,7} \rightarrow N_{2,4}+N_{5,7}$
+    * $N_{2,4} \rightarrow N_{3,3}+bp (2,4)$
+    * $N_{3,3} \rightarrow STOP$
+    * $N_{5,7} \rightarrow N_{6,6}+bp (5,7)$
+    * $N_{6,6} \rightarrow STOP$
+    * $N_{8,8} \rightarrow STOP$
 e.
-    * N_{1,8} → N_{1,7}+N_{8,8}
-    * N_{1,7} → N_{1,4}+N_{5,7}
-    * N_{1,4} → N_{1,1}+N_{2,4}
-    * N_{1,1} → STOP
-    * N_{2,4} → N_{3,3}+bp (2,4)
-    * N_{3,3} → STOP
-    * N_{5,7} → N_{6,6}+bp (5,7)
-    * N_{6,6} → STOP
-    * N_{8,8} → STOP
+    * $N_{1,8} \rightarrow N_{1,7}+N_{8,8}$
+    * $N_{1,7} \rightarrow N_{1,4}+N_{5,7}$
+    * $N_{1,4} \rightarrow N_{1,1}+N_{2,4}$
+    * $N_{1,1} \rightarrow STOP$
+    * $N_{2,4} \rightarrow N_{3,3}+bp (2,4)$
+    * $N_{3,3} \rightarrow STOP$
+    * $N_{5,7} \rightarrow N_{6,6}+bp (5,7)$
+    * $N_{6,6} \rightarrow STOP$
+    * $N_{8,8} \rightarrow STOP$
 
 :::
 
