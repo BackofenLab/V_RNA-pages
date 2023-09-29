@@ -41,6 +41,9 @@ jobs:
           activate-environment: rmarkdown-env
           environment-file: .github/envs/environment.yml
 
+      - name: Activate conda environment
+        run: conda activate rmarkdown-env
+
       - name: Test env
         run: conda list
 
