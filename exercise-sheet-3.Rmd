@@ -101,7 +101,7 @@ This results in a higher entropy for the probability distribution in part 2..
 
 ---------------------------------
 
-Exercise 2 - true or false ?
+# Exercise 2 - true or false ?
 
 Consider some sequence $S$ with a set of possible structures
 $\cal{P}$ and partition function $Z$. Furthermore, let for each
@@ -150,7 +150,32 @@ $$
 $$
 - [x] The Boltzmann weight of the MFE structure of $S$ is the maximum among the Boltzmann weights of all structures $P\in\mathcal{P}$.
 
-
 :::
 
 #### {-}
+
+---------------------------------
+
+# Exercise 3 - partition function
+
+Given the RNA sequence `AUCACCGC` and a minimal loop length of $1$.
+Compute the partition function of the molecule using an energy function similar to the Nussinov algorithm:
+$$
+	E(P) = |P|
+$$
+that is the energy is the number of non-crossing base pairs of a given structure
+(only GC and AU pairs are to be considered).
+
+Table of Boltzmann weights for $RT = 1$:
+
+```{r, results="asis", include=knitr::is_html_output(), echo=FALSE}
+sij <- read.csv("assets/tables/boltzmann-weights.csv", check.names=FALSE, sep=";")
+sij_ft <- flextable(sij)
+sij_ft <- custom_theme(sij_ft)
+index_replace(sij_ft)
+```
+
+---------------------------------
+---------------------------------
+
+<script src="assets/js/scripts.js"></script>
