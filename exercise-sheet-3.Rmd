@@ -12,6 +12,8 @@ library(officer)
 
 # Exercise 1 - entropy
 
+---------------------------------
+
 We want to have a short look at the concept of entropy.
 Let $X$ be a discrete random variable with probabilities $p(i), (i=1,2,\ldots,n)$.
 The amount of information to be associated with an outcome of probability $p(i)$
@@ -72,10 +74,12 @@ Compute the entropy of the distribution $p(i) = \frac{1}{4},\: (i= 1,2,3,4)$.
 
 ::: {.answer data-latex=""}
 
-$$
-    H(X) & = & 4 \cdot p(i) \log(\frac{1}{p(i)})\\
-         & = & 2
-$$
+\[
+\begin{align*}
+H(X) & = & 4 \cdot p(i) \log(\frac{1}{p(i)})\\
+& = & 2
+\end{align*}
+\]
 
 :::
 
@@ -111,14 +115,14 @@ This results in a higher entropy for the probability distribution in part 2..
 
 # Exercise 2 - true or false ?
 
+---------------------------------
+
 Consider some sequence $S$ with a set of possible structures
 $\cal{P}$ and partition function $Z$. Furthermore, let for each
 structure $P\in\mathcal{P}$ denote that $Pr[P]$ is the probability that $S$ forms
 structure $P$.
 
 Which of the following statements are true?
-
----------------------------------
 
 ::: {.question data-latex=""}
 
@@ -166,6 +170,8 @@ $$
 
 # Exercise 3 - partition function
 
+---------------------------------
+
 Given the RNA sequence `AUCACCGC` and a minimal loop length of $1$.
 Compute the partition function of the molecule using an energy function similar to the Nussinov algorithm:
 $$
@@ -184,6 +190,6 @@ index_replace(sij_ft)
 ```
 
 ---------------------------------
----------------------------------
+
 
 <script src="assets/js/scripts.js"></script>
