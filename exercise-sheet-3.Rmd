@@ -100,3 +100,57 @@ This results in a higher entropy for the probability distribution in part 2..
 #### {-}
 
 ---------------------------------
+
+Exercise 2 - true or false ?
+
+Consider some sequence $S$ with a set of possible structures
+$\cal{P}$ and partition function $Z$. Furthermore, let for each
+structure $P\in\mathcal{P}$ denote that $Pr[P]$ is the probability that $S$ forms
+structure $P$.
+
+Which of the following statements are true?
+
+---------------------------------
+
+::: {.question data-latex=""}
+
+- [ ] $Z$ is the maximum of the Boltzmann weights of all structures $P\in\mathcal{P}$ of $S$.
+- [ ] $Z$ is the average of the Boltzmann weights of all structures $P\in\mathcal{P}$ of $S$.
+- [ ] $Z$ is the sum of the Boltzmann weights of all structures $P\in\mathcal{P}$ of $S$.
+- [ ] $Z$ is the minimum of the Boltzmann weights of all structures $P\in\mathcal{P}$ of $S$.
+- [ ] The sum of the Boltzmann weights of all structures $P\in\mathcal{P}$ is one.
+- [ ] The sum of the probabilities $Pr[P]$ of all structures $P\in\mathcal{P}$ is one.
+- [ ] The Boltzmann weight of a structures $P\in\mathcal{P}$ depends on the temperature.
+- [ ] The probability $Pr[P]$ of a structures $P\in\mathcal{P}$ depends on the temperature.
+- [ ] The Boltzmann weight of the MFE structure of $S$ is the maximum among the Boltzmann weights of all structures $P\in\mathcal{P}$.
+
+:::
+
+#### {.tabset}
+
+##### Hide
+
+##### Solution
+
+::: {.answer data-latex=""}
+
+- [ ] $Z$ is the maximum of the Boltzmann weights of all structures $P\in\mathcal{P}$ of $S$.
+- [ ] $Z$ is the average of the Boltzmann weights of all structures $P\in\mathcal{P}$ of $S$.
+- [x] $Z$ is the sum of the Boltzmann weights of all structures $P\in\mathcal{P}$ of $S$.
+- [ ] $Z$ is the minimum of the Boltzmann weights of all structures $P\in\mathcal{P}$ of $S$.
+- [ ] The sum of the Boltzmann weights of all structures $P\in\mathcal{P}$ is one.
+- [x] The sum of the probabilities $Pr[P]$ of all structures $P\in\mathcal{P}$ is one.
+- [x] The Boltzmann weight of a structures $P\in\mathcal{P}$ depends on the temperature.
+- [x] The probability $Pr[P]$ of a structures $P\in\mathcal{P}$ depends on the temperature.
+$$
+ Pr[P \mid T] = \frac{\exp(-E(P)/RT)}{\sum_{P'}\exp(-E(P)/RT)}
+ \neq
+ \frac{\exp(-E(P)/R(T+\Delta))}{\sum_{P'}\exp(-E(P)/R(T+\Delta))} =
+ Pr[P\mid T+\Delta]
+$$
+- [x] The Boltzmann weight of the MFE structure of $S$ is the maximum among the Boltzmann weights of all structures $P\in\mathcal{P}$.
+
+
+:::
+
+#### {-}
