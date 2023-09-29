@@ -2,6 +2,12 @@
 title: "Exercise sheet 3: structure probability"
 ---
 
+```{r, include=FALSE}
+source("assets/custom_functions.R")
+library(flextable)
+library(officer)
+```
+
 ---------------------------------
 
 # Exercise 1 - entropy
@@ -114,15 +120,15 @@ Which of the following statements are true?
 
 ::: {.question data-latex=""}
 
-- [ ] $Z$ is the maximum of the Boltzmann weights of all structures $P\in\mathcal{P}$ of $S$.
-- [ ] $Z$ is the average of the Boltzmann weights of all structures $P\in\mathcal{P}$ of $S$.
-- [ ] $Z$ is the sum of the Boltzmann weights of all structures $P\in\mathcal{P}$ of $S$.
-- [ ] $Z$ is the minimum of the Boltzmann weights of all structures $P\in\mathcal{P}$ of $S$.
-- [ ] The sum of the Boltzmann weights of all structures $P\in\mathcal{P}$ is one.
-- [ ] The sum of the probabilities $Pr[P]$ of all structures $P\in\mathcal{P}$ is one.
-- [ ] The Boltzmann weight of a structures $P\in\mathcal{P}$ depends on the temperature.
-- [ ] The probability $Pr[P]$ of a structures $P\in\mathcal{P}$ depends on the temperature.
-- [ ] The Boltzmann weight of the MFE structure of $S$ is the maximum among the Boltzmann weights of all structures $P\in\mathcal{P}$.
+- [ ]  $Z$ is the maximum of the Boltzmann weights of all structures $P\in\mathcal{P}$ of $S$.
+- [ ]  $Z$ is the average of the Boltzmann weights of all structures $P\in\mathcal{P}$ of $S$.
+- [ ]  $Z$ is the sum of the Boltzmann weights of all structures $P\in\mathcal{P}$ of $S$.
+- [ ]  $Z$ is the minimum of the Boltzmann weights of all structures $P\in\mathcal{P}$ of $S$.
+- [ ]  The sum of the Boltzmann weights of all structures $P\in\mathcal{P}$ is one.
+- [ ]  The sum of the probabilities $Pr[P]$ of all structures $P\in\mathcal{P}$ is one.
+- [ ]  The Boltzmann weight of a structures $P\in\mathcal{P}$ depends on the temperature.
+- [ ]  The probability $Pr[P]$ of a structures $P\in\mathcal{P}$ depends on the temperature.
+- [ ]  The Boltzmann weight of the MFE structure of $S$ is the maximum among the Boltzmann weights of all structures $P\in\mathcal{P}$.
 
 :::
 
@@ -134,21 +140,21 @@ Which of the following statements are true?
 
 ::: {.answer data-latex=""}
 
-- [ ] $Z$ is the maximum of the Boltzmann weights of all structures $P\in\mathcal{P}$ of $S$.
-- [ ] $Z$ is the average of the Boltzmann weights of all structures $P\in\mathcal{P}$ of $S$.
-- [x] $Z$ is the sum of the Boltzmann weights of all structures $P\in\mathcal{P}$ of $S$.
-- [ ] $Z$ is the minimum of the Boltzmann weights of all structures $P\in\mathcal{P}$ of $S$.
-- [ ] The sum of the Boltzmann weights of all structures $P\in\mathcal{P}$ is one.
-- [x] The sum of the probabilities $Pr[P]$ of all structures $P\in\mathcal{P}$ is one.
-- [x] The Boltzmann weight of a structures $P\in\mathcal{P}$ depends on the temperature.
-- [x] The probability $Pr[P]$ of a structures $P\in\mathcal{P}$ depends on the temperature.
+- [ ]  $Z$ is the maximum of the Boltzmann weights of all structures $P\in\mathcal{P}$ of $S$.
+- [ ]  $Z$ is the average of the Boltzmann weights of all structures $P\in\mathcal{P}$ of $S$.
+- [x]  $Z$ is the sum of the Boltzmann weights of all structures $P\in\mathcal{P}$ of $S$.
+- [ ]  $Z$ is the minimum of the Boltzmann weights of all structures $P\in\mathcal{P}$ of $S$.
+- [ ]  The sum of the Boltzmann weights of all structures $P\in\mathcal{P}$ is one.
+- [x]  The sum of the probabilities $Pr[P]$ of all structures $P\in\mathcal{P}$ is one.
+- [x]  The Boltzmann weight of a structures $P\in\mathcal{P}$ depends on the temperature.
+- [x]  The probability $Pr[P]$ of a structures $P\in\mathcal{P}$ depends on the temperature.
 $$
  Pr[P \mid T] = \frac{\exp(-E(P)/RT)}{\sum_{P'}\exp(-E(P)/RT)}
  \neq
  \frac{\exp(-E(P)/R(T+\Delta))}{\sum_{P'}\exp(-E(P)/R(T+\Delta))} =
  Pr[P\mid T+\Delta]
 $$
-- [x] The Boltzmann weight of the MFE structure of $S$ is the maximum among the Boltzmann weights of all structures $P\in\mathcal{P}$.
+- [x]  The Boltzmann weight of the MFE structure of $S$ is the maximum among the Boltzmann weights of all structures $P\in\mathcal{P}$.
 
 :::
 
