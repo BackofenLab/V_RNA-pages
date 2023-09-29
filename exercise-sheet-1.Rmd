@@ -235,7 +235,8 @@ knitr::include_graphics("assets/figures/exercise-sheet-1/nussinov-recursion-ambi
 No, because the original Nussinov is not ambiguous.
 
 Only if a base pair is found the sequence is separated into two parts for the further recursion.
-In the first recursion, the sequence is always split unless there is a possible base pair. This generates several possible tracebacks for the same optimal sequence.
+In the first recursion, the sequence is always split unless there is a possible base pair.
+This generates several possible tracebacks for the same optimal sequence.
 
 a.
     * $N_{1,8} \rightarrow N_{1,7}$
@@ -248,5 +249,28 @@ a.
 
 #### {-}
 
+---------------------------------
+
+# Exercise 3 (optional)
+
+::: {.question data-latex=""}
+
+Implement the Nussinov algorithm as given in the lecture using a programming language of your choice.
+
+1. Implement the computation of the Nussinov matrix:
+
+
+   Init: (for $1\leq i\leq n$)
+
+   Recursion: (for $1\leq i<j\leq n$)
+   $$
+        N_{ij} = \max
+        \begin{cases}
+        N_{ij-1}\\
+        \max_{\substack{i\leq k<j\\S_k, S_j complementary}} N_{ik-1} + N_{k+1j-1}\ +1\\
+        \end{cases}
+   $$
+
+:::
 
 <script src="assets/js/scripts.js"></script>
