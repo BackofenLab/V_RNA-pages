@@ -360,7 +360,7 @@ Compute and visualize the base pair probabilities in a dot-plot using your corre
 
 ::: {.answer data-latex=""}
 
-```{r, include=knitr::is_html_output(), echo=FALSE,}
+```{r, include=knitr::is_html_output(), echo=FALSE,  fig.align='center', out.width='50%'}
 knitr::include_graphics("assets/figures/exercise-sheet-3/e4-1.png")
 ```
 
@@ -386,11 +386,11 @@ Compute the probability $P^u(4)$ and $P^u(5)$ to be unpaired at sequence positio
 
 ::: {.answer data-latex=""}
 
-$$
+\[
 P^u(4) &= 0.06 + 0.16 + 0.16 = 0.38\\
 P^u(5) &= 0.06 + 0.16 + 0.16 = 0.38\\
 P^u(4,5) &= 0.06 + 0.16 = 0.22
-$$
+\]
 
 :::
 
