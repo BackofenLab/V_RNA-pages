@@ -126,15 +126,15 @@ Which of the following statements are true?
 
 ::: {.question data-latex=""}
 
-- [ ]  $Z$ is the maximum of the Boltzmann weights of all structures $P\in\mathcal{P}$ of $S$.
-- [ ]  $Z$ is the average of the Boltzmann weights of all structures $P\in\mathcal{P}$ of $S$.
-- [ ]  $Z$ is the sum of the Boltzmann weights of all structures $P\in\mathcal{P}$ of $S$.
-- [ ]  $Z$ is the minimum of the Boltzmann weights of all structures $P\in\mathcal{P}$ of $S$.
-- [ ]  The sum of the Boltzmann weights of all structures $P\in\mathcal{P}$ is one.
-- [ ]  The sum of the probabilities $Pr[P]$ of all structures $P\in\mathcal{P}$ is one.
-- [ ]  The Boltzmann weight of a structures $P\in\mathcal{P}$ depends on the temperature.
-- [ ]  The probability $Pr[P]$ of a structures $P\in\mathcal{P}$ depends on the temperature.
-- [ ]  The Boltzmann weight of the MFE structure of $S$ is the maximum among the Boltzmann weights of all structures $P\in\mathcal{P}$.
+- [ ] &nbsp; $Z$ is the maximum of the Boltzmann weights of all structures $P\in\mathcal{P}$ of $S$.
+- [ ] &nbsp; $Z$ is the average of the Boltzmann weights of all structures $P\in\mathcal{P}$ of $S$.
+- [ ] &nbsp; $Z$ is the sum of the Boltzmann weights of all structures $P\in\mathcal{P}$ of $S$.
+- [ ] &nbsp; $Z$ is the minimum of the Boltzmann weights of all structures $P\in\mathcal{P}$ of $S$.
+- [ ] &nbsp; The sum of the Boltzmann weights of all structures $P\in\mathcal{P}$ is one.
+- [ ] &nbsp; The sum of the probabilities $Pr[P]$ of all structures $P\in\mathcal{P}$ is one.
+- [ ] &nbsp; The Boltzmann weight of a structures $P\in\mathcal{P}$ depends on the temperature.
+- [ ] &nbsp; The probability $Pr[P]$ of a structures $P\in\mathcal{P}$ depends on the temperature.
+- [ ] &nbsp; The Boltzmann weight of the MFE structure of $S$ is the maximum among the Boltzmann weights of all structures $P\in\mathcal{P}$.
 
 :::
 
@@ -146,21 +146,21 @@ Which of the following statements are true?
 
 ::: {.answer data-latex=""}
 
-- [ ]  $Z$ is the maximum of the Boltzmann weights of all structures $P\in\mathcal{P}$ of $S$.
-- [ ]  $Z$ is the average of the Boltzmann weights of all structures $P\in\mathcal{P}$ of $S$.
-- [x]  $Z$ is the sum of the Boltzmann weights of all structures $P\in\mathcal{P}$ of $S$.
-- [ ]  $Z$ is the minimum of the Boltzmann weights of all structures $P\in\mathcal{P}$ of $S$.
-- [ ]  The sum of the Boltzmann weights of all structures $P\in\mathcal{P}$ is one.
-- [x]  The sum of the probabilities $Pr[P]$ of all structures $P\in\mathcal{P}$ is one.
-- [x]  The Boltzmann weight of a structures $P\in\mathcal{P}$ depends on the temperature.
-- [x]  The probability $Pr[P]$ of a structures $P\in\mathcal{P}$ depends on the temperature.
+- [ ] &nbsp; $Z$ is the maximum of the Boltzmann weights of all structures $P\in\mathcal{P}$ of $S$.
+- [ ] &nbsp; $Z$ is the average of the Boltzmann weights of all structures $P\in\mathcal{P}$ of $S$.
+- [x] &nbsp; $Z$ is the sum of the Boltzmann weights of all structures $P\in\mathcal{P}$ of $S$.
+- [ ] &nbsp; $Z$ is the minimum of the Boltzmann weights of all structures $P\in\mathcal{P}$ of $S$.
+- [ ] &nbsp; The sum of the Boltzmann weights of all structures $P\in\mathcal{P}$ is one.
+- [x] &nbsp; The sum of the probabilities $Pr[P]$ of all structures $P\in\mathcal{P}$ is one.
+- [x] &nbsp; The Boltzmann weight of a structures $P\in\mathcal{P}$ depends on the temperature.
+- [x] &nbsp; The probability $Pr[P]$ of a structures $P\in\mathcal{P}$ depends on the temperature.
 $$
  Pr[P \mid T] = \frac{\exp(-E(P)/RT)}{\sum_{P'}\exp(-E(P)/RT)}
  \neq
  \frac{\exp(-E(P)/R(T+\Delta))}{\sum_{P'}\exp(-E(P)/R(T+\Delta))} =
  Pr[P\mid T+\Delta]
 $$
-- [x]  The Boltzmann weight of the MFE structure of $S$ is the maximum among the Boltzmann weights of all structures $P\in\mathcal{P}$.
+- [x] &nbsp; The Boltzmann weight of the MFE structure of $S$ is the maximum among the Boltzmann weights of all structures $P\in\mathcal{P}$.
 
 :::
 
@@ -183,7 +183,7 @@ that is the energy is the number of non-crossing base pairs of a given structure
 Table of Boltzmann weights for $RT = 1$:
 
 ```{r, results="asis", include=knitr::is_html_output(), echo=FALSE}
-sij <- read.csv("assets/tables/boltzmann-weights.csv", check.names=FALSE, sep=";")
+sij <- read.csv("assets/tables/exercise-sheet-3/boltzmann-weights.csv", check.names=FALSE, sep=";")
 sij_ft <- flextable(sij)
 sij_ft <- custom_theme(sij_ft)
 index_replace(sij_ft)
@@ -208,11 +208,207 @@ Compute $Z$ via exhaustive structure space enumeration. (using the provided Bolt
 ::: {.answer data-latex=""}
 
 ```{r, results="asis", include=knitr::is_html_output(), echo=FALSE}
-sij <- read.csv("assets/tables/es3-1.csv", check.names=FALSE, sep=";")
+sij <- read.csv("assets/tables/exercise-sheet-3/e3-1.csv", check.names=FALSE, sep=";")
 sij_ft <- flextable(sij)
 sij_ft <- custom_theme(sij_ft)
 index_replace(sij_ft)
 ```
+
+:::
+
+#### {-}
+
+---------------------------------
+
+### 3.2
+
+::: {.question data-latex=""}
+
+Compute the structure probability of all structures.
+
+:::
+
+#### {.tabset}
+
+##### Hide
+
+##### Solution
+
+::: {.answer data-latex=""}
+
+```{r, results="asis", include=knitr::is_html_output(), echo=FALSE}
+sij <- read.csv("assets/tables/exercise-sheet-3/e3-2.csv", check.names=FALSE, sep=";")
+sij_ft <- flextable(sij)
+sij_ft <- custom_theme(sij_ft)
+index_replace(sij_ft)
+```
+
+:::
+
+#### {-}
+
+---------------------------------
+
+### 3.3
+
+::: {.question data-latex=""}
+
+Compare the structure probabilities in relation to each other? What is the structure probability of the open chain? What can you observe?
+
+:::
+
+#### {.tabset}
+
+##### Hide
+
+##### Solution
+
+::: {.answer data-latex=""}
+
+The open chain is more likely than any other structure including the optimal structure (here $P=\{(2,4)(5,7)\}$).
+
+:::
+
+#### {-}
+
+---------------------------------
+
+### 3.4
+
+::: {.question data-latex=""}
+
+Is this result expected?
+
+:::
+
+#### {.tabset}
+
+##### Hide
+
+##### Solution
+
+::: {.answer data-latex=""}
+
+This is not expected, the open chain should not have a higher probability than the optimal structure.
+
+:::
+
+#### {-}
+
+---------------------------------
+
+### 3.5
+
+::: {.question data-latex=""}
+
+If not how can you fix it? Test your idea by recalculating the structure probabilities!
+
+:::
+
+#### {.tabset}
+
+##### Hide
+
+##### Solution
+
+::: {.answer data-latex=""}
+
+The solution is to negate the energy function, i.e. $E(P) = -|P|$
+
+```{r, results="asis", include=knitr::is_html_output(), echo=FALSE}
+sij <- read.csv("assets/tables/exercise-sheet-3/e3-3.csv", check.names=FALSE, sep=";")
+sij_ft <- flextable(sij)
+sij_ft <- custom_theme(sij_ft)
+index_replace(sij_ft)
+```
+
+We can now search for the optimal structure by energy minimization and the mfe structure is the most probable structure, as expected.
+:::
+
+#### {-}
+
+---------------------------------
+
+# Exercise 4 - Base pair and unpaired probabilities
+
+---------------------------------
+
+Given the corrected probabilities of the previous exercise for sequence `AUCACCGC`.
+
+---------------------------------
+
+### 4.1
+
+::: {.question data-latex=""}
+
+Compute and visualize the base pair probabilities in a dot-plot using your corrected energy function. (use the probability values instead of dots.)
+
+:::
+
+#### {.tabset}
+
+##### Hide
+
+##### Solution
+
+::: {.answer data-latex=""}
+
+```{r, include=knitr::is_html_output(), echo=FALSE,}
+knitr::include_graphics("assets/figures/exercise-sheet-3/e4-1.png")
+```
+
+:::
+
+#### {-}
+
+---------------------------------
+
+### 4.2
+
+::: {.question data-latex=""}
+
+Compute the probability $P^u(4)$ and $P^u(5)$ to be unpaired at sequence position 4 and 5, resp., and $P^u(4,5)$ that the subsequence $4..5$ is not involved in any base pairing.
+
+:::
+
+#### {.tabset}
+
+##### Hide
+
+##### Solution
+
+::: {.answer data-latex=""}
+
+$$
+P^u(4) &= 0.06 + 0.16 + 0.16 = 0.38\\
+P^u(5) &= 0.06 + 0.16 + 0.16 = 0.38\\
+P^u(4,5) &= 0.06 + 0.16 = 0.22
+$$
+
+:::
+
+#### {-}
+
+---------------------------------
+
+### 4.3
+
+::: {.question data-latex=""}
+
+Why can't we compute $P^u(4,5)$ from $P^u(4)$ and $P^u(5)$ using their product, i.e. why is $P^u(4,5) \neq P^u(4)\cdot P^u(5)$?
+
+:::
+
+#### {.tabset}
+
+##### Hide
+
+##### Solution
+
+::: {.answer data-latex=""}
+
+The set of structures considered for $P^u(4,5)$ is a subset of both structure sets used to compute $P^u(4)$ and $P^u(5)$.
+Thus, the two probabilities are not independent and can not be multiplied.
 
 :::
 
