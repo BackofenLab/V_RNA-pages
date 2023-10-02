@@ -316,7 +316,14 @@ If not how can you fix it? Test your idea by recalculating the structure probabi
 The solution is to negate the energy function, i.e. $E(P) = -|P|$
 
 ```{r, results="asis", include=knitr::is_html_output(), echo=FALSE}
-sij <- read.csv("assets/tables/exercise-sheet-3/e3-3.csv", check.names=FALSE, sep=";")
+sij <- read.csv("assets/tables/exercise-sheet-3/e3-3_1.csv", check.names=FALSE, sep=";")
+sij_ft <- flextable(sij)
+sij_ft <- custom_theme(sij_ft)
+index_replace(sij_ft)
+```
+
+```{r, results="asis", include=knitr::is_html_output(), echo=FALSE}
+sij <- read.csv("assets/tables/exercise-sheet-3/e3-3_2.csv", check.names=FALSE, sep=";")
 sij_ft <- flextable(sij)
 sij_ft <- custom_theme(sij_ft)
 index_replace(sij_ft)
