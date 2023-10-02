@@ -1,0 +1,181 @@
+---
+title: "Exercise sheet 4: RNAalifold "
+---
+
+
+---------------------------------
+
+# Exercise 1
+
+---------------------------------
+
+::: {.question data-latex=""}
+
+Extend the given Zuker recursions towards the folding of an alignment of K sequences similar to RNAalifold.
+
+For the matrix $W$, define for $i+m \leq j$
+$$
+   W_{ij} = 0
+$$
+
+and $i+m<j$
+
+$$
+  W_{ij} = \min
+  \begin{cases}
+    W_{i{j-1}}\\
+    W_{i+1{j}}\\
+    V_{ij}\\
+  \end{cases}
+$$
+
+For the matrix $V$, define for $i+m \leq j$
+
+$$
+  V_{ij} = \infty
+$$
+
+and $i+m<j$
+
+$$
+  V_{ij} = \min
+  \begin{cases}
+    eH(i,j)\\
+    V_{i+1{j-1}} + eS(i,j)\\
+    min_{i<i^{'}<j^{'}<j}V_{i^{'}{j^{'}}}+eL(i,j,i^{'},j^{'})\\
+  \end{cases}
+$$
+
+:::
+
+#### {.tabset}
+
+##### Hide
+
+##### Solution
+
+::: {.answer data-latex=""}
+
+- adding conservation score $\gamma$, weight $\beta$ and sum that loops over all k sequences of the alignment.
+
+$$
+   V_{ij} = \beta \gamma (ij) + \min
+   \begin{cases}
+     \sum_{1 \leq l \leq K} eH(i,j, S_{l})\\
+     V_{i+1{j-1}} + \sum_{1 \leq l \leq K} eS(i,j, S_{l})\\
+     min_{i<i^{'}<j^{'}<j}V_{i^{'}{j^{'}}}+ \sum_{1 \leq l \leq K} eL(i,j,i^{'},j^{'}, S_{l})\\
+   \end{cases}
+$$
+
+:::
+
+#### {-}
+
+---------------------------------
+
+# Exercise 2
+
+---------------------------------
+
+Consider the following alignment that is used as input for RNAalifold. No minimal loop length is given.
+
+```
+AAGUUUCG
+AAGCUUCG
+AAC-AUG-
+```
+
+---------------------------------
+
+### 2.1
+
+::: {.question data-latex=""}
+
+Compute the following conservation scores.
+
+\[
+  \begin{align*}
+    \gamma(1,6)&=\hspace{0.6\linewidth}\\
+    \gamma(2,5)&=\\
+    \gamma(3,7)&=\\
+    \gamma(4,8)&=\\
+    \gamma(7,8)&=
+  \end{align*}
+\]
+
+:::
+
+#### {.tabset}
+
+##### Hide
+
+##### Solution
+
+::: {.answer data-latex=""}
+
+\[
+  \begin{align*}
+    \gamma(1,6)&= -[0+0+0] + \delta(0+0+0) = 0\\
+    \gamma(2,5)&= -[0+0+0] + \delta(0+0+1) = \delta\\
+    \gamma(3,7)&= -[0+2+2] + \delta(0+0+0) = -4\\
+    \gamma(4,8)&= -[1+0+0] + \delta(0+0+0.25) = -1+0.25\delta\\
+    \gamma(7,8)&= -[0+0+0] + \delta(0+0+1) = \delta
+  \end{align*}
+\]
+
+:::
+
+#### {-}
+
+---------------------------------
+
+### 2.2
+
+::: {.question data-latex=""}
+
+Why is $\gamma(3,7) < \gamma(1,6)$?
+
+:::
+
+#### {.tabset}
+
+##### Hide
+
+##### Solution
+
+::: {.answer data-latex=""}
+
+$\gamma(3,7)$ is smaller because of the covariation term. The base pair GC has been mutated into the base pair CG. This is a change in the sequence but not in the secondary structure.
+
+:::
+
+#### {-}
+
+---------------------------------
+
+### 2.3
+
+::: {.question data-latex=""}
+
+What is the intuition of the covariation and penalty terms in the conservation scores?
+
+:::
+
+#### {.tabset}
+
+##### Hide
+
+##### Solution
+
+::: {.answer data-latex=""}
+
+The intuition for the covariation term is to favour structures that have been maintained although the sequence has been mutated. The penalty term favours base pairs since it penalizes gaps and unpaired bases.
+
+:::
+
+#### {-}
+
+---------------------------------
+
+<script src="assets/js/scripts.js"></script>
+
