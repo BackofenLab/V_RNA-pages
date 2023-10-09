@@ -367,5 +367,3 @@ A temperature increase also increases the energy contributions. e.g.:
 #### {-}
 
 ---------------------------------
-
-<script src="assets/js/scripts.js"></script>

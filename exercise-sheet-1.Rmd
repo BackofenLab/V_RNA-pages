@@ -293,5 +293,3 @@ For checking if your implementation is correct, please use [https://rna.informat
 
 :::
 ::::
-
-<script src="assets/js/scripts.js"></script>

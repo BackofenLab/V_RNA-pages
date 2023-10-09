@@ -387,9 +387,11 @@ Compute the probability $P^u(4)$ and $P^u(5)$ to be unpaired at sequence positio
 ::: {.answer data-latex=""}
 
 \[
+\begin{align*}
 P^u(4) &= 0.06 + 0.16 + 0.16 = 0.38\\
 P^u(5) &= 0.06 + 0.16 + 0.16 = 0.38\\
 P^u(4,5) &= 0.06 + 0.16 = 0.22
+\end{align*}
 \]
 
 :::
@@ -422,5 +424,3 @@ Thus, the two probabilities are not independent and can not be multiplied.
 #### {-}
 
 ---------------------------------
-
-<script src="assets/js/scripts.js"></script>
