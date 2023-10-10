@@ -95,11 +95,11 @@ Compute the following conservation scores.
 
 $$
 \begin{align*}
-  \gamma(1,6)&=\hspace{0.6\linewidth}\\
-  \gamma(2,5)&=\\
-  \gamma(3,7)&=\\
-  \gamma(4,8)&=\\
-  \gamma(7,8)&=
+  \gamma(1,6) &= \\
+  \gamma(2,5) &= \\
+  \gamma(3,7) &= \\
+  \gamma(4,8) &= \\
+  \gamma(7,8) &=
 \end{align*}
 $$
 
