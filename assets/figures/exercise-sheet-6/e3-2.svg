@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="140.7357mm"
-   height="62.565201mm"
-   viewBox="0 0 140.7357 62.565201"
+   width="148.60028mm"
+   height="70.070854mm"
+   viewBox="0 0 148.60028 70.070854"
    version="1.1"
    id="svg961"
    inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
@@ -25,12 +25,12 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="0.75187991"
-     inkscape:cx="332.49991"
-     inkscape:cy="113.04997"
-     inkscape:window-width="1920"
-     inkscape:window-height="1043"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
+     inkscape:cx="361.7599"
+     inkscape:cy="141.64496"
+     inkscape:window-width="1846"
+     inkscape:window-height="1016"
+     inkscape:window-x="1994"
+     inkscape:window-y="27"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1"
      fit-margin-top="0"
@@ -261,7 +261,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-19.447796,-91.389786)">
+     transform="translate(-11.583218,-83.884125)">
     <rect
        style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
        id="rect4358"
@@ -1322,8 +1322,8 @@
          y="89.907822"
          sodipodi:role="line"
          id="tspan6900-2"
-         style="stroke-width:0.264583;stroke:none;stroke-opacity:1;fill:#2632ff;fill-opacity:1">a<tspan
-   style="font-size:2.23573px;baseline-shift:super;stroke-width:0.264583;stroke:none;stroke-opacity:1;fill:#2632ff;fill-opacity:1"
+         style="fill:#2632ff;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-opacity:1">a<tspan
+   style="font-size:2.23573px;baseline-shift:super;fill:#2632ff;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-opacity:1"
    id="tspan24671-7">4</tspan></tspan></text>
     <text
        style="font-variant:normal;font-weight:normal;font-size:3.43958px;font-family:Arial;-inkscape-font-specification:ArialMT;writing-mode:lr-tb;fill:#2632ff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.264583;stroke-opacity:1"
@@ -1348,8 +1348,8 @@
          y="134.57527"
          sodipodi:role="line"
          id="tspan6916-2"
-         style="stroke-width:0.264583;stroke:none;stroke-opacity:1;fill:#2632ff;fill-opacity:1">a<tspan
-   style="font-size:2.23573px;baseline-shift:super;stroke-width:0.264583;stroke:none;stroke-opacity:1;fill:#2632ff;fill-opacity:1"
+         style="fill:#2632ff;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-opacity:1">a<tspan
+   style="font-size:2.23573px;baseline-shift:super;fill:#2632ff;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-opacity:1"
    id="tspan19533-9">2</tspan></tspan></text>
   </g>
 </svg>
