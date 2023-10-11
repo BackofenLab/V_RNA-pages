@@ -36,7 +36,7 @@ equally valid solutions.
 
 There are many possible solutions. Here is one example:
 
-```{r, include=knitr::is_html_output(), echo=FALSE,}
+```{r, include=knitr::is_html_output(), echo=FALSE, fig.align='center', out.width='80%'}
 knitr::include_graphics("assets/figures/exercise-sheet-0/e1-1.svg")
 ```
 
@@ -76,7 +76,7 @@ unit on [RNA secondary structure]().
 
 There are many possible solutions. Here is one example:
 
-```{r, include=knitr::is_html_output(), echo=FALSE,}
+```{r, include=knitr::is_html_output(), echo=FALSE, fig.align='center', out.width='100%'}
 knitr::include_graphics("assets/figures/exercise-sheet-0/e2-1.svg")
 ```
 
