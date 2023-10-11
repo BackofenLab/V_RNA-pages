@@ -168,7 +168,7 @@ Time complexity goes down from $O(n^4)$ to $O(n^2)$.
 
 ---------------------------------
 
-### 1.7
+### 1.6
 
 ::: {.question data-latex=""}
 

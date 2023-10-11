@@ -10,7 +10,7 @@ There are several ways of installing `IntaRNA` locally (conda, docker, binaries,
 
 Please follow the instructions suitable for your operating system on [https://github.com/BackofenLab/IntaRNA/#installation](GitHub).
 
-Additionally, you will need to download the <a href="https://raw.githubusercontent.com/BackofenLab/V_RNA-pages/main/assets/misc/query.fa" download>query.fa</a> and <a href="https://raw.githubusercontent.com/BackofenLab/V_RNA-pages/main/assets/misc/target.fa" download>target.fa</a> files.
+Additionally, you will need to download the <a href="https://raw.githubusercontent.com/BackofenLab/V_RNA-pages/main/assets/misc/query.fa" download="query.fa">query.fa</a> and <a href="https://raw.githubusercontent.com/BackofenLab/V_RNA-pages/main/assets/misc/target.fa" download="target.fa">target.fa</a> files.
 These files contain the sequences used for RNA-RNA interaction prediction.
 
 ---------------------------------
