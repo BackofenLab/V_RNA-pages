@@ -1,5 +1,5 @@
 ---
-title: "Exercise sheet 5: Sankoff algorithm"
+title: "Exercise sheet 6: Jiang algorithm"
 ---
 
 
