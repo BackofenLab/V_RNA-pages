@@ -191,11 +191,11 @@ If yes, indicate a possible decomposition order, otherwise highlight the structu
 
 ::: {.answer data-latex=""}
 
-```{r, include=knitr::is_html_output(), echo=FALSE,  fig.align='center', out.width='60%'}
+```{r, include=knitr::is_html_output(), echo=FALSE,  fig.align='center', out.width='40%'}
 knitr::include_graphics("assets/figures/exercise-sheet-7/e3-3.svg")
 ```
 
-```{r, include=knitr::is_html_output(), echo=FALSE,  fig.align='center', out.width='60%'}
+```{r, include=knitr::is_html_output(), echo=FALSE,  fig.align='center', out.width='75%'}
 knitr::include_graphics("assets/figures/exercise-sheet-7/e3-4.svg")
 ```
 
