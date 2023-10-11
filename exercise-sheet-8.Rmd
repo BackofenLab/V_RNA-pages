@@ -1,0 +1,103 @@
+---
+title: "Exercise sheet 8: RNA-RNA interaction"
+---
+
+
+---------------------------------
+
+# Exercise 1 - Double-site accessibility-based RRI prediction
+
+---------------------------------
+
+::: {.question data-latex=""}
+
+So far, we discussed only how to predict via accessibility-based approaches a single RRI site where the respective subsequences are free of base pairing.
+
+Consider now the following steps of a meta approach that predicts and combines two independent sites.
+
+1. RRI prediction of first (most stable) RRI $B_1$
+2. constraint RRI prediction of second RRI $B_2$, where the subsequences involved in $B_1$ are constraint to be unpaired
+3. combine $B_1$ and $B_2$ into one prediction
+
+Note, step $1$ and $2$ are using different ED value, since step $2$ is a constraint prediction also requiring a constraint ED-value computation.
+In the following, we refer to them via $ED(B_1)$ and $ED(B_2 \mid B_1)$. Similarly, we denote respective energy $E$ and hybridization energy $E_hyp$ terms.
+
+In step $3$, we are combining both sets of inter-molecular base pairs into one RRI, while keeping track of the respective blocks $B_1$ and $B_2$.
+Given that, we propose that the overall energy of RRI can be approximated as follows:
+
+$$
+\begin{equation}
+E(B_1 \land B_2) = E(B_1) + E(B_2\mid B_1)
+\end{equation}
+$$
+
+Prove the equation above by converting one side of the equation into the other side.
+
+:::
+
+#### {.tabset}
+
+##### Hide
+
+##### Solution
+
+::: {.answer data-latex=""}
+
+$$
+\begin{aligned}
+	E(B_1) + E(B_2\mid B_1)
+	&= E_{hyb}(B_1) + ED(B_1)
+	 + E_{hyb}( B_2 | B_1 )+ ED(B_2 | B_1) && \text{(i)} \\
+	&= E_{hyb}(B_1) - RTlog(\mathcal{P}^u(B_1))
+	 + E_{hyb}(B_2 | B_1) - RTlog(\mathcal{P}^u(B_2 | B_1))  && \text{(ii)}\\
+	&= E_{hyb}(B_1)  + E_{hyb}(B_2 | B_1)
+	 - RTlog(\mathcal{P}^u(B_1) * \mathcal{P}^u(B_2 | B_1))  && \text{(iii)}\\
+	 %\label{eqRight}
+	 &= E_{hyb}(B_1)+E_{hyb}(B_2)-RTlog(\mathcal{P}^u(B_1 \land B_2))  && \text{(iv)}\\
+	 &= E_{hyb}(B_1 \land B_2) + ED(B_1 \land B_2)  && \text{(v)}\\
+	 &= E(B_1 \land B_2)  && \\
+\end{aligned}
+$$
+
+To show that the equality holds, we used the following tricks to reformulate the left side of equation \ref{Ecombined} into the right side:
+
+i. The mfe ($E$) can be calculated using $E = E_{hyb} + ED$
+ii. We know that we can compute the ED value for sub-sequence $a \cdots b$ by the unpaired probability $ED= -RTlog(\mathcal{P}^u(ab))$
+iii. Due to independence of hybridization energies of sites we can use $E_{hyb}(B_2 | B_1)=E_{hyb}(B_2)$, and we can use: $log(a) + log(b) = log(a*b)$
+iv. We can use the conditional probability: $P(A \land B) = P(A) * P(B |A)$
+v. $ED= -RTlog(\mathcal{P}^u(ab))$
+
+:::
+
+#### {-}
+
+---------------------------------
+
+# Exercise 2 - Problems and drawbacks
+
+---------------------------------
+
+::: {.question data-latex=""}
+
+Is the predicted double-site RRI based on the previous question the optimal prediction?
+What problems, side effects and special situations are not covered?
+
+:::
+
+#### {.tabset}
+
+##### Hide
+
+##### Solution
+
+::: {.answer data-latex=""}
+
+i. more than two sites
+ii. ED of $B_1$ can change when conditional $B_2$ is formed, thus we have to iterate constraint predictions until ED is not changing any more
+iii. combination of sites might be sterically not feasible in reality
+
+:::
+
+#### {-}
+
+---------------------------------
