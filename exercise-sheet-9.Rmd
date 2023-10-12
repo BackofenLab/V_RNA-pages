@@ -8,7 +8,7 @@ The following assignments should be solved using the tool `IntaRNA`.
 As some advanced `IntaRNA` options are required, you will need to install the tool locally.
 There are several ways of installing `IntaRNA` locally (conda, docker, binaries, etc...).
 
-Please follow the instructions suitable for your operating system on [https://github.com/BackofenLab/IntaRNA/#installation](GitHub).
+Please follow the instructions suitable for your operating system on [GitHub](https://github.com/BackofenLab/IntaRNA/#installation).
 
 Additionally, you will need to download the <a href="https://raw.githubusercontent.com/BackofenLab/V_RNA-pages/main/assets/misc/query.fa" download="query.fa">query.fa</a> and <a href="https://raw.githubusercontent.com/BackofenLab/V_RNA-pages/main/assets/misc/target.fa" download="target.fa">target.fa</a> files.
 These files contain the sequences used for RNA-RNA interaction prediction.

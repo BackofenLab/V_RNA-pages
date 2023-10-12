@@ -289,7 +289,7 @@ knitr::include_graphics("assets/figures/infoicon.svg")
 
 The implementation should be done at home!
 
-For checking if your implementation is correct, please use [https://rna.informatik.uni-freiburg.de/Teaching/index.jsp?toolName=Nussinov](our webserver).
+For checking if your implementation is correct, please use [our webserver](https://rna.informatik.uni-freiburg.de/Teaching/index.jsp?toolName=Nussinov).
 
 :::
 ::::

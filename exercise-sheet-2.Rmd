@@ -310,9 +310,9 @@ By introducing the matrix $WM$ and only approximate the multiloop energies, Zuke
 # Exercise 3 - Loop decomposition and energy evaluation
 
 The Vienna RNAfold WebServer implements the Zuker algorithm for energy minimization of RNA secondary structures.
-Run the [http://rna.tbi.univie.ac.at/cgi-bin/RNAWebSuite/RNAfold.cgi](server) using the sample sequence.
+Run the [server](http://rna.tbi.univie.ac.at/cgi-bin/RNAWebSuite/RNAfold.cgi) using the sample sequence.
 
-Feed the sequence-structure pair into the [http://rna.tbi.univie.ac.at/cgi-bin/RNAWebSuite/RNAeval.cgi](Vienna RNAeval WebServer) and compare your decomposition with the resulting one.
+Feed the sequence-structure pair into the [Vienna RNAeval WebServer](http://rna.tbi.univie.ac.at/cgi-bin/RNAWebSuite/RNAeval.cgi) and compare your decomposition with the resulting one.
 
 ---------------------------------
 
