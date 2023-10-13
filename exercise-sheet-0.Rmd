@@ -12,6 +12,8 @@ We will solve the exercise question together within the exercise session.
 
 # Exercise 1 - Biological Basics
 
+<!--- --------------------------------- -->
+
 ::: {.question data-latex=""}
 
 Create an individual mind map for the learning unit on [biological basics](https://ilias.uni-freiburg.de/goto.php?target=pg_162485_1537966&client_id=unifreiburg). (A mind map is a graph
@@ -52,9 +54,11 @@ knitr::include_graphics("assets/figures/exercise-sheet-0/e1-1.svg")
 
 #### {-}
 
----------------------------------
+<!--- --------------------------------- -->
 
 # Exercise 2 - RNA secondary structure
+
+<!--- --------------------------------- -->
 
 ::: {.question data-latex=""}
 
@@ -100,10 +104,11 @@ knitr::include_graphics("assets/figures/exercise-sheet-0/e2-1.svg")
 
 #### {-}
 
----------------------------------
+<!--- --------------------------------- -->
 
 # Exercise 3
 
+<!--- --------------------------------- -->
 
 ::: {.question data-latex=""}
 
@@ -121,7 +126,7 @@ is transcribed into RNA in humans?
 ::: {.answer data-latex=""}
 
 The percentages of DNA resulting in proteins can vary across organisms. Not always, but often, 'higher' organisms have a smaller percentage of their DNA transcribed and translated into proteins.
-Eukaryotes like humans can use alternative splicing to produce multiple proteins out of one gene. It is estimated that 70% of genes in humans are expressed as multiple proteins through alternative splicing. 
+Eukaryotes like humans can use alternative splicing to produce multiple proteins out of one gene. It is estimated that 70% of genes in humans are expressed as multiple proteins through alternative splicing.
 
 :::
 
@@ -138,4 +143,4 @@ In humans, it’s estimated that over 80% of DNA is transcribed, but only less t
 
 #### {-}
 
--------------------------------------------
+<!--- --------------------------------- -->
