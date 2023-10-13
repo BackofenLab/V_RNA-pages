@@ -36,7 +36,16 @@ equally valid solutions.
 
 ::: {.answer data-latex=""}
 
-You can use the following notes to create your mind map: Secondary structure, Nucleotides, DNA, RNA, Virus, Protein, Amino acids, and primary structure.
+You can use the following notes to create your mind map: 
+
+- secondary structure 
+- nucleotides 
+- DNA 
+- RNA 
+- virus 
+- protein 
+- amino acids 
+- primary structure
 
 :::
 
@@ -86,7 +95,12 @@ unit on [RNA secondary structure](https://ilias.uni-freiburg.de/goto.php?target=
 
 ::: {.answer data-latex=""}
 
-The following keywords can be helpful in building the mind map: DNA, RNA, secondary structure, and hairpin.
+The following keywords can be helpful in building the mind map: 
+
+- DNA 
+- RNA 
+- secondary structure 
+- hairpin
 
 :::
 
