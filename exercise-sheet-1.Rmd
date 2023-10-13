@@ -6,6 +6,8 @@ title: "Exercise sheet 1: Nussinov algorithm"
 
 # Exercise 1
 
+<!--- --------------------------------- -->
+
 Consider the RNA with sequence:
 
 ```
@@ -14,7 +16,7 @@ S = GGGCACAUGGGGCAGUGCAGCCACUGAGCC
 
 $P = \{(1,30),(2,29),(4,17),(5,16),(6,15),(8,14),(9,13),(18,26),(19,25),(20,24)\}$
 
----------------------------------
+<!--- --------------------------------- -->
 
 ### 1.1
 
@@ -40,7 +42,7 @@ knitr::include_graphics("assets/figures/exercise-sheet-1/graph_represention_part
 
 #### {-}
 
----------------------------------
+<!--- --------------------------------- -->
 
 ### 1.2
 
@@ -73,9 +75,12 @@ One would need to introduce a different symbol e.g. using square brackets [] to 
 
 #### {-}
 
----------------------------------
+<!--- --------------------------------- -->
 
 # Exercise 2
+
+<!--- --------------------------------- -->
+
 
 For a variation of Nussinov algorithm with minimum loop length $1$, consider the following computed Nussinov matrix $N$ for the sequence `AUCACCGC`:
 
@@ -83,7 +88,7 @@ For a variation of Nussinov algorithm with minimum loop length $1$, consider the
 knitr::include_graphics("assets/figures/exercise-sheet-1/nussinov-table.png")
 ```
 
----------------------------------
+<!--- --------------------------------- -->
 
 ### 2.1
 
@@ -109,7 +114,7 @@ P = \{(5,7),(2,4)\}
 
 #### {-}
 
----------------------------------
+<!--- --------------------------------- -->
 
 ### 2.2
 
@@ -135,7 +140,7 @@ Apart from the pairs $(5,7)$ and $(2,4)$, only positions $(2,7)$ and $(3,7)$ are
 
 #### {-}
 
----------------------------------
+<!--- --------------------------------- -->
 
 ### 2.3
 
@@ -210,7 +215,7 @@ e.
 
 #### {-}
 
----------------------------------
+<!--- --------------------------------- -->
 
 ### 2.4
 
@@ -249,9 +254,11 @@ a.
 
 #### {-}
 
----------------------------------
+<!--- --------------------------------- -->
 
 # Exercise 3 (optional)
+
+<!--- --------------------------------- -->
 
 ::: {.question data-latex=""}
 

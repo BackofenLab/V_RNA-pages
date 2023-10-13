@@ -6,6 +6,8 @@ title: "Exercise sheet 2: Zuker's algorithm"
 
 # Exercise 1
 
+<!--- --------------------------------- -->
+
 We specify a new dynamic programming algorithm -- a simplified variant of the Zuker algorithm -- that fills two matrices $W$ and $V$.
 The algorithm is specified by the following two recursion equations.
 As in the definition of the Zuker algorithm, we use functions $eH$, $eS$, $eL$ for loop energy contributions.
@@ -40,7 +42,7 @@ $$
   \end{cases}
 $$
 
----------------------------------
+<!--- --------------------------------- -->
 
 ### 1.1
 
@@ -64,7 +66,7 @@ The minimal loop length.
 
 #### {-}
 
----------------------------------
+<!--- --------------------------------- -->
 
 ### 1.2
 
@@ -88,7 +90,7 @@ Yes, it is sufficient to initialize $W_{ii} = 0$.
 
 #### {-}
 
----------------------------------
+<!--- --------------------------------- -->
 
 ### 1.3
 
@@ -112,7 +114,7 @@ The entry $W_{1n}$ contains the minimum free energy of all secondary structures 
 
 #### {-}
 
----------------------------------
+<!--- --------------------------------- -->
 
 ### 1.4
 
@@ -136,7 +138,7 @@ The complexity is $O(n^{4})$. For each of the $O(n^{2})$ matrix entries the mini
 
 #### {-}
 
----------------------------------
+<!--- --------------------------------- -->
 
 ### 1.5
 
@@ -166,7 +168,7 @@ Time complexity goes down from $O(n^4)$ to $O(n^2)$.
 
 #### {-}
 
----------------------------------
+<!--- --------------------------------- -->
 
 ### 1.6
 
@@ -199,9 +201,11 @@ This reduces the overall time complexity to $O(n)$
 
 #### {-}
 
----------------------------------
+<!--- --------------------------------- -->
 
 # Exercise 2
+
+<!--- --------------------------------- -->
 
 Now, modify the recursion for entries $V_{ij}$ for $i<j-m$:
 
@@ -215,7 +219,7 @@ $$
   \end{cases}
 $$
 
----------------------------------
+<!--- --------------------------------- -->
 
 ### 2.1
 
@@ -242,7 +246,7 @@ For example it won't be possible to predict a structure having a multiloop with 
 
 #### {-}
 
----------------------------------
+<!--- --------------------------------- -->
 
 ### 2.2
 
@@ -266,7 +270,7 @@ Space: $O(n^{2})$. Time: $O(n^{6})$, for each entry in matrix $V O(n^{4})$ diffe
 
 #### {-}
 
----------------------------------
+<!--- --------------------------------- -->
 
 ### 2.3
 
@@ -305,16 +309,18 @@ By introducing the matrix $WM$ and only approximate the multiloop energies, Zuke
 
 #### {-}
 
----------------------------------
+<!--- --------------------------------- -->
 
 # Exercise 3 - Loop decomposition and energy evaluation
+
+<!--- --------------------------------- -->
 
 The Vienna RNAfold WebServer implements the Zuker algorithm for energy minimization of RNA secondary structures.
 Run the [server](http://rna.tbi.univie.ac.at/cgi-bin/RNAWebSuite/RNAfold.cgi) using the sample sequence.
 
 Feed the sequence-structure pair into the [Vienna RNAeval WebServer](http://rna.tbi.univie.ac.at/cgi-bin/RNAWebSuite/RNAeval.cgi) and compare your decomposition with the resulting one.
 
----------------------------------
+<!--- --------------------------------- -->
 
 ### 3.1
 
@@ -338,7 +344,7 @@ Typically in unpaired regions (Hairpin loop, Multi loop)
 
 #### {-}
 
----------------------------------
+<!--- --------------------------------- -->
 
 ### 3.2
 
@@ -366,4 +372,5 @@ A temperature increase also increases the energy contributions. e.g.:
 
 #### {-}
 
----------------------------------
+<!--- --------------------------------- -->
+

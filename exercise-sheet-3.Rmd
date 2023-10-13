@@ -12,7 +12,7 @@ library(officer)
 
 # Exercise 1 - entropy
 
----------------------------------
+<!--- --------------------------------- -->
 
 We want to have a short look at the concept of entropy.
 Let $X$ be a discrete random variable with probabilities $p(i), (i=1,2,\ldots,n)$.
@@ -26,7 +26,7 @@ $$H(X) = E[I(X)] = \sum_{i=1}^{n}p(i)\log_2(\frac{1}{p(i)}).$$
 
 Note that all logarithms in this exercise are base 2 (standard in information theory).
 
----------------------------------
+<!--- --------------------------------- -->
 
 ### 1.1
 
@@ -56,7 +56,7 @@ H(X) & = p(1)\log\left(\frac{1}{p(1)}\right) + p(2)\log\left(\frac{1}{p(2)}\righ
 
 #### {-}
 
----------------------------------
+<!--- --------------------------------- -->
 
 ### 1.2
 
@@ -85,7 +85,7 @@ H(X) & = & 4 \cdot p(i) \log(\frac{1}{p(i)})\\
 
 #### {-}
 
----------------------------------
+<!--- --------------------------------- -->
 
 ### 1.3
 
@@ -111,11 +111,11 @@ This results in a higher entropy for the probability distribution in part 2..
 
 #### {-}
 
----------------------------------
+<!--- --------------------------------- -->
 
 # Exercise 2 - true or false ?
 
----------------------------------
+<!--- --------------------------------- -->
 
 Consider some sequence $S$ with a set of possible structures
 $\cal{P}$ and partition function $Z$. Furthermore, let for each
@@ -166,11 +166,11 @@ $$
 
 #### {-}
 
----------------------------------
+<!--- --------------------------------- -->
 
 # Exercise 3 - partition function
 
----------------------------------
+<!--- --------------------------------- -->
 
 Given the RNA sequence `AUCACCGC` and a minimal loop length of $1$.
 Compute the partition function of the molecule using an energy function similar to the Nussinov algorithm:
@@ -189,7 +189,7 @@ sij_ft <- custom_theme(sij_ft)
 index_replace(sij_ft)
 ```
 
----------------------------------
+<!--- --------------------------------- -->
 
 ### 3.1
 
@@ -218,7 +218,7 @@ index_replace(sij_ft)
 
 #### {-}
 
----------------------------------
+<!--- --------------------------------- -->
 
 ### 3.2
 
@@ -247,7 +247,7 @@ index_replace(sij_ft)
 
 #### {-}
 
----------------------------------
+<!--- --------------------------------- -->
 
 ### 3.3
 
@@ -271,7 +271,7 @@ The open chain is more likely than any other structure including the optimal str
 
 #### {-}
 
----------------------------------
+<!--- --------------------------------- -->
 
 ### 3.4
 
@@ -295,7 +295,7 @@ This is not expected, the open chain should not have a higher probability than t
 
 #### {-}
 
----------------------------------
+<!--- --------------------------------- -->
 
 ### 3.5
 
@@ -335,15 +335,15 @@ We can now search for the optimal structure by energy minimization and the mfe s
 
 #### {-}
 
----------------------------------
+<!--- --------------------------------- -->
 
 # Exercise 4 - Base pair and unpaired probabilities
 
----------------------------------
+<!--- --------------------------------- -->
 
 Given the corrected probabilities of the previous exercise for sequence `AUCACCGC`.
 
----------------------------------
+<!--- --------------------------------- -->
 
 ### 4.1
 
@@ -369,7 +369,7 @@ knitr::include_graphics("assets/figures/exercise-sheet-3/e4-1.png")
 
 #### {-}
 
----------------------------------
+<!--- --------------------------------- -->
 
 ### 4.2
 
@@ -399,7 +399,7 @@ $$
 
 #### {-}
 
----------------------------------
+<!--- --------------------------------- -->
 
 ### 4.3
 
@@ -424,4 +424,5 @@ Thus, the two probabilities are not independent and can not be multiplied.
 
 #### {-}
 
----------------------------------
+<!--- --------------------------------- -->
+

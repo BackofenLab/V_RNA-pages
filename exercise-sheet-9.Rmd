@@ -17,7 +17,7 @@ These files contain the sequences used for RNA-RNA interaction prediction.
 
 # Exercise 1 - Hybridization versus Accessibility
 
----------------------------------
+<!--- --------------------------------- -->
 
 ::: {.question data-latex=""}
 
@@ -26,7 +26,7 @@ Use `IntaRNA` to predict an interaction between the query and the target sequenc
 1. Use hybridization energy only.
 2. Use the accessibility-based model.
 
----------------------------------
+<!--- --------------------------------- -->
 
 i. What differences do you observe when using both models?
 ii. Compare the interaction energies for your results. What do you observe?
@@ -79,11 +79,11 @@ In other words, the energy $E$ would be overall higher, but the resulting intera
 
 #### {-}
 
----------------------------------
+<!--- --------------------------------- -->
 
 # Exercise 2 - Seed constraints
 
----------------------------------
+<!--- --------------------------------- -->
 
 ::: {.question data-latex=""}
 
@@ -96,7 +96,7 @@ Using the two sequences from before, try out the following seed constraints:
 1. No seed constraints
 2. Different seed lengths between 2-10 base pairs
 
----------------------------------
+<!--- --------------------------------- -->
 
 i. Compare the predicted interactions to each-other
 ii. Compare the runtime of the different settings
@@ -178,4 +178,4 @@ The higher the initial seed length is set, the fewer interactions are predicted 
 
 #### {-}
 
----------------------------------
+<!--- --------------------------------- -->

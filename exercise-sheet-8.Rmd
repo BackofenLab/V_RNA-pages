@@ -7,7 +7,7 @@ title: "Exercise sheet 8: RNA-RNA interaction"
 
 # Exercise 1 - Double-site accessibility-based RRI prediction
 
----------------------------------
+<!--- --------------------------------- -->
 
 ::: {.question data-latex=""}
 
@@ -71,11 +71,11 @@ v. $ED= -RTlog(\mathcal{P}^u(ab))$
 
 #### {-}
 
----------------------------------
+<!--- --------------------------------- -->
 
 # Exercise 2 - Problems and drawbacks
 
----------------------------------
+<!--- --------------------------------- -->
 
 ::: {.question data-latex=""}
 
@@ -100,4 +100,4 @@ iii. combination of sites might be sterically not feasible in reality
 
 #### {-}
 
----------------------------------
+<!--- --------------------------------- -->

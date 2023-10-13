@@ -2,12 +2,11 @@
 title: "Exercise sheet 7: RNA-RNA interaction"
 ---
 
-
 ---------------------------------
 
 # Exercise 1 - RNA-RNA interaction
 
----------------------------------
+<!--- --------------------------------- -->
 
 ::: {.question data-latex=""}
 
@@ -34,11 +33,11 @@ iv. $\cdots$
 
 #### {-}
 
----------------------------------
+<!--- --------------------------------- -->
 
 # Exercise 2 - Hybridization-focused RRI prediction
 
----------------------------------
+<!--- --------------------------------- -->
 
 ### 2.1
 
@@ -62,7 +61,7 @@ When we encounter a cell value equal to $eInit$, which represents the left-most 
 
 #### {-}
 
----------------------------------
+<!--- --------------------------------- -->
 
 ### 2.2
 
@@ -88,7 +87,7 @@ If we first test for $eInit$, we will always get the shorter RRI (which is prefe
 
 #### {-}
 
----------------------------------
+<!--- --------------------------------- -->
 
 ### 2.3
 
@@ -115,11 +114,11 @@ That is, as long as the overall score stays below $eInit$, intermediate bad sub-
 
 #### {-}
 
----------------------------------
+<!--- --------------------------------- -->
 
 # Exercise 3 - Generalized RRI prediction
 
----------------------------------
+<!--- --------------------------------- -->
 
 ### 3.1
 
@@ -146,7 +145,7 @@ knitr::include_graphics("assets/figures/exercise-sheet-7/e3-1.svg")
 
 #### {-}
 
----------------------------------
+<!--- --------------------------------- -->
 
 ### 3.2
 
@@ -172,7 +171,7 @@ knitr::include_graphics("assets/figures/exercise-sheet-7/e3-2.svg")
 
 #### {-}
 
----------------------------------
+<!--- --------------------------------- -->
 
 ### 3.3
 
@@ -204,4 +203,5 @@ knitr::include_graphics("assets/figures/exercise-sheet-7/e3-4.svg")
 
 #### {-}
 
----------------------------------
+<!--- --------------------------------- -->
+
