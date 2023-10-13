@@ -68,7 +68,7 @@ knitr::include_graphics("assets/figures/exercise-sheet-1/graph_represention_part
 
 The new base pairs/arcs $(11, 22)$ and $(12, 21)$ result in a pseudoknot.
 The bracket-only dot-bracket notation can not display pseudoknots.
-One would need to introduce a different symbol eg using square brackets `[] to indicate the opening and closing positions of the crossing base pairs.
+One would need to introduce a different symbol e.g. using square brackets [] to indicate the opening and closing positions of the crossing base pairs.
 :::
 
 #### {-}

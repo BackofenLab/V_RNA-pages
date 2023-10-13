@@ -5,7 +5,7 @@ title: "Exercise sheet 0: Biology Basics & RNA Secondary Structure"
 ---------------------------------
 
 In order to better understand the underlying biological concepts of this lecture, read the E-learning
-material for [Biological basics]() and [RNA secondary structure](). Please review the material beforehand.
+material for [Biological basics](https://ilias.uni-freiburg.de/goto.php?target=pg_162485_1537966&client_id=unifreiburg) and [RNA secondary structure](https://ilias.uni-freiburg.de/goto.php?target=pg_162407_1537953&client_id=unifreiburg). Please review the material beforehand.
 We will solve the exercise question together within the exercise session.
 
 ---------------------------------
@@ -14,7 +14,7 @@ We will solve the exercise question together within the exercise session.
 
 ::: {.question data-latex=""}
 
-Create an individual mind map for the learning unit on [biological basics](). (A mind map is a graph
+Create an individual mind map for the learning unit on [biological basics](https://ilias.uni-freiburg.de/goto.php?target=pg_162485_1537966&client_id=unifreiburg). (A mind map is a graph
 with nodes for terms and edges that describe a logical relationship between terms, e.g. an organism
 consists of cell(s) so you could draw a line between the terms organism and cell, the line could then
 be annotated with ‘contains’ to denote the logical relationship).
@@ -52,7 +52,7 @@ knitr::include_graphics("assets/figures/exercise-sheet-0/e1-1.svg")
 
 Given the following (unordered) initial set of keywords, arrange them in a mind map with respective
 relations. Extend with all keywords and relations you find missing and important, given the learning
-unit on [RNA secondary structure]().
+unit on [RNA secondary structure](https://ilias.uni-freiburg.de/goto.php?target=pg_162407_1537953&client_id=unifreiburg).
 
 - multi loop
 - Feynman diagram
