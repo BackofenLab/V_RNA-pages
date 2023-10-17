@@ -14,7 +14,7 @@ output:
     css: "assets/css/bioinf-style.css"
     includes:
        in_header: html/header.html
-       after_body: "assets/html/removeSolution.html"
+       after_body: "assets/html/javascriptFooter.html"
 urlcolor: blue
 linkcolor: blue
 

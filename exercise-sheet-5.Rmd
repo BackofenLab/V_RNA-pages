@@ -57,7 +57,7 @@ Decomposition into hairpin and interior case analogously to original Sankoff plu
 $$
   C(i_{1},j_{1},i_{2},j_{2}) = \min
   \begin{cases}
-    e(s_{1}) + e(s_{2}); & \text{where \(s_{1}, s_{2}\) are hairpin closing base pairs (i_{1}, j_{1})(i_{2},j_{2})} \\
+    e(s_{1}) + e(s_{2}); & \text{where \(s_{1}, s_{2}\) are hairpin closing base pairs} (i_{1}, j_{1})(i_{2},j_{2}) \\
     \min_{p_{1},q_{1},p_{2},q_{2}} \{e(s_{1}) + e(s_{2}) + C(p_{1},q_{1},p_{2},q_{2})\}; & \\
     \min_{k > 2} \{e(s_{1}) + e(s_{2}) + \sum_{l=1}^{k-1} C(p_{1}^{l},q_{1}^{l},p_{2}^{l},q_{2}^{l})\} & \\
   \end{cases}
