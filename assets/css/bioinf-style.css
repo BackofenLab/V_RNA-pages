@@ -22,6 +22,11 @@ a:hover {
   background-color: var(--active-item-color);
 }
 
+@font-face {
+  font-family: 'Creepster';
+  src: url('assets/fonts/Creepster.ttf') format('truetype');
+}
+
 table td:first-child { border-right:  1px solid; }
 table th {border-bottom: 1px solid;}
 .navbar-default {background-color: var(--ufr-main-blue)}
