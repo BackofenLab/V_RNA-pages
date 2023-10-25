@@ -84,6 +84,7 @@ function halloweenTheme(){
         svgElement.onclick = function() {
         // Remove the SVG element from the DOM
         svgElement.parentNode.removeChild(svgElement);
+        svgObject.remove();
         };
 
         const eye1 = svgElement.getElementById('tofill1');
@@ -155,6 +156,7 @@ function christmasTheme(){
         svgElement.onclick = function() {
         // Remove the SVG element from the DOM
         svgElement.parentNode.removeChild(svgElement);
+        svgObject.remove();
         };
 
         const rect = svgElement.getElementById('reindeerNose');
