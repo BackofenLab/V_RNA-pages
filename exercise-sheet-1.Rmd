@@ -14,6 +14,8 @@ Consider the RNA with sequence:
 S = GGGCACAUGGGGCAGUGCAGCCACUGAGCC
 ```
 
+and structure $P$:
+
 $P = \{(1,30),(2,29),(4,17),(5,16),(6,15),(8,14),(9,13),(18,26),(19,25),(20,24)\}$
 
 <!--- --------------------------------- -->
@@ -22,7 +24,7 @@ $P = \{(1,30),(2,29),(4,17),(5,16),(6,15),(8,14),(9,13),(18,26),(19,25),(20,24)\
 
 ::: {.question data-latex=""}
 
-Draw the structure in dot-bracket notation and as a graphical representation.
+Draw the structure $P$ in dot-bracket notation and as a graphical representation.
 
 :::
 
