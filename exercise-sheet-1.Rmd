@@ -32,6 +32,15 @@ Draw the structure $P$ in dot-bracket notation and as a graphical representation
 
 ##### Hide
 
+##### Hint
+
+::: {.answer data-latex=""}
+
+If you write down the sequence including the position number it is easy to draw the dot-bracket notation. Once you have this you can use the dot-breakage notation to draw the structure. See how many hairpins you have to get a feeling of how much space you need. Start by drawing one of the hairpins. A hairpin in dot-bracket notation looks like this: ((...))
+
+:::
+
+
 ##### Solution
 
 ::: {.answer data-latex=""}
@@ -60,6 +69,14 @@ this fail and why?
 #### {.tabset}
 
 ##### Hide
+
+##### Hint
+
+::: {.answer data-latex=""}
+
+Include the additional base pairs to the dot-bracket notation by using square brackets instead of round brackets. Include an additional arc to the graph notation, on the corresponding position. Should be easy. If you do not see what issue this structure is coursing draw a linear Feynman-diagram.
+
+:::
 
 ##### Solution
 
