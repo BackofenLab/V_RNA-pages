@@ -8,7 +8,7 @@ title: "Exercise sheet 1: Nussinov algorithm"
 
 <!--- --------------------------------- -->
 
-Consider the RNA with sequence:
+Consider the RNA with the sequence:
 
 ```
 S = GGGCACAUGGGGCAGUGCAGCCACUGAGCC
@@ -36,7 +36,7 @@ Draw the structure $P$ in dot-bracket notation and as a graphical representation
 
 ::: {.answer data-latex=""}
 
-If you write down the sequence including the position number it is easy to draw the dot-bracket notation. Once you have this you can use the dot-breakage notation to draw the structure. See how many hairpins you have to get a feeling of how much space you need. Start by drawing one of the hairpins. A hairpin in dot-bracket notation looks like this: ((...))
+If you note down the sequence along with the position numbers, it becomes easier to draft the dot-bracket notation. With this in hand, you can utilize the dot-bracket notation to sketch the structure. Assess the number of hairpins to gauge the amount of space required. Begin by illustrating one of the hairpins. In dot-bracket notation, a hairpin is represented as: ((...)).
 
 :::
 
@@ -74,7 +74,7 @@ this fail and why?
 
 ::: {.answer data-latex=""}
 
-Include the additional base pairs to the dot-bracket notation by using square brackets instead of round brackets. Include an additional arc to the graph notation, on the corresponding position. Should be easy. If you do not see what issue this structure is coursing draw a linear Feynman-diagram.
+Include the additional base pairs to the dot-bracket notation by using square brackets instead of round brackets, as before. Include an additional arc to the graph notation, on the corresponding position. If you're unable to discern the problem this structure might cause, try sketching a linear Feynman diagram.
 
 :::
 
@@ -101,7 +101,7 @@ One would need to introduce a different symbol e.g. using square brackets [] to 
 <!--- --------------------------------- -->
 
 
-For a variation of Nussinov algorithm with minimum loop length $1$, consider the following computed Nussinov matrix $N$ for the sequence `AUCACCGC`:
+For a variation of the Nussinov algorithm with minimum loop length $1$, consider the following computed Nussinov matrix $N$ for the sequence `AUCACCGC`:
 
 ```{r, include=knitr::is_html_output(), echo=FALSE, fig.align='center', out.width='50%'}
 knitr::include_graphics("assets/figures/exercise-sheet-1/nussinov-table.png")
@@ -116,7 +116,7 @@ knitr::include_graphics("assets/figures/exercise-sheet-1/nussinov-table.png")
 Compute the optimal structure according to the following recursion (considering loop length 1)!
 
 ```{r, include=knitr::is_html_output(), echo=FALSE,}
-knitr::include_graphics("assets/figures/exercise-sheet-1/nussinov-recursion-unique.png")
+knitr::include_graphics("assets/figures/exercise-sheet-1/nussinov-recursion-ambiguous.png")
 ```
 
 :::
@@ -124,6 +124,16 @@ knitr::include_graphics("assets/figures/exercise-sheet-1/nussinov-recursion-uniq
 #### {.tabset}
 
 ##### Hide
+
+##### Hint 
+
+::: {.answer data-latex=""}
+
+Traceback starts in upper right corner: traceback(i,j). But you do not need to compute a traceback you can also find the structure just by looking at the sequence.
+
+:::
+
+
 
 ##### Solution
 
@@ -146,6 +156,15 @@ Is there more than one optimal structure?
 #### {.tabset}
 
 ##### Hide
+
+##### Hint 1
+
+::: {.answer data-latex=""}
+
+Conserting loop length of 1 means at least one unpaired nucleotide that must exist in a loop.
+:::
+
+
 
 ##### Solution
 
@@ -172,6 +191,38 @@ Define all optimal tracebacks! Is there more than one optimal traceback?
 #### {.tabset}
 
 ##### Hide
+
+##### Hint
+
+::: {.answer data-latex=""}
+
+There could be more than one optimal traceback for one optimal solution if the recursion is ambiguous. 
+:::
+
+##### Hint 2
+
+::: {.answer data-latex=""}
+Pseudo Code Traceback
+
+```{r}
+Procedure trackback(i,j)
+if `$j \leq i$`
+   return
+else if $N_{i,j}$ = $N_{i,j-1}$ than
+   trackback(i,j-1);
+   return
+else
+   for all $k: i \leq k < j$, $S_{k}$ and $S_{j}$ complementary do
+       if $N_{i,j}$ = $N_{i,k-1} + N_{k+1,j-1} + 1$ then
+         print($k,j$)
+         return
+      end if
+   end for
+end if
+```
+
+:::
+
 
 ##### Solution
 
@@ -242,8 +293,8 @@ e.
 
 Does the last answer still hold for the following recursion (considering loop length 1)? Identify the possible traceback(s)!
 
-```{r, include=knitr::is_html_output(), echo=FALSE,}
-knitr::include_graphics("assets/figures/exercise-sheet-1/nussinov-recursion-ambiguous.png")
+```{r, include=knitr::is_html_output(), echo=FALSE,} 
+knitr::include_graphics("assets/figures/exercise-sheet-1/nussinov-recursion-unique.png")
 ```
 
 :::
@@ -252,13 +303,21 @@ knitr::include_graphics("assets/figures/exercise-sheet-1/nussinov-recursion-ambi
 
 ##### Hide
 
+##### Hint
+
+::: {.answer data-latex=""}
+
+What is different between these two recursions? How are the splits performed?
+:::
+
+
 ##### Solution
 
 ::: {.answer data-latex=""}
 
 No, because the original Nussinov is not ambiguous.
 
-Only if a base pair is found the sequence is separated into two parts for the further recursion.
+Only if a base pair is found the sequence is separated into two parts for further recursion.
 In the first recursion, the sequence is always split unless there is a possible base pair.
 This generates several possible tracebacks for the same optimal sequence.
 
