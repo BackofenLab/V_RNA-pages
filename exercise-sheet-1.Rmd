@@ -204,7 +204,7 @@ There could be more than one optimal traceback for one optimal solution if the r
 ::: {.answer data-latex=""}
 Pseudo Code Traceback
 
-```{r}
+```{r, echo=False,}
 Procedure trackback(i,j)
 if `$j \leq i$`
    return
