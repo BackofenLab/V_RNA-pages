@@ -206,15 +206,15 @@ Pseudo Code Traceback
 
 ```{r, eval=FALSE,}
 Procedure trackback(i,j)
-if `$j \leq i$`
+if (j <= i)
    return
-else if $N_{i,j}$ = $N_{i,j-1}$ than
+else if N_{i,j} = N_{i,j-1} then
    trackback(i,j-1);
    return
 else
-   for all $k: i \leq k < j$, $S_{k}$ and $S_{j}$ complementary do
-       if $N_{i,j}$ = $N_{i,k-1} + N_{k+1,j-1} + 1$ then
-         print($k,j$)
+   for all k: i <= k < j, S_{k} and S_{j} complementary do
+       if N_{i,j} = N_{i,k-1} + N_{k+1,j-1} + 1 then
+         print(k,j)
          return
       end if
    end for
