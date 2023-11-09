@@ -125,7 +125,7 @@ knitr::include_graphics("assets/figures/exercise-sheet-1/nussinov-recursion-ambi
 
 ##### Hide
 
-##### Hint 
+##### Hint
 
 ::: {.answer data-latex=""}
 
@@ -161,7 +161,8 @@ Is there more than one optimal structure?
 
 ::: {.answer data-latex=""}
 
-Conserting loop length of 1 means at least one unpaired nucleotide that must exist in a loop.
+Considering a loop length of 1 means that at least one unpaired nucleotide must exist in a loop.
+
 :::
 
 
@@ -196,7 +197,7 @@ Define all optimal tracebacks! Is there more than one optimal traceback?
 
 ::: {.answer data-latex=""}
 
-There could be more than one optimal traceback for one optimal solution if the recursion is ambiguous. 
+There could be more than one optimal traceback for one optimal solution if the recursion is ambiguous.
 :::
 
 ##### Hint 2
@@ -293,7 +294,7 @@ e.
 
 Does the last answer still hold for the following recursion (considering loop length 1)? Identify the possible traceback(s)!
 
-```{r, include=knitr::is_html_output(), echo=FALSE,} 
+```{r, include=knitr::is_html_output(), echo=FALSE,}
 knitr::include_graphics("assets/figures/exercise-sheet-1/nussinov-recursion-unique.png")
 ```
 
