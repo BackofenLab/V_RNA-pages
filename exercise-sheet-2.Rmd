@@ -56,6 +56,14 @@ What is represented by $m$ in the above recursion equations?
 
 ##### Hide
 
+##### Hint
+
+::: {.answer data-latex=""}
+
+m is part of the condition for the initialization. Do you know of a case where the initialization was extended?
+
+:::
+
 ##### Solution
 
 ::: {.answer data-latex=""}
@@ -79,6 +87,14 @@ Can we reduce the initialization of $W$?
 #### {.tabset}
 
 ##### Hide
+
+##### Hint
+
+::: {.answer data-latex=""}
+
+There were two ways to include a minimal loop length as a condition in your DP-folding algorithm.
+
+:::
 
 ##### Solution
 
@@ -104,6 +120,14 @@ What is computed in $W_{1n}$?
 
 ##### Hide
 
+##### Hint
+
+::: {.answer data-latex=""}
+
+You would start your traceback in this cell.
+
+:::
+
 ##### Solution
 
 ::: {.answer data-latex=""}
@@ -127,6 +151,14 @@ What is the complexity for computing $W_{1n}$ by dynamic programming?
 #### {.tabset}
 
 ##### Hide
+
+##### Hint
+
+::: {.answer data-latex=""}
+
+Which is the case with the highest amount of indices that need to be checked?
+
+:::
 
 ##### Solution
 
@@ -154,6 +186,14 @@ How does the time complexity change?
 
 ##### Hide
 
+##### Hint
+
+::: {.answer data-latex=""}
+
+In this case, we do not have a multiloop case.
+
+:::
+
 ##### Solution
 
 ::: {.answer data-latex=""}
@@ -161,7 +201,7 @@ How does the time complexity change?
 The Zuker algorithm is restricted to secondary structures containing only internal loops up to a maximum size of L.
 That way for each matrix entry only $O(n)$ internal loops have to be checked, leading to a reduced complexity of $O(n^{3})$.
 The same modification can be done for this algorithm.
-By restricting the maximum size of internal loops the modified algorithm is working on a subset of the original structure ensemble, so the problem differ slightly.
+By restricting the maximum size of internal loops the modified algorithm is working on a subset of the original structure ensemble, so the problem differs slightly.
 Time complexity goes down from $O(n^4)$ to $O(n^2)$.
 
 :::
@@ -234,6 +274,14 @@ Identify structures that can be predicted by the Zuker's algorithm but not by th
 
 ##### Hide
 
+##### Hint
+
+::: {.answer data-latex=""}
+
+Consider the final case of the recursion, which is added in addition to the recursion cases from Exercise 1.
+
+:::
+
 ##### Solution
 
 ::: {.answer data-latex=""}
@@ -259,6 +307,14 @@ What is the time and space complexity of this algorithm?
 #### {.tabset}
 
 ##### Hide
+
+##### Hint
+
+::: {.answer data-latex=""}
+
+Check how many additional indices need to be checked.
+
+:::
 
 ##### Solution
 
@@ -338,7 +394,7 @@ Study the energy contributions of the individual loops. Which loops have typical
 
 ::: {.answer data-latex=""}
 
-Typically in unpaired regions (Hairpin loop, Multi loop)
+Typically in unpaired regions (Hairpin loop, Internal loop, and Multi loop)
 
 :::
 
