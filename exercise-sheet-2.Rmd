@@ -38,7 +38,7 @@ $$
   \begin{cases}
     eH(i,j)\\
     V_{i+1{j-1}} + eS(i,j)\\
-    min_{i<i^{'}<j^{'}<j}V_{i^{'}{j^{'}}}+eL(i,j,i^{'},j^{'})\\
+    min_{\substack{i<i^{'}<j^{'}<j,\\i^{'}-i+j-j^{'}>2}}V_{i^{'}{j^{'}}}+eL(i,j,i^{'},j^{'})\\
   \end{cases}
 $$
 
@@ -254,7 +254,7 @@ $$
   \begin{cases}
     eH(i,j)\\
     V_{i+1{j-1}} + eS(i,j)\\
-    min_{i<i^{'}<j^{'}<j}V_{i^{'}{j^{'}}}+eL(i,j,i^{'},j^{'})\\
+    min_{\substack{i<i^{'}<j^{'}<j, \\ i^{'}-i+j-j^{'}>2}}V_{i^{'}{j^{'}}}+eL(i,j,i^{'},j^{'})\\
     min_{i<i_{1}<j_{1}<i_{2}<j_{2}<j}V_{i_{1}{j_{1}}}+V_{i_{2}{j_{2}}}+eM(i,j,i_{1},j_{1},i_{2},j_{2})\\
   \end{cases}
 $$
