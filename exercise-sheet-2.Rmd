@@ -14,7 +14,7 @@ As in the definition of the Zuker algorithm, we use functions $eH$, $eS$, $eL$ f
 
 For the matrix $W$, define for $i+m < j$:
 
-Init: $W_{ij} = 0$, with $i+m\reqj$ and i \leq j
+Init: $W_{ij} = 0$, with $i+m\req j$ and i \leq j
 
 $$
   W_{ij} = \min
@@ -27,7 +27,7 @@ $$
 
 For the matrix $V$, define for $i+m < j$:
 
-Init: $V_{ij} = \infty$, with $i+m\reqj$ and i \leq j
+Init: $V_{ij} = \infty$, with $i+m\req j$ and i \leq j
 
 $$
   V_{ij} = \min
