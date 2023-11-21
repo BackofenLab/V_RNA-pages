@@ -40,6 +40,14 @@ Compute the entropy of the probability distribution $p(1) = \frac{1}{2},\, p(2) 
 
 ##### Hide
 
+##### Hint
+
+::: {.answer data-latex=""}
+
+Compute the expected value of the information of the radome variable $E[I(X)]$ or entropy $H(X)$ as described above. 
+
+:::
+
 ##### Solution
 
 ::: {.answer data-latex=""}
@@ -70,6 +78,7 @@ Compute the entropy of the distribution $p(i) = \frac{1}{4},\: (i= 1,2,3,4)$.
 
 ##### Hide
 
+
 ##### Solution
 
 ::: {.answer data-latex=""}
@@ -99,6 +108,14 @@ How can you explain the difference in entropy for both probability distributions
 
 ##### Hide
 
+##### Hint
+
+::: {.answer data-latex=""}
+
+Which of the two probability distributions has the higher information content, because you know more about an event before an event happened? 
+
+:::
+
 ##### Solution
 
 ::: {.answer data-latex=""}
@@ -113,7 +130,7 @@ This results in a higher entropy for the probability distribution in part 2..
 
 <!--- --------------------------------- -->
 
-# Exercise 2 - true or false ?
+# Exercise 2 - true or false?
 
 <!--- --------------------------------- -->
 
@@ -203,6 +220,14 @@ Compute $Z$ via exhaustive structure space enumeration. (using the provided Bolt
 
 ##### Hide
 
+##### Hint
+
+::: {.answer data-latex=""}
+
+To compute Z you need to know all possible structures. 
+
+:::
+
 ##### Solution
 
 ::: {.answer data-latex=""}
@@ -232,6 +257,13 @@ Compute the structure probability of all structures.
 
 ##### Hide
 
+##### Hint
+
+::: {.answer data-latex=""}
+$$ Pr[P|S] = \frac{\exp(-E(P)/RT)}{\sum_{P'}\exp(-E(P)/RT)} $$
+
+:::
+
 ##### Solution
 
 ::: {.answer data-latex=""}
@@ -253,7 +285,7 @@ index_replace(sij_ft)
 
 ::: {.question data-latex=""}
 
-Compare the structure probabilities in relation to each other? What is the structure probability of the open chain? What can you observe?
+Compare the structure probabilities in relation to each other. What is the structure probability of the open chain? What can you observe?
 
 :::
 
@@ -284,6 +316,12 @@ Is this result expected?
 #### {.tabset}
 
 ##### Hide
+##### Hint
+
+::: {.answer data-latex=""}
+Base pairs usually stabilize a structure. 
+
+:::
 
 ##### Solution
 
@@ -309,10 +347,19 @@ If not how can you fix it? Test your idea by recalculating the structure probabi
 
 ##### Hide
 
+##### Hint
+
+::: {.answer data-latex=""}
+How can you ensure that the open chain gets the lowest Bolzman weight without changing the idea to score the number of base pairs for computing the energy of a structure?
+
+:::
+
+
 ##### Solution
 
 ::: {.answer data-latex=""}
 
+The reason why the open chain has the highest probability is because the Bolzmann weight decreases with an increasing number of base pairs.
 The solution is to negate the energy function, i.e. $E(P) = -|P|$
 
 ```{r, results="asis", include=knitr::is_html_output(), echo=FALSE}
@@ -357,6 +404,14 @@ Compute and visualize the base pair probabilities in a dot-plot using your corre
 
 ##### Hide
 
+##### Hint
+
+::: {.answer data-latex=""}
+Compute the base pair probabilities:
+$$ PR[(i,j)|S] = \sum_{P \ni (i,j)} Pr[P|S] $$
+
+:::
+
 ##### Solution
 
 ::: {.answer data-latex=""}
@@ -382,6 +437,13 @@ Compute the probability $P^u(4)$ and $P^u(5)$ to be unpaired at sequence positio
 #### {.tabset}
 
 ##### Hide
+
+##### Hint
+
+::: {.answer data-latex=""}
+$$ PR_{u}[(i,j)] = \frac{Z_{i,j}^u}{Z} $$
+
+:::
 
 ##### Solution
 
@@ -412,6 +474,12 @@ Why can't we compute $P^u(4,5)$ from $P^u(4)$ and $P^u(5)$ using their product, 
 #### {.tabset}
 
 ##### Hide
+##### Hint
+
+::: {.answer data-latex=""}
+Are $P^u(4)$ and $P^u(5)$ independent?
+
+:::
 
 ##### Solution
 
