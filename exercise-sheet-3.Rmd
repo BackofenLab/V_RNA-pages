@@ -295,6 +295,7 @@ If not how can you fix it? Test your idea by recalculating the structure probabi
 ##### Hint
 
 ::: {.answer data-latex=""}
+
 How can you ensure that the open chain gets the lowest Boltzmann weight without changing the idea of scoring the number of base pairs for computing the energy of a structure?
 
 :::

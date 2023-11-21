@@ -1,5 +1,5 @@
 ---
-title: "Exercise sheet 6: Jiang algorithm"
+title: "Exercise sheet 6: Sankoff algorithm"
 ---
 
 
@@ -11,9 +11,26 @@ title: "Exercise sheet 6: Jiang algorithm"
 
 ::: {.question data-latex=""}
 
-Please have a look at the reformulated recursion of the Jiang algorithm.
-In the lecture, some important properties have been omitted for sake of clarity.
-In this exercise your task is to explicitly state some of these properties.
+The Sankoff algorithm is obtained from the Zuker recursions by raising them from folding one sub-sequence to folding two sub-sequences.
+Furthermore, it adds the edit distance.
+Develop asimpler version of Sankoff that is obtained by starting the same construction from the simpler, but less efficient, form of the Zuker recursions
+
+$$
+C(i,j) = \min_{1 \leq k \leq 4} \left( \min_{s \text{ is a $k$-loop closed by } (i,j)} \left\{ e(s) + \sum_{(p,q) \text{ accessible in $s$ from } (i,j)} C(p,q) \right\} \right)
+$$
+
+with the initial conditions $C(i,i) = \infty$, and
+
+$$
+F(i,j) = \min_{ C(i,j), min_{i \leq h < j} \left[ F(i,h) + F(h+1,j) \right]}
+$$
+
+with the initial conditions $F(i,i) = 0$.
+
+Furthermore, you can neglect the edit distance contribution.
+Make sure that your algorithm still has the same structural restrictions as the Sankoff algorithm,
+i.e. each hairpin is aligned to a hairpin,
+each multiloop is aligned to a corresponding multiloop and each 2-loop (including stackings and bulges) is aligned to at most one other 2-loop.
 
 :::
 
@@ -23,7 +40,7 @@ In this exercise your task is to explicitly state some of these properties.
 
 ::: {.question data-latex=""}
 
-What are the base cases for the table entries, how should the tables be initialized?
+Generate respective recursion depictions for the translation of $C$ and $F$ into a Sankoff-style algorithm.
 
 :::
 
@@ -35,7 +52,37 @@ What are the base cases for the table entries, how should the tables be initiali
 
 ::: {.answer data-latex=""}
 
-The empty prefix of each M matrix has to be initialized with 0.
+Decomposition into hairpin and interior case analogously to original Sankoff plus two explicit multi-loop cases for $k=3$ and $k=4$.
+
+$$
+  C(i_{1},j_{1},i_{2},j_{2}) = \min
+  \begin{cases}
+    e(s_{1}) + e(s_{2}); & \text{where \(s_{1}, s_{2}\) are hairpin closing base pairs} (i_{1}, j_{1})(i_{2},j_{2}) \\
+    \min_{p_{1},q_{1},p_{2},q_{2}} \{e(s_{1}) + e(s_{2}) + C(p_{1},q_{1},p_{2},q_{2})\}; & \\
+    \min_{k > 2} \{e(s_{1}) + e(s_{2}) + \sum_{l=1}^{k-1} C(p_{1}^{l},q_{1}^{l},p_{2}^{l},q_{2}^{l})\} & \\
+  \end{cases}
+$$
+
+$$
+\text{where in the second case, \( s_{1}, s_{2} \) are 2-loops enclosed by \( i_{1},j_{1},i_{2},j_{2} \) with \( pq \) accessible.}
+$$
+
+
+```{r, include=knitr::is_html_output(), echo=FALSE,  fig.align='center', out.width='50%'}
+knitr::include_graphics("assets/figures/exercise-sheet-5/e1-1.jpeg")
+```
+
+$$
+  F(i_{1},j_{1},i_{2},j_{2}) = \min
+  \begin{cases}
+    C(i_{1},j_{1};i_{2},j_{2})\\
+    min_{\substack{i_{1}\leq h_{1} \leq j_{1} \\ i_{2}\leq h_{2} \leq j_{2}}} \{F(i_{1},h_{1}; i_{2},h_{2}) +  F(h_{1}+1, j_{1}; h_{2}+1, j_{2})\}\\
+  \end{cases}
+$$
+
+```{r, include=knitr::is_html_output(), echo=FALSE,  fig.align='center', out.width='50%'}
+knitr::include_graphics("assets/figures/exercise-sheet-5/e1-2.jpeg")
+```
 
 :::
 
@@ -47,7 +94,8 @@ The empty prefix of each M matrix has to be initialized with 0.
 
 ::: {.question data-latex=""}
 
-What value has to be assigned to entries outside of the tabulated M matrices, for example element $(3,4)$ of table $M^{a_2}_{a_3}$ in exercise 2?
+What is the general complexity?
+What is the complexity without an upper bound for $k$?
 
 :::
 
@@ -59,8 +107,13 @@ What value has to be assigned to entries outside of the tabulated M matrices, fo
 
 ::: {.answer data-latex=""}
 
-The elements of the M matrices consist of prefix-alignment below 2 arcs.
-Any element outside these matrices is invalid and should never be used. Assign $\infty$.
+here:
+
+$O(n^4)*O(n^{4*3}) = O(n^{16})$
+
+without upper bound on $k$:
+
+$O(n^{4(k-1)+4})$ or $O(n^{4*k})$
 
 :::
 
@@ -72,7 +125,7 @@ Any element outside these matrices is invalid and should never be used. Assign $
 
 ::: {.question data-latex=""}
 
-In what situation do we need to evaluate the fourth case of the recursion?
+What is the effect of omitting the edit distance contribution?
 
 :::
 
@@ -84,7 +137,9 @@ In what situation do we need to evaluate the fourth case of the recursion?
 
 ::: {.answer data-latex=""}
 
-The fourth case has to be evaluated only if there exists a pair of arcs that lies completely inside of the evaluated arcs.
+We only do simultaneous folding (mfe minimization) with helix alignment (since no sequence alignment contributions);
+no penalties for helix-length differences (since we do not score sequence similarity or indel gaps);
+Eventually, we find the best common structure shape, but sequence similarity of the respective alignment can be very bad (i.e. evolutionary unlikely).
 
 :::
 
@@ -96,7 +151,8 @@ The fourth case has to be evaluated only if there exists a pair of arcs that lie
 
 ::: {.question data-latex=""}
 
-Which entry of each M matrix is used for the $F$ matrix?
+Assume the derived recursion would incorporate sequence editing scores analogously to the original Sankoff approach via a respective matrix $D$.
+What happens, if we apply very high gap scores within $D$?
 
 :::
 
@@ -108,7 +164,7 @@ Which entry of each M matrix is used for the $F$ matrix?
 
 ::: {.answer data-latex=""}
 
-The matrix $F$ stores the final values of all $M$ matrices. The final values of the M-matrices are located at their lower right corners.
+Almost everything is aligned (matched or mismatched) and thus helix lengths should be very similar (interior loop indel less likely), ie overall it becomes a gap minimization problem and simultaneous folding becomes a 'second level objective'.
 
 :::
 
@@ -116,124 +172,3 @@ The matrix $F$ stores the final values of all $M$ matrices. The final values of 
 
 <!--- --------------------------------- -->
 
-# Exercise 2
-
-<!--- --------------------------------- -->
-
-::: {.question data-latex=""}
-
-We would like to align the following two structures with the reformulated recursion of the Jiang algorithm:
-
-```{r, include=knitr::is_html_output(), echo=FALSE,  fig.align='center', out.width='40%'}
-knitr::include_graphics("assets/figures/exercise-sheet-6/e2-1.svg")
-```
-
-The cost for the different operations are $w_d^{\text{end}}=2$, $w_b^{\text{end}}=3$, $w_{am}=6$, $w_d=7$, and $w_m=3$.
-The matrices $M^{a_i,a_j}$ and $F$ (with some missing entries) are given as follows:
-
-```{r, include=knitr::is_html_output(), echo=FALSE,  fig.align='center', out.width='75%'}
-knitr::include_graphics("assets/figures/exercise-sheet-6/e2-2.svg")
-```
-
-:::
-
-<!--- --------------------------------- -->
-
-### 1.1
-
-::: {.question data-latex=""}
-
-Which of the four matrices $M^{a_i}_{a_j}$ on the left corresponds to which pair of arcs $a_i$, $a_j$?
-
-:::
-
-#### {.tabset}
-
-##### Hide
-
-##### Solution
-
-::: {.answer data-latex=""}
-
-a. $M^{a_2,a_3}$
-b. $M^{a_2,a_4}$
-c. $M^{a_1,a_4}$
-d. $M^{a_1,a_3}$
-
-:::
-
-#### {-}
-
-<!--- --------------------------------- -->
-
-### 1.2
-
-::: {.question data-latex=""}
-
-Calculate the missing values (shaded in grey) of the $M^{a_i}_{a_j}$ matrices and also calculate the values of the $F$
-
-:::
-
-#### {.tabset}
-
-##### Hide
-
-##### Solution
-
-::: {.answer data-latex=""}
-
-```{r, include=knitr::is_html_output(), echo=FALSE,  fig.align='center', out.width='75%'}
-knitr::include_graphics("assets/figures/exercise-sheet-6/e2-3.svg")
-```
-
-:::
-
-#### {-}
-
-<!--- --------------------------------- -->
-
-# Exercise 3
-
-<!--- --------------------------------- -->
-
-::: {.question data-latex=""}
-
-After having calculated the matrices $M^{a_i}_{a_j}$ we compute the matrix containing the alignment of all prefixes of the entire sequences.
-Technically, this is a matrix $M^{a_i}_{a_j}$ for some imaginary base pairs $a_i=(0,9)$ and $a_j=(0,9)$.
-
-This matrix is given as:
-
-```{r, include=knitr::is_html_output(), echo=FALSE,  fig.align='center', out.width='60%'}
-knitr::include_graphics("assets/figures/exercise-sheet-6/e3-1.svg")
-```
-
-A part of the final backtrace is also already given by the arrows in the matrix.
-Give the missing part of the backtrace and also the alignment corresponding to the backtrace!
-
-:::
-
-#### {.tabset}
-
-##### Hide
-
-##### Solution
-
-::: {.answer data-latex=""}
-
-Traceback:
-
-```{r, include=knitr::is_html_output(), echo=FALSE,  fig.align='center', out.width='60%'}
-knitr::include_graphics("assets/figures/exercise-sheet-6/e3-2.svg")
-```
-
-Alignment:
-
-```{r, include=knitr::is_html_output(), echo=FALSE,  fig.align='center', out.width='40%'}
-knitr::include_graphics("assets/figures/exercise-sheet-6/e3-3.svg")
-```
-
-:::
-
-#### {-}
-
-<!--- --------------------------------- -->

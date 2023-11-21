@@ -1,0 +1,181 @@
+---
+title: "Exercise sheet 10: RNA-RNA interaction - Seeds"
+---
+
+---------------------------------
+
+The following assignments should be solved using the tool `IntaRNA`.
+As some advanced `IntaRNA` options are required, you will need to install the tool locally.
+There are several ways of installing `IntaRNA` locally (conda, docker, binaries, etc...).
+
+Please follow the instructions suitable for your operating system on [GitHub](https://github.com/BackofenLab/IntaRNA/#installation).
+
+Additionally, you will need to download the <a href="https://raw.githubusercontent.com/BackofenLab/V_RNA-pages/main/assets/misc/query.fa" download="query.fa">query.fa</a> and <a href="https://raw.githubusercontent.com/BackofenLab/V_RNA-pages/main/assets/misc/target.fa" download="target.fa">target.fa</a> files.
+These files contain the sequences used for RNA-RNA interaction prediction.
+
+---------------------------------
+
+# Exercise 1 - Hybridization versus Accessibility
+
+<!--- --------------------------------- -->
+
+::: {.question data-latex=""}
+
+Use `IntaRNA` to predict an interaction between the query and the target sequences given within the `FASTA` file.
+
+1. Use hybridization energy only.
+2. Use the accessibility-based model.
+
+<!--- --------------------------------- -->
+
+i. What differences do you observe when using both models?
+ii. Compare the interaction energies for your results. What do you observe?
+
+:::
+
+#### {.tabset}
+
+##### Hide
+
+##### Hint 1 - Parameters
+
+::: {.answer data-latex=""}
+
+To see the available input parameters use the `--help` (`-h`) or `--fullhelp` options.
+
+:::
+
+##### Hint 2 - Function calls
+
+::: {.answer data-latex=""}
+
+Hybridization:
+
+``IntaRNA -q query.fa -t target.fa --acc=N``
+
+Accessibility:
+
+``IntaRNA -q query.fa -t target.fa``
+
+:::
+
+##### Solution
+
+::: {.answer data-latex=""}
+
+i. When only considering hybridization minimization, the resulting RNA-RNA interaction (RRI) prediction consists of several intermolecular stackings and the interaction region is very long.
+On the other hand, if we additionally consider the accessibility of the interaction region, the resulting prediction consists of only one (or a few) stable intermolecular base pair stackings.
+
+ii. When comparing the interaction energies, the energy for the hybridization-only mode is much lower than the accessibility-based one.
+The longer the resulting interaction, the lower the energy of $E_{hybrid}$ and thus the more stable the model.
+The hybridization approach ignores the potentially necessary dissolving of intramolecular base pairs.
+This dissolving of intramolecular base pairs is considered in the accessibility-based approach by adding ED (positive) values.
+If we would take the long interaction result of the hybridization approach and evaluate it using the accessibility-based approach, we would end up with the same $E_{hybrid}$.
+But the ED terms would be very high, thus leading to an overall higher energy $E$ compared to the result from the accessibility based approach.
+The accessibility-based approach looks for the optimal trade-off between $E_{hybrid}$ and ED values, leading to an overall better (and biologically more realistic) result.
+In other words, the energy $E$ would be overall higher, but the resulting interaction would be more reasonable as it takes into account intramolecular base pairing.
+
+:::
+
+#### {-}
+
+<!--- --------------------------------- -->
+
+# Exercise 2 - Seed constraints
+
+<!--- --------------------------------- -->
+
+::: {.question data-latex=""}
+
+We want to investigate the effect of using seed constraints in RNA-RNA interaction prediction.
+Change the output of `IntaRNA` to `CSV` format and increase the number of sub-optimal predictions that should be returned.
+Additionally, make sure that you use the exact prediction mode.
+
+Using the two sequences from before, try out the following seed constraints:
+
+1. No seed constraints
+2. Different seed lengths between 2-10 base pairs
+
+<!--- --------------------------------- -->
+
+i. Compare the predicted interactions to each-other
+ii. Compare the runtime of the different settings
+iii. Compare the number of suboptimal interactions produced by the different settings
+
+:::
+
+#### {.tabset}
+
+##### Hide
+
+##### Hint 1 - Parameters
+
+::: {.answer data-latex=""}
+
+To see the available input parameters use the `--help` (`-h`) or `--fullhelp` options.
+
+:::
+
+##### Hint 2 - Function calls
+
+::: {.answer data-latex=""}
+
+Testing several seed lengths:
+
+```
+IntaRNA -q query.fa -t target.fa --mode M --noSeed
+IntaRNA -q query.fa -t target.fa --mode M --seedBP 2
+IntaRNA -q query.fa -t target.fa --mode M --seedBP 4
+IntaRNA -q query.fa -t target.fa --mode M --seedBP 7
+IntaRNA -q query.fa -t target.fa --mode M --seedBP 9
+```
+
+Counting the resulting sub-optimal sequences:
+
+```
+IntaRNA -q query.fa -t target.fa --mode M --noSeed --outMode C -n 1000 | tail +2 | wc -l
+IntaRNA -q query.fa -t target.fa --mode M --seedBP 2 --outMode C -n 1000 | tail +2 | wc -l
+IntaRNA -q query.fa -t target.fa --mode M --seedBP 4 --outMode C -n 1000 | tail +2 | wc -l
+IntaRNA -q query.fa -t target.fa --mode M --seedBP 7 --outMode C -n 1000 | tail +2 | wc -l
+IntaRNA -q query.fa -t target.fa --mode M --seedBP 9 --outMode C -n 1000 | tail +2 | wc -l
+```
+
+Check the runtime:
+
+```
+time IntaRNA -q query.fa -t target.fa --mode M --noSeed --outMode C -n 1000 | wc -l
+time IntaRNA -q query.fa -t target.fa --mode M --seedBP 2 --outMode C -n 1000 | wc -l
+```
+
+You can additionally add `--outDeltaE 1` to restrict the values of sub-optimal interaction energies accepted in the output.
+
+
+:::
+
+##### Solution
+
+::: {.answer data-latex=""}
+
+Observation 1:
+
+Counting the number of suboptimal interactions shows the concept of using a seed will reduce the runtime. `--noSeed` results in the highest amount of sub-optimal interaction preditions
+Using a larger seed reduces the amount of possible interactions, thus reducing the search-space and the runtime of `IntaRNA`.
+If the seed becomes too large, no feasible interactions will be found anymore with an energy value $< 0$.
+
+Observation 2:
+
+We have seen in the lecture that in the biological process starts by forming a stable seed interaction which is then extended into a longer more stable interaction (e.g. sRNA or miRNA interaction).
+Therefore, using a seed can help to remove some of the biologically less likely sub-optimal interactions.
+
+Observation 3:
+
+Comparing interaction predictions resulting from using seeds of length $2$ and $4$ shows that some short interactions may not sum up to an energy value below $0$, and are therefore not predicted.
+Thus we sometimes observe less sequences for very low seed lengths.
+The higher the initial seed length is set, the fewer interactions are predicted as fewer interactions are possible.
+
+
+:::
+
+#### {-}
+
+<!--- --------------------------------- -->

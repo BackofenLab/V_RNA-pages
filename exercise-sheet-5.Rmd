@@ -1,5 +1,5 @@
 ---
-title: "Exercise sheet 5: Sankoff algorithm"
+title: "Exercise sheet 5: RNAalifold"
 ---
 
 
@@ -11,91 +11,97 @@ title: "Exercise sheet 5: Sankoff algorithm"
 
 ::: {.question data-latex=""}
 
-The Sankoff algorithm is obtained from the Zuker recursions by raising them from folding one sub-sequence to folding two sub-sequences.
-Furthermore, it adds the edit distance.
-Develop asimpler version of Sankoff that is obtained by starting the same construction from the simpler, but less efficient, form of the Zuker recursions
+Extend the given Zuker recursions towards the folding of an alignment of K sequences similar to RNAalifold.
 
+For the matrix $W$, define for $i+m \leq j$
 $$
-C(i,j) = \min_{1 \leq k \leq 4} \left( \min_{s \text{ is a $k$-loop closed by } (i,j)} \left\{ e(s) + \sum_{(p,q) \text{ accessible in $s$ from } (i,j)} C(p,q) \right\} \right)
-$$
-
-with the initial conditions $C(i,i) = \infty$, and
-
-$$
-F(i,j) = \min_{ C(i,j), min_{i \leq h < j} \left[ F(i,h) + F(h+1,j) \right]}
+   W_{ij} = 0
 $$
 
-with the initial conditions $F(i,i) = 0$.
-
-Furthermore, you can neglect the edit distance contribution.
-Make sure that your algorithm still has the same structural restrictions as the Sankoff algorithm,
-i.e. each hairpin is aligned to a hairpin,
-each multiloop is aligned to a corresponding multiloop and each 2-loop (including stackings and bulges) is aligned to at most one other 2-loop.
-
-:::
-
-<!--- --------------------------------- -->
-
-### 1.1
-
-::: {.question data-latex=""}
-
-Generate respective recursion depictions for the translation of $C$ and $F$ into a Sankoff-style algorithm.
-
-:::
-
-#### {.tabset}
-
-##### Hide
-
-##### Solution
-
-::: {.answer data-latex=""}
-
-Decomposition into hairpin and interior case analogously to original Sankoff plus two explicit multi-loop cases for $k=3$ and $k=4$.
+and $i+m<j$
 
 $$
-  C(i_{1},j_{1},i_{2},j_{2}) = \min
+  W_{ij} = \min
   \begin{cases}
-    e(s_{1}) + e(s_{2}); & \text{where \(s_{1}, s_{2}\) are hairpin closing base pairs} (i_{1}, j_{1})(i_{2},j_{2}) \\
-    \min_{p_{1},q_{1},p_{2},q_{2}} \{e(s_{1}) + e(s_{2}) + C(p_{1},q_{1},p_{2},q_{2})\}; & \\
-    \min_{k > 2} \{e(s_{1}) + e(s_{2}) + \sum_{l=1}^{k-1} C(p_{1}^{l},q_{1}^{l},p_{2}^{l},q_{2}^{l})\} & \\
+    W_{i{j-1}}\\
+    W_{i+1{j}}\\
+    V_{ij}\\
   \end{cases}
 $$
 
-$$
-\text{where in the second case, \( s_{1}, s_{2} \) are 2-loops enclosed by \( i_{1},j_{1},i_{2},j_{2} \) with \( pq \) accessible.}
-$$
-
-
-```{r, include=knitr::is_html_output(), echo=FALSE,  fig.align='center', out.width='50%'}
-knitr::include_graphics("assets/figures/exercise-sheet-5/e1-1.jpeg")
-```
+For the matrix $V$, define for $i+m \leq j$
 
 $$
-  F(i_{1},j_{1},i_{2},j_{2}) = \min
+  V_{ij} = \infty
+$$
+
+and $i+m<j$
+
+$$
+  V_{ij} = \min
   \begin{cases}
-    C(i_{1},j_{1};i_{2},j_{2})\\
-    min_{\substack{i_{1}\leq h_{1} \leq j_{1} \\ i_{2}\leq h_{2} \leq j_{2}}} \{F(i_{1},h_{1}; i_{2},h_{2}) +  F(h_{1}+1, j_{1}; h_{2}+1, j_{2})\}\\
+    eH(i,j)\\
+    V_{i+1{j-1}} + eS(i,j)\\
+    min_{i<i^{'}<j^{'}<j}V_{i^{'}{j^{'}}}+eL(i,j,i^{'},j^{'})\\
   \end{cases}
 $$
 
-```{r, include=knitr::is_html_output(), echo=FALSE,  fig.align='center', out.width='50%'}
-knitr::include_graphics("assets/figures/exercise-sheet-5/e1-2.jpeg")
+:::
+
+#### {.tabset}
+
+##### Hide
+
+##### Solution
+
+::: {.answer data-latex=""}
+
+- adding conservation score $\gamma$, weight $\beta$ and sum that loops over all k sequences of the alignment.
+
+$$
+   V_{ij} = \beta \gamma (ij) + \min
+   \begin{cases}
+     \sum_{1 \leq l \leq K} eH(i,j, S_{l})\\
+     V_{i+1{j-1}} + \sum_{1 \leq l \leq K} eS(i,j, S_{l})\\
+     min_{i<i^{'}<j^{'}<j}V_{i^{'}{j^{'}}}+ \sum_{1 \leq l \leq K} eL(i,j,i^{'},j^{'}, S_{l})\\
+   \end{cases}
+$$
+
+:::
+
+#### {-}
+
+<!--- --------------------------------- -->
+
+# Exercise 2
+
+<!--- --------------------------------- -->
+
+Consider the following alignment that is used as input for RNAalifold. No minimal loop length is given.
+
+```
+AAGUUUCG
+AAGCUUCG
+AAC-AUG-
 ```
 
-:::
-
-#### {-}
-
 <!--- --------------------------------- -->
 
-### 1.2
+### 2.1
 
 ::: {.question data-latex=""}
 
-What is the general complexity?
-What is the complexity without an upper bound for $k$?
+Compute the following conservation scores.
+
+$$
+\begin{align*}
+  \gamma(1,6) &= \\
+  \gamma(2,5) &= \\
+  \gamma(3,7) &= \\
+  \gamma(4,8) &= \\
+  \gamma(7,8) &=
+\end{align*}
+$$
 
 :::
 
@@ -107,13 +113,15 @@ What is the complexity without an upper bound for $k$?
 
 ::: {.answer data-latex=""}
 
-here:
-
-$O(n^4)*O(n^{4*3}) = O(n^{16})$
-
-without upper bound on $k$:
-
-$O(n^{4(k-1)+4})$ or $O(n^{4*k})$
+\[
+\begin{align*}
+  \gamma(1,6)&= -[0+0+0] + \delta(0+0+0) = 0\\
+  \gamma(2,5)&= -[0+0+0] + \delta(0+0+1) = \delta\\
+  \gamma(3,7)&= -[0+2+2] + \delta(0+0+0) = -4\\
+  \gamma(4,8)&= -[1+0+0] + \delta(0+0+0.25) = -1+0.25\delta\\
+  \gamma(7,8)&= -[0+0+0] + \delta(0+0+1) = \delta
+\end{align*}
+\]
 
 :::
 
@@ -121,11 +129,11 @@ $O(n^{4(k-1)+4})$ or $O(n^{4*k})$
 
 <!--- --------------------------------- -->
 
-### 1.3
+### 2.2
 
 ::: {.question data-latex=""}
 
-What is the effect of omitting the edit distance contribution?
+Why is $\gamma(3,7) < \gamma(1,6)$?
 
 :::
 
@@ -137,9 +145,7 @@ What is the effect of omitting the edit distance contribution?
 
 ::: {.answer data-latex=""}
 
-We only do simultaneous folding (mfe minimization) with helix alignment (since no sequence alignment contributions);
-no penalties for helix-length differences (since we do not score sequence similarity or indel gaps);
-Eventually, we find the best common structure shape, but sequence similarity of the respective alignment can be very bad (i.e. evolutionary unlikely).
+$\gamma(3,7)$ is smaller because of the covariation term. The base pair GC has been mutated into the base pair CG. This is a change in the sequence but not in the secondary structure.
 
 :::
 
@@ -147,12 +153,11 @@ Eventually, we find the best common structure shape, but sequence similarity of 
 
 <!--- --------------------------------- -->
 
-### 1.4
+### 2.3
 
 ::: {.question data-latex=""}
 
-Assume the derived recursion would incorporate sequence editing scores analogously to the original Sankoff approach via a respective matrix $D$.
-What happens, if we apply very high gap scores within $D$?
+What is the intuition of the covariation and penalty terms in the conservation scores?
 
 :::
 
@@ -164,11 +169,10 @@ What happens, if we apply very high gap scores within $D$?
 
 ::: {.answer data-latex=""}
 
-Almost everything is aligned (matched or mismatched) and thus helix lengths should be very similar (interior loop indel less likely), ie overall it becomes a gap minimization problem and simultaneous folding becomes a 'second level objective'.
+The intuition for the covariation term is to favour structures that have been maintained although the sequence has been mutated. The penalty term favours base pairs since it penalizes gaps and unpaired bases.
 
 :::
 
 #### {-}
 
 <!--- --------------------------------- -->
-

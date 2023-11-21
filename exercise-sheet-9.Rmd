@@ -1,35 +1,37 @@
 ---
-title: "Exercise sheet 9: RNA-RNA interaction - Seeds"
+title: "Exercise sheet 9: RNA-RNA interaction"
 ---
 
----------------------------------
-
-The following assignments should be solved using the tool `IntaRNA`.
-As some advanced `IntaRNA` options are required, you will need to install the tool locally.
-There are several ways of installing `IntaRNA` locally (conda, docker, binaries, etc...).
-
-Please follow the instructions suitable for your operating system on [GitHub](https://github.com/BackofenLab/IntaRNA/#installation).
-
-Additionally, you will need to download the <a href="https://raw.githubusercontent.com/BackofenLab/V_RNA-pages/main/assets/misc/query.fa" download="query.fa">query.fa</a> and <a href="https://raw.githubusercontent.com/BackofenLab/V_RNA-pages/main/assets/misc/target.fa" download="target.fa">target.fa</a> files.
-These files contain the sequences used for RNA-RNA interaction prediction.
 
 ---------------------------------
 
-# Exercise 1 - Hybridization versus Accessibility
+# Exercise 1 - Double-site accessibility-based RRI prediction
 
 <!--- --------------------------------- -->
 
 ::: {.question data-latex=""}
 
-Use `IntaRNA` to predict an interaction between the query and the target sequences given within the `FASTA` file.
+So far, we discussed only how to predict via accessibility-based approaches a single RRI site where the respective subsequences are free of base pairing.
 
-1. Use hybridization energy only.
-2. Use the accessibility-based model.
+Consider now the following steps of a meta approach that predicts and combines two independent sites.
 
-<!--- --------------------------------- -->
+1. RRI prediction of first (most stable) RRI $B_1$
+2. constraint RRI prediction of second RRI $B_2$, where the subsequences involved in $B_1$ are constraint to be unpaired
+3. combine $B_1$ and $B_2$ into one prediction
 
-i. What differences do you observe when using both models?
-ii. Compare the interaction energies for your results. What do you observe?
+Note, step $1$ and $2$ are using different ED value, since step $2$ is a constraint prediction also requiring a constraint ED-value computation.
+In the following, we refer to them via $ED(B_1)$ and $ED(B_2 \mid B_1)$. Similarly, we denote respective energy $E$ and hybridization energy $E_{hyp}$ terms.
+
+In step $3$, we are combining both sets of inter-molecular base pairs into one RRI, while keeping track of the respective blocks $B_1$ and $B_2$.
+Given that, we propose that the overall energy of RRI can be approximated as follows:
+
+$$
+\begin{equation}
+E(B_1 \land B_2) = E(B_1) + E(B_2\mid B_1)
+\end{equation}
+$$
+
+Prove the equation above by converting one side of the equation into the other side.
 
 :::
 
@@ -37,43 +39,33 @@ ii. Compare the interaction energies for your results. What do you observe?
 
 ##### Hide
 
-##### Hint 1 - Parameters
-
-::: {.answer data-latex=""}
-
-To see the available input parameters use the `--help` (`-h`) or `--fullhelp` options.
-
-:::
-
-##### Hint 2 - Function calls
-
-::: {.answer data-latex=""}
-
-Hybridization:
-
-``IntaRNA -q query.fa -t target.fa --acc=N``
-
-Accessibility:
-
-``IntaRNA -q query.fa -t target.fa``
-
-:::
-
 ##### Solution
 
 ::: {.answer data-latex=""}
 
-i. When only considering hybridization minimization, the resulting RNA-RNA interaction (RRI) prediction consists of several intermolecular stackings and the interaction region is very long.
-On the other hand, if we additionally consider the accessibility of the interaction region, the resulting prediction consists of only one (or a few) stable intermolecular base pair stackings.
+$$
+\begin{aligned}
+	E(B_1) + E(B_2\mid B_1)
+	&= E_{hyb}(B_1) + ED(B_1)
+	 + E_{hyb}( B_2 | B_1 )+ ED(B_2 | B_1) && \text{(i)} \\
+	&= E_{hyb}(B_1) - RTlog(\mathcal{P}^u(B_1))
+	 + E_{hyb}(B_2 | B_1) - RTlog(\mathcal{P}^u(B_2 | B_1))  && \text{(ii)}\\
+	&= E_{hyb}(B_1)  + E_{hyb}(B_2 | B_1)
+	 - RTlog(\mathcal{P}^u(B_1) * \mathcal{P}^u(B_2 | B_1))  && \text{(iii)}\\
+	 %\label{eqRight}
+	 &= E_{hyb}(B_1)+E_{hyb}(B_2)-RTlog(\mathcal{P}^u(B_1 \land B_2))  && \text{(iv)}\\
+	 &= E_{hyb}(B_1 \land B_2) + ED(B_1 \land B_2)  && \text{(v)}\\
+	 &= E(B_1 \land B_2)  && \\
+\end{aligned}
+$$
 
-ii. When comparing the interaction energies, the energy for the hybridization-only mode is much lower than the accessibility-based one.
-The longer the resulting interaction, the lower the energy of $E_{hybrid}$ and thus the more stable the model.
-The hybridization approach ignores the potentially necessary dissolving of intramolecular base pairs.
-This dissolving of intramolecular base pairs is considered in the accessibility-based approach by adding ED (positive) values.
-If we would take the long interaction result of the hybridization approach and evaluate it using the accessibility-based approach, we would end up with the same $E_{hybrid}$.
-But the ED terms would be very high, thus leading to an overall higher energy $E$ compared to the result from the accessibility based approach.
-The accessibility-based approach looks for the optimal trade-off between $E_{hybrid}$ and ED values, leading to an overall better (and biologically more realistic) result.
-In other words, the energy $E$ would be overall higher, but the resulting interaction would be more reasonable as it takes into account intramolecular base pairing.
+To show that the equality holds, we used the following tricks to reformulate the left side of the equation into the right side:
+
+i. The mfe ($E$) can be calculated using $E = E_{hyb} + ED$
+ii. We know that we can compute the ED value for sub-sequence $a \cdots b$ by the unpaired probability $ED= -RTlog(\mathcal{P}^u(ab))$
+iii. Due to independence of hybridization energies of sites we can use $E_{hyb}(B_2 | B_1)=E_{hyb}(B_2)$, and we can use: $log(a) + log(b) = log(a*b)$
+iv. We can use the conditional probability: $P(A \land B) = P(A) * P(B |A)$
+v. $ED= -RTlog(\mathcal{P}^u(ab))$
 
 :::
 
@@ -81,26 +73,14 @@ In other words, the energy $E$ would be overall higher, but the resulting intera
 
 <!--- --------------------------------- -->
 
-# Exercise 2 - Seed constraints
+# Exercise 2 - Problems and drawbacks
 
 <!--- --------------------------------- -->
 
 ::: {.question data-latex=""}
 
-We want to investigate the effect of using seed constraints in RNA-RNA interaction prediction.
-Change the output of `IntaRNA` to `CSV` format and increase the number of sub-optimal predictions that should be returned.
-Additionally, make sure that you use the exact prediction mode.
-
-Using the two sequences from before, try out the following seed constraints:
-
-1. No seed constraints
-2. Different seed lengths between 2-10 base pairs
-
-<!--- --------------------------------- -->
-
-i. Compare the predicted interactions to each-other
-ii. Compare the runtime of the different settings
-iii. Compare the number of suboptimal interactions produced by the different settings
+Is the predicted double-site RRI based on the previous question the optimal prediction?
+What problems, side effects and special situations are not covered?
 
 :::
 
@@ -108,71 +88,13 @@ iii. Compare the number of suboptimal interactions produced by the different set
 
 ##### Hide
 
-##### Hint 1 - Parameters
-
-::: {.answer data-latex=""}
-
-To see the available input parameters use the `--help` (`-h`) or `--fullhelp` options.
-
-:::
-
-##### Hint 2 - Function calls
-
-::: {.answer data-latex=""}
-
-Testing several seed lengths:
-
-```
-IntaRNA -q query.fa -t target.fa --mode M --noSeed
-IntaRNA -q query.fa -t target.fa --mode M --seedBP 2
-IntaRNA -q query.fa -t target.fa --mode M --seedBP 4
-IntaRNA -q query.fa -t target.fa --mode M --seedBP 7
-IntaRNA -q query.fa -t target.fa --mode M --seedBP 9
-```
-
-Counting the resulting sub-optimal sequences:
-
-```
-IntaRNA -q query.fa -t target.fa --mode M --noSeed --outMode C -n 1000 | tail +2 | wc -l
-IntaRNA -q query.fa -t target.fa --mode M --seedBP 2 --outMode C -n 1000 | tail +2 | wc -l
-IntaRNA -q query.fa -t target.fa --mode M --seedBP 4 --outMode C -n 1000 | tail +2 | wc -l
-IntaRNA -q query.fa -t target.fa --mode M --seedBP 7 --outMode C -n 1000 | tail +2 | wc -l
-IntaRNA -q query.fa -t target.fa --mode M --seedBP 9 --outMode C -n 1000 | tail +2 | wc -l
-```
-
-Check the runtime:
-
-```
-time IntaRNA -q query.fa -t target.fa --mode M --noSeed --outMode C -n 1000 | wc -l
-time IntaRNA -q query.fa -t target.fa --mode M --seedBP 2 --outMode C -n 1000 | wc -l
-```
-
-You can additionally add `--outDeltaE 1` to restrict the values of sub-optimal interaction energies accepted in the output.
-
-
-:::
-
 ##### Solution
 
 ::: {.answer data-latex=""}
 
-Observation 1:
-
-Counting the number of suboptimal interactions shows the concept of using a seed will reduce the runtime. `--noSeed` results in the highest amount of sub-optimal interaction preditions
-Using a larger seed reduces the amount of possible interactions, thus reducing the search-space and the runtime of `IntaRNA`.
-If the seed becomes too large, no feasible interactions will be found anymore with an energy value $< 0$.
-
-Observation 2:
-
-We have seen in the lecture that in the biological process starts by forming a stable seed interaction which is then extended into a longer more stable interaction (e.g. sRNA or miRNA interaction).
-Therefore, using a seed can help to remove some of the biologically less likely sub-optimal interactions.
-
-Observation 3:
-
-Comparing interaction predictions resulting from using seeds of length $2$ and $4$ shows that some short interactions may not sum up to an energy value below $0$, and are therefore not predicted.
-Thus we sometimes observe less sequences for very low seed lengths.
-The higher the initial seed length is set, the fewer interactions are predicted as fewer interactions are possible.
-
+i. more than two sites
+ii. ED of $B_1$ can change when conditional $B_2$ is formed, thus we have to iterate constraint predictions until ED is not changing any more
+iii. combination of sites might be sterically not feasible in reality
 
 :::
 
