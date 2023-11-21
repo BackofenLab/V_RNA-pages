@@ -12,11 +12,9 @@ We specify a new dynamic programming algorithm -- a simplified variant of the Zu
 The algorithm is specified by the following two recursion equations.
 As in the definition of the Zuker algorithm, we use functions $eH$, $eS$, $eL$ for loop energy contributions.
 
-For the matrix $W$, define for $i+m \leq j$
+For the matrix $W$, define for $i+m < j$:
 
-  $W_{ij} = 0$
-
-and $i+m<j$
+Init: $W_{ij} = 0$, with $i+m\reqj$ and i \leq j
 
 $$
   W_{ij} = \min
@@ -27,11 +25,9 @@ $$
   \end{cases}
 $$
 
-For the matrix $V$, define for $i+m \leq j$
+For the matrix $V$, define for $i+m < j$:
 
-  $V_{ij} = \infty$
-
-and $i+m<j$
+Init: $V_{ij} = \infty$, with $i+m\reqj$ and i \leq j
 
 $$
   V_{ij} = \min

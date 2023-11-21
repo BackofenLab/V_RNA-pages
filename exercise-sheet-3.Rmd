@@ -44,7 +44,7 @@ Compute the entropy of the probability distribution $p(1) = \frac{1}{2},\, p(2) 
 
 ::: {.answer data-latex=""}
 
-Compute the expected value of the information of the radome variable $E[I(X)]$ or entropy $H(X)$ as described above. 
+Compute the expected value of the information of the random variable $E[I(X)]$ or entropy $H(X)$ as described above.
 
 :::
 
@@ -112,7 +112,7 @@ How can you explain the difference in entropy for both probability distributions
 
 ::: {.answer data-latex=""}
 
-Which of the two probability distributions has the higher information content, because you know more about an event before an event happened? 
+Which of the two probability distributions has the higher information content, because you know more about an event before an event happened?
 
 :::
 
@@ -130,62 +130,7 @@ This results in a higher entropy for the probability distribution in part 2..
 
 <!--- --------------------------------- -->
 
-# Exercise 2 - true or false?
-
-<!--- --------------------------------- -->
-
-Consider some sequence $S$ with a set of possible structures
-$\cal{P}$ and partition function $Z$. Furthermore, let for each
-structure $P\in\mathcal{P}$ denote that $Pr[P]$ is the probability that $S$ forms
-structure $P$.
-
-Which of the following statements are true?
-
-::: {.question data-latex=""}
-
-- [ ] &nbsp; $Z$ is the maximum of the Boltzmann weights of all structures $P\in\mathcal{P}$ of $S$.
-- [ ] &nbsp; $Z$ is the average of the Boltzmann weights of all structures $P\in\mathcal{P}$ of $S$.
-- [ ] &nbsp; $Z$ is the sum of the Boltzmann weights of all structures $P\in\mathcal{P}$ of $S$.
-- [ ] &nbsp; $Z$ is the minimum of the Boltzmann weights of all structures $P\in\mathcal{P}$ of $S$.
-- [ ] &nbsp; The sum of the Boltzmann weights of all structures $P\in\mathcal{P}$ is one.
-- [ ] &nbsp; The sum of the probabilities $Pr[P]$ of all structures $P\in\mathcal{P}$ is one.
-- [ ] &nbsp; The Boltzmann weight of a structures $P\in\mathcal{P}$ depends on the temperature.
-- [ ] &nbsp; The probability $Pr[P]$ of a structures $P\in\mathcal{P}$ depends on the temperature.
-- [ ] &nbsp; The Boltzmann weight of the MFE structure of $S$ is the maximum among the Boltzmann weights of all structures $P\in\mathcal{P}$.
-
-:::
-
-#### {.tabset}
-
-##### Hide
-
-##### Solution
-
-::: {.answer data-latex=""}
-
-- [ ] &nbsp; $Z$ is the maximum of the Boltzmann weights of all structures $P\in\mathcal{P}$ of $S$.
-- [ ] &nbsp; $Z$ is the average of the Boltzmann weights of all structures $P\in\mathcal{P}$ of $S$.
-- [x] &nbsp; $Z$ is the sum of the Boltzmann weights of all structures $P\in\mathcal{P}$ of $S$.
-- [ ] &nbsp; $Z$ is the minimum of the Boltzmann weights of all structures $P\in\mathcal{P}$ of $S$.
-- [ ] &nbsp; The sum of the Boltzmann weights of all structures $P\in\mathcal{P}$ is one.
-- [x] &nbsp; The sum of the probabilities $Pr[P]$ of all structures $P\in\mathcal{P}$ is one.
-- [x] &nbsp; The Boltzmann weight of a structures $P\in\mathcal{P}$ depends on the temperature.
-- [x] &nbsp; The probability $Pr[P]$ of a structures $P\in\mathcal{P}$ depends on the temperature.
-$$
- Pr[P \mid T] = \frac{\exp(-E(P)/RT)}{\sum_{P'}\exp(-E(P)/RT)}
- \neq
- \frac{\exp(-E(P)/R(T+\Delta))}{\sum_{P'}\exp(-E(P)/R(T+\Delta))} =
- Pr[P\mid T+\Delta]
-$$
-- [x] &nbsp; The Boltzmann weight of the MFE structure of $S$ is the maximum among the Boltzmann weights of all structures $P\in\mathcal{P}$.
-
-:::
-
-#### {-}
-
-<!--- --------------------------------- -->
-
-# Exercise 3 - partition function
+# Exercise 2 - partition function
 
 <!--- --------------------------------- -->
 
@@ -208,7 +153,7 @@ index_replace(sij_ft)
 
 <!--- --------------------------------- -->
 
-### 3.1
+### 2.1
 
 ::: {.question data-latex=""}
 
@@ -224,7 +169,7 @@ Compute $Z$ via exhaustive structure space enumeration. (using the provided Bolt
 
 ::: {.answer data-latex=""}
 
-To compute Z you need to know all possible structures. 
+To compute Z you need to know all possible structures.
 
 :::
 
@@ -245,7 +190,7 @@ index_replace(sij_ft)
 
 <!--- --------------------------------- -->
 
-### 3.2
+### 2.2
 
 ::: {.question data-latex=""}
 
@@ -257,7 +202,7 @@ Compute the structure probability of all structures.
 
 ##### Hide
 
-##### Hint
+##### Formula
 
 ::: {.answer data-latex=""}
 $$ Pr[P|S] = \frac{\exp(-E(P)/RT)}{\sum_{P'}\exp(-E(P)/RT)} $$
@@ -281,7 +226,7 @@ index_replace(sij_ft)
 
 <!--- --------------------------------- -->
 
-### 3.3
+### 2.3
 
 ::: {.question data-latex=""}
 
@@ -305,7 +250,7 @@ The open chain is more likely than any other structure including the optimal str
 
 <!--- --------------------------------- -->
 
-### 3.4
+### 2.4
 
 ::: {.question data-latex=""}
 
@@ -319,7 +264,7 @@ Is this result expected?
 ##### Hint
 
 ::: {.answer data-latex=""}
-Base pairs usually stabilize a structure. 
+Base pairs usually stabilize a structure.
 
 :::
 
@@ -335,7 +280,7 @@ This is not expected, the open chain should not have a higher probability than t
 
 <!--- --------------------------------- -->
 
-### 3.5
+### 2.5
 
 ::: {.question data-latex=""}
 
@@ -350,7 +295,7 @@ If not how can you fix it? Test your idea by recalculating the structure probabi
 ##### Hint
 
 ::: {.answer data-latex=""}
-How can you ensure that the open chain gets the lowest Bolzman weight without changing the idea to score the number of base pairs for computing the energy of a structure?
+How can you ensure that the open chain gets the lowest Boltzmann weight without changing the idea of scoring the number of base pairs for computing the energy of a structure?
 
 :::
 
@@ -384,7 +329,7 @@ We can now search for the optimal structure by energy minimization and the mfe s
 
 <!--- --------------------------------- -->
 
-# Exercise 4 - Base pair and unpaired probabilities
+# Exercise 3 - Base pair and unpaired probabilities
 
 <!--- --------------------------------- -->
 
@@ -392,7 +337,7 @@ Given the corrected probabilities of the previous exercise for sequence `AUCACCG
 
 <!--- --------------------------------- -->
 
-### 4.1
+### 3.1
 
 ::: {.question data-latex=""}
 
@@ -404,7 +349,7 @@ Compute and visualize the base pair probabilities in a dot-plot using your corre
 
 ##### Hide
 
-##### Hint
+##### Formula
 
 ::: {.answer data-latex=""}
 Compute the base pair probabilities:
@@ -426,7 +371,7 @@ knitr::include_graphics("assets/figures/exercise-sheet-3/e4-1.png")
 
 <!--- --------------------------------- -->
 
-### 4.2
+### 3.2
 
 ::: {.question data-latex=""}
 
@@ -438,7 +383,7 @@ Compute the probability $P^u(4)$ and $P^u(5)$ to be unpaired at sequence positio
 
 ##### Hide
 
-##### Hint
+##### Formula
 
 ::: {.answer data-latex=""}
 $$ PR_{u}[(i,j)] = \frac{Z_{i,j}^u}{Z} $$
@@ -463,7 +408,7 @@ $$
 
 <!--- --------------------------------- -->
 
-### 4.3
+### 3.3
 
 ::: {.question data-latex=""}
 
@@ -474,6 +419,7 @@ Why can't we compute $P^u(4,5)$ from $P^u(4)$ and $P^u(5)$ using their product, 
 #### {.tabset}
 
 ##### Hide
+
 ##### Hint
 
 ::: {.answer data-latex=""}
