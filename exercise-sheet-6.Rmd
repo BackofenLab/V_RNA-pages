@@ -69,7 +69,7 @@ $$
 
 
 ```{r, include=knitr::is_html_output(), echo=FALSE,  fig.align='center', out.width='50%'}
-knitr::include_graphics("assets/figures/exercise-sheet-5/e1-1.jpeg")
+knitr::include_graphics("assets/figures/exercise-sheet-6/e1-1.jpeg")
 ```
 
 $$
@@ -81,7 +81,7 @@ $$
 $$
 
 ```{r, include=knitr::is_html_output(), echo=FALSE,  fig.align='center', out.width='50%'}
-knitr::include_graphics("assets/figures/exercise-sheet-5/e1-2.jpeg")
+knitr::include_graphics("assets/figures/exercise-sheet-6/e1-2.jpeg")
 ```
 
 :::
