@@ -12,14 +12,14 @@ title: "Exercise sheet 4: McCaskill"
 
 You are given the following matrix $C$ for sequence $S$ = `AUCCAU`:
 
-```{r, include=knitr::is_html_output(), echo=FALSE,  fig.align='center', out.width='50%'}
+```{r, include=knitr::is_html_output(), echo=FALSE,  fig.align='center', out.width='35%'}
 knitr::include_graphics("assets/figures/exercise-sheet-4/e1-1.svg")
 ```
 
 It was calculated using the following recursion:
 
 $$
-C_{i,j} = \textbf{1}(i,j) \cdot C_{i+1,j-1} * 1 + \sum_{i\leq k < j} C_{i,k} * C_{k+1,j}, with \textbf{1}(i,j) = \begin{cases} 1 & \text{if } S_{i} S_{j} \text{compl.} \\ 0 & \text{else} \end{cases}
+C_{i,j} = \textbf{1}(i,j) \cdot C_{i+1,j-1} * 1 + \sum_{i\leq k < j} C_{i,k} * C_{k+1,j}, \text{ with } \textbf{1}(i,j) = \begin{cases} 1 & \text{if } S_{i} S_{j} \text{ compl.} \\ 0 & \text{else} \end{cases}
 $$
 
 :::
@@ -44,7 +44,7 @@ Calculate the value of $C_{1,6}$. What does it represent?
 
 $C_{1,6}$ is the number of possible secondary structures for the sequence $S$.
 
-```{r, include=knitr::is_html_output(), echo=FALSE,  fig.align='center', out.width='50%'}
+```{r, include=knitr::is_html_output(), echo=FALSE,  fig.align='center', out.width='35%'}
 knitr::include_graphics("assets/figures/exercise-sheet-4/e1-1_sol.svg")
 ```
 
@@ -82,10 +82,10 @@ Several structures are counted multiple times.
 Recalculate the matrix $C$ using the following recursion:
 
 $$
-C_{i,j} = C_{i,j-1} + \sum\limit_{\substack{i \leq k < j \\ S_{k}, S_{j} \text{compl.}}} C_{i,k-1} * C_{k+1,j-1}
+C_{i,j} = C_{i,j-1} + \sum\lim_{\substack{i \leq k < j \\ S_{k}, S_{j} \text{ compl.}}} C_{i,k-1} * C_{k+1,j-1}
 $$
 
-```{r, include=knitr::is_html_output(), echo=FALSE,  fig.align='center', out.width='50%'}
+```{r, include=knitr::is_html_output(), echo=FALSE,  fig.align='center', out.width='35%'}
 knitr::include_graphics("assets/figures/exercise-sheet-4/e1-2.svg")
 ```
 
@@ -99,7 +99,7 @@ knitr::include_graphics("assets/figures/exercise-sheet-4/e1-2.svg")
 
 ::: {.answer data-latex=""}
 
-```{r, include=knitr::is_html_output(), echo=FALSE,  fig.align='center', out.width='50%'}
+```{r, include=knitr::is_html_output(), echo=FALSE,  fig.align='center', out.width='35%'}
 knitr::include_graphics("assets/figures/exercise-sheet-4/e1-2_sol.svg")
 ```
 
