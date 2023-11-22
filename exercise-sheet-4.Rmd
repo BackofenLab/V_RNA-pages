@@ -86,7 +86,7 @@ C_{i,j} = C_{i,j-1} + \sum\limit_{\substack{i \leq k < j \\ S_{k}, S_{j} \text{c
 $$
 
 ```{r, include=knitr::is_html_output(), echo=FALSE,  fig.align='center', out.width='50%'}
-knitr::include_graphics("assets/figures/exercise-sheet-4/e2-1.svg")
+knitr::include_graphics("assets/figures/exercise-sheet-4/e1-2.svg")
 ```
 
 :::
@@ -100,7 +100,7 @@ knitr::include_graphics("assets/figures/exercise-sheet-4/e2-1.svg")
 ::: {.answer data-latex=""}
 
 ```{r, include=knitr::is_html_output(), echo=FALSE,  fig.align='center', out.width='50%'}
-knitr::include_graphics("assets/figures/exercise-sheet-4/e2-1_sol.svg")
+knitr::include_graphics("assets/figures/exercise-sheet-4/e1-2_sol.svg")
 ```
 
 :::
