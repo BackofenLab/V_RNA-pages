@@ -13,7 +13,7 @@ title: "Exercise sheet 4: McCaskill"
 You are given the following matrix $C$ for sequence $S$ = `AUCCAU`:
 
 ```{r, include=knitr::is_html_output(), echo=FALSE,  fig.align='center', out.width='50%'}
-knitr::include_graphics("assets/figures/exercise-sheet-6/e1-1.svg")
+knitr::include_graphics("assets/figures/exercise-sheet-4/e1-1.svg")
 ```
 
 It was calculated using the following recursion:
@@ -45,7 +45,7 @@ Calculate the value of $C_{1,6}$. What does it represent?
 $C_{1,6}$ is the number of possible secondary structures for the sequence $S$.
 
 ```{r, include=knitr::is_html_output(), echo=FALSE,  fig.align='center', out.width='50%'}
-knitr::include_graphics("assets/figures/exercise-sheet-6/e1-1_sol.svg")
+knitr::include_graphics("assets/figures/exercise-sheet-4/e1-1_sol.svg")
 ```
 
 :::
@@ -86,7 +86,7 @@ C_{i,j} = C_{i,j-1} + \sum\limit_{\substack{i \leq k < j \\ S_{k}, S_{j} \text{c
 $$
 
 ```{r, include=knitr::is_html_output(), echo=FALSE,  fig.align='center', out.width='50%'}
-knitr::include_graphics("assets/figures/exercise-sheet-6/e2-1.svg")
+knitr::include_graphics("assets/figures/exercise-sheet-4/e2-1.svg")
 ```
 
 :::
@@ -100,7 +100,7 @@ knitr::include_graphics("assets/figures/exercise-sheet-6/e2-1.svg")
 ::: {.answer data-latex=""}
 
 ```{r, include=knitr::is_html_output(), echo=FALSE,  fig.align='center', out.width='50%'}
-knitr::include_graphics("assets/figures/exercise-sheet-6/e2-1_sol.svg")
+knitr::include_graphics("assets/figures/exercise-sheet-4/e2-1_sol.svg")
 ```
 
 :::
