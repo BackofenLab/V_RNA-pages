@@ -16,7 +16,7 @@ For the matrix $W$,
 
 Init: $W_{ij} = 0$, with $i+m\geq j$
 
-Recursion for entries W_{ij}, with $i+m < j$:
+Recursion for entries $W_{ij}$, with $i+m < j$:
 $$
   W_{ij} = \min
   \begin{cases}
