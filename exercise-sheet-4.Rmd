@@ -22,7 +22,7 @@ $$
 C_{i,j} = \textbf{1}(i,j) \cdot C_{i+1,j-1} \cdot 1 + \sum_{i\leq k < j} C_{i,k} \cdot C_{k+1,j}, \text{ with } \textbf{1}(i,j) = \begin{cases} 1 & \text{if } S_{i} S_{j} \text{ compl.} \\ 0 & \text{else} \end{cases}
 $$
 
-For the rest of this exercise, we will assume a **minimum loop length of 0**.
+We assume a **minimum loop length of 0**.
 
 :::
 
