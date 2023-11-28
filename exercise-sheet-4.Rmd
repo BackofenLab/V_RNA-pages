@@ -82,7 +82,7 @@ Several structures are counted multiple times.
 Recalculate the matrix $C$ using the following recursion:
 
 $$
-C_{i,j} = C_{i,j-1} + \sum\lim_{\substack{i \leq k < j \\ S_{k}, S_{j} \text{ compl.}}} C_{i,k-1} \cdot C_{k+1,j-1}
+C_{i,j} = C_{i,j-1} + \sum\limits_{\substack{i \leq k < j \\ S_{k}, S_{j} \text{ compl.}}} C_{i,k-1} \cdot C_{k+1,j-1}
 $$
 
 ```{r, include=knitr::is_html_output(), echo=FALSE,  fig.align='center', out.width='35%'}
