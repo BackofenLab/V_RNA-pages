@@ -19,7 +19,7 @@ knitr::include_graphics("assets/figures/exercise-sheet-4/e1-1.svg")
 It was calculated using the following recursion:
 
 $$
-C_{i,j} = \textbf{1}(i,j) \cdot C_{i+1,j-1} * 1 + \sum_{i\leq k < j} C_{i,k} * C_{k+1,j}, \text{ with } \textbf{1}(i,j) = \begin{cases} 1 & \text{if } S_{i} S_{j} \text{ compl.} \\ 0 & \text{else} \end{cases}
+C_{i,j} = \textbf{1}(i,j) \cdot C_{i+1,j-1} \cdot 1 + \sum_{i\leq k < j} C_{i,k} \cdot C_{k+1,j}, \text{ with } \textbf{1}(i,j) = \begin{cases} 1 & \text{if } S_{i} S_{j} \text{ compl.} \\ 0 & \text{else} \end{cases}
 $$
 
 :::
@@ -82,7 +82,7 @@ Several structures are counted multiple times.
 Recalculate the matrix $C$ using the following recursion:
 
 $$
-C_{i,j} = C_{i,j-1} + \sum\lim_{\substack{i \leq k < j \\ S_{k}, S_{j} \text{ compl.}}} C_{i,k-1} * C_{k+1,j-1}
+C_{i,j} = C_{i,j-1} + \sum\lim_{\substack{i \leq k < j \\ S_{k}, S_{j} \text{ compl.}}} C_{i,k-1} \cdot C_{k+1,j-1}
 $$
 
 ```{r, include=knitr::is_html_output(), echo=FALSE,  fig.align='center', out.width='35%'}
