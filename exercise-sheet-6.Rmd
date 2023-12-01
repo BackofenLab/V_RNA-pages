@@ -24,8 +24,8 @@ with the initial conditions $C(i,i) = \infty$, and
 $$
 F(i,j)= \min
  \begin{cases}
-  C(i,j) 
-  min_{i \leq h < j}\{ F(i,h) + F(h+1,j) \}\\
+  C(i,j) ,
+  min_{i \leq h < j}\[ F(i,h) + F(h+1,j) \]\\
  \end{cases}
 $$
 
