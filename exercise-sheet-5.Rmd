@@ -13,13 +13,11 @@ title: "Exercise sheet 5: RNAalifold"
 
 Extend the given Zuker recursions towards the folding of an alignment of K sequences similar to RNAalifold.
 
-For the matrix $W$, define for $i+m \leq j$
-$$
-   W_{ij} = 0
-$$
+For the matrix $W$,
 
-and $i+m<j$
+Init: $W_{ij} = 0$, with $i+m\geq j$
 
+Recursion for entries $W_{ij}$, with $i+m < j$:
 $$
   W_{ij} = \min
   \begin{cases}
@@ -29,20 +27,17 @@ $$
   \end{cases}
 $$
 
-For the matrix $V$, define for $i+m \leq j$
+For the matrix $V$:
 
-$$
-  V_{ij} = \infty
-$$
+Init: $V_{ij} = \infty$, with $i+m\geq j$ and $i \leq j$
 
-and $i+m<j$
-
+Recursion for entries $V_{ij}$, with $i+m < j$:
 $$
   V_{ij} = \min
   \begin{cases}
     eH(i,j)\\
     V_{i+1{j-1}} + eS(i,j)\\
-    min_{i<i^{'}<j^{'}<j}V_{i^{'}{j^{'}}}+eL(i,j,i^{'},j^{'})\\
+    min_{\substack{i<i^{'}<j^{'}<j,\\i^{'}-i+j-j^{'}>2}}V_{i^{'}{j^{'}}}+eL(i,j,i^{'},j^{'})\\
   \end{cases}
 $$
 
