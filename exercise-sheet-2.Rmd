@@ -28,7 +28,7 @@ $$
 
 For the matrix $V$:
 
-Init: $V_{ij} = \infty$, with $i+m\geq j$ and $i \leq j$
+Init: $V_{ij} = \infty$, with $i+m\geq j$
 
 Recursion for entries $V_{ij}$, with $i+m < j$:
 $$
