@@ -24,10 +24,11 @@ with the initial conditions $C(i,i) = \infty$, and
 $$
 F(i,j)= \min
  \begin{cases}
-  C(i,j) \end{cases}
-  min_{i \leq h < j} \left[ F(i,h) + F(h+1,j) \right]}
+  C(i,j) 
+  min_{i \leq h < j}\{ F(i,h) + F(h+1,j) \}\\
  \end{cases}
 $$
+
 
 with the initial conditions $F(i,i) = 0$.
 
