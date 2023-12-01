@@ -13,7 +13,7 @@ title: "Exercise sheet 6: Sankoff algorithm"
 
 The Sankoff algorithm is obtained from the Zuker recursions by raising them from folding one sub-sequence to folding two sub-sequences.
 Furthermore, it adds the edit distance.
-Develop asimpler version of Sankoff that is obtained by starting the same construction from the simpler, but less efficient, form of the Zuker recursions
+Develop a simpler version of Sankoff that is obtained by starting the same construction from the simpler, but less efficient, form of the Zuker recursions
 
 $$
 C(i,j) = \min_{1 \leq k \leq 4} \left( \min_{s \text{ is a $k$-loop closed by } (i,j)} \left\{ e(s) + \sum_{(p,q) \text{ accessible in $s$ from } (i,j)} C(p,q) \right\} \right)
@@ -22,7 +22,11 @@ $$
 with the initial conditions $C(i,i) = \infty$, and
 
 $$
-F(i,j) = \min_{ C(i,j), min_{i \leq h < j} \left[ F(i,h) + F(h+1,j) \right]}
+F(i,j)= \min
+ \begin{cases}
+  C(i,j) \end{cases}
+  min_{i \leq h < j} \left[ F(i,h) + F(h+1,j) \right]}
+ \end{cases}
 $$
 
 with the initial conditions $F(i,i) = 0$.
@@ -52,7 +56,7 @@ Generate respective recursion depictions for the translation of $C$ and $F$ into
 
 ::: {.answer data-latex=""}
 
-Decomposition into hairpin and interior case analogously to original Sankoff plus two explicit multi-loop cases for $k=3$ and $k=4$.
+Decomposition into a hairpin and interior case analogously to the original Sankoff plus two explicit multi-loop cases for $k=3$ and $k=4$.
 
 $$
   C(i_{1},j_{1},i_{2},j_{2}) = \min
