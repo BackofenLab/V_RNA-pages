@@ -58,7 +58,7 @@ $$
    \begin{cases}
      \sum_{1 \leq l \leq K} eH(i,j, S_{l})\\
      V_{i+1{j-1}} + \sum_{1 \leq l \leq K} eS(i,j, S_{l})\\
-     min_{i<i^{'}<j^{'}<j}V_{i^{'}{j^{'}}}+ \sum_{1 \leq l \leq K} eL(i,j,i^{'},j^{'}, S_{l})\\
+     min_{\substack{i<i^{'}<j^{'}<j,\\i^{'}-i+j-j^{'}>2}}V_{i^{'}{j^{'}}}+ \sum_{1 \leq l \leq K} eL(i,j,i^{'},j^{'}, S_{l})\\
    \end{cases}
 $$
 
