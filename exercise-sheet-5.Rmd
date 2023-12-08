@@ -104,6 +104,25 @@ $$
 
 ##### Hide
 
+##### Formula
+
+::: {.answer data-latex=""}
+
+\[
+\gamma(i,j)= & \;-\hspace{-6pt}\sum_{1\leq\ell<\ell'\leq K}
+    \begin{cases}
+      h(a_{\ell i},a_{\ell' i}) + h(a_{\ell j},a_{\ell' j}) & \text{$a_{\ell i} - a_{\ell j}$, $a_{\ell' i} - a_{\ell' j}$ compl.}\\
+      0 & \text{otherwise},
+    \end{cases}
+    \\&+\delta\sum_{1\leq\ell\leq K}
+    \begin{cases}
+      0 & \text{$a_{\ell i} - a_{\ell j}$ complementary}\\
+      0.25 & \text{$a_{\ell i}, a_{\ell j}$ are both gaps}\\ \\
+      1 & \text{otherwise},
+    \end{cases}
+\]
+:::
+
 ##### Solution
 
 ::: {.answer data-latex=""}
