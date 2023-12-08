@@ -111,8 +111,8 @@ $$
 \begin{align*}
 h(x,y)= 
   \begin{cases}
-   1 & x \neq y \\
-   0 & x=y \\
+   1 & x \neq y\\ \\
+   0 & x=y\\
   \end{cases}
 \end{align*}
 \]
