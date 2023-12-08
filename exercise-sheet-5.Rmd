@@ -110,6 +110,14 @@ $$
 
 \[
 \begin{align*}
+h(x,y)= 
+  \begin{cases}
+   1 & x \neq y
+   0 & x=y
+  \end{cases}
+\end{align*}
+
+\begin{align*}
 \gamma(i,j)= & \;-\hspace{-6pt}\sum_{1\leq\ell<\ell'\leq K}
     \begin{cases}
       h(a_{\ell i},a_{\ell' i}) + h(a_{\ell j},a_{\ell' j}) & \text{$a_{\ell i} - a_{\ell j}$, $a_{\ell' i} - a_{\ell' j}$ compl.}\\
