@@ -107,7 +107,6 @@ $$
 ##### Formula
 
 ::: {.answer data-latex=""}
-
 \[
 \begin{align*}
 h(x,y)= 
@@ -116,7 +115,9 @@ h(x,y)=
    0 & x=y
   \end{cases}
 \end{align*}
+\]
 
+\[
 \begin{align*}
 \gamma(i,j)= & \;-\hspace{-6pt}\sum_{1\leq\ell<\ell'\leq K}
     \begin{cases}
