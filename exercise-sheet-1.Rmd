@@ -206,16 +206,17 @@ There could be more than one optimal traceback for one optimal solution if the r
 Pseudo Code Traceback
 
 ```{r, eval=FALSE,}
-Procedure trackback(i,j)
+Procedure traceback(i,j)
 if (j <= i)
    return
-else if N_{i,j} = N_{i,j-1} then
-   trackback(i,j-1);
+else if N_{i,j} = N_{i+1,j-1} +1, S_{i} and S_{j} complementary  then
+   print(i,j)
+   traceback(i+1,j-1);
    return
 else
-   for all k: i <= k < j, S_{k} and S_{j} complementary do
-       if N_{i,j} = N_{i,k-1} + N_{k+1,j-1} + 1 then
-         print(k,j)
+   for all k: i <= k < j do
+       if N_{i,j} = N_{i,k} + N_{k+1,j} then
+         traceback(i,k); traceback(k+1,j)
          return
       end if
    end for
