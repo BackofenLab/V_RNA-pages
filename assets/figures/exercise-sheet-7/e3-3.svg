@@ -164,78 +164,64 @@
    style="font-size:65%;baseline-shift:super"
    id="tspan81599">2</tspan></tspan></text>
     </g>
-    <g
-       id="g887"
-       transform="translate(-1.2704584,-0.68347873)">
-      <text
-         xml:space="preserve"
-         style="font-weight:bold;font-size:7.05556px;line-height:1.25;font-family:monospace;-inkscape-font-specification:'monospace Bold';letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
-         x="31.383379"
-         y="106.43974"
-         id="text34670"><tspan
-           sodipodi:role="line"
-           id="tspan34668"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:monospace;-inkscape-font-specification:monospace;stroke-width:0.264583"
-           x="31.383379"
-           y="106.43974">GG-AUCUCA--</tspan></text>
-      <g
-         id="g46231-94"
-         transform="matrix(1.1772469,0,0,-1,-17.074366,197.65658)"
-         style="stroke-width:0.92165">
-        <path
-           style="fill:none;stroke:#000000;stroke-width:0.368661;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-           d="m 42.899721,90.387336 c -0.185806,-2.747467 2.352895,-6.121529 6.620189,-6.133784 h 6.620189"
-           id="path43189-7"
-           sodipodi:nodetypes="ccc" />
-        <path
-           style="fill:none;stroke:#000000;stroke-width:0.368661;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-           d="m 69.380477,90.387336 c 0.185806,-2.747467 -2.352895,-6.121529 -6.620189,-6.133784 h -6.620189"
-           id="path43189-2-8"
-           sodipodi:nodetypes="ccc" />
-      </g>
-      <g
-         id="g46231-94-4"
-         transform="matrix(0.65083659,0,0,-0.79272267,22.32419,178.95773)"
-         style="stroke-width:1.39221">
-        <path
-           style="fill:none;stroke:#000000;stroke-width:0.556884;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-           d="m 42.899721,90.387336 c -0.185806,-2.747467 2.352895,-6.121529 6.620189,-6.133784 h 6.620189"
-           id="path43189-7-5"
-           sodipodi:nodetypes="ccc" />
-        <path
-           style="fill:none;stroke:#000000;stroke-width:0.556884;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-           d="m 69.380477,90.387336 c 0.185806,-2.747467 -2.352895,-6.121529 -6.620189,-6.133784 h -6.620189"
-           id="path43189-2-8-0"
-           sodipodi:nodetypes="ccc" />
-      </g>
-      <text
-         xml:space="preserve"
-         style="font-weight:bold;font-size:3.46731px;line-height:1.25;font-family:monospace;-inkscape-font-specification:'monospace Bold';letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
-         x="30.477625"
-         y="112.44366"
-         id="text49344"
-         transform="scale(0.99571604,1.0043024)"><tspan
-           sodipodi:role="line"
-           id="tspan49342"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.264583"
-           x="30.477625"
-           y="112.44366">a<tspan
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:7.05556px;line-height:1.25;font-family:monospace;-inkscape-font-specification:'monospace Bold';letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+       x="30.112921"
+       y="105.75626"
+       id="text34670"><tspan
+         sodipodi:role="line"
+         id="tspan34668"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:monospace;-inkscape-font-specification:monospace;stroke-width:0.264583"
+         x="30.112921"
+         y="105.75626">GG-AUGUCA--</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.400001;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 32.15874,106.58576 c -0.21874,2.74747 2.769938,6.12153 7.793597,6.13379 h 7.793597"
+       id="path43189-7"
+       sodipodi:nodetypes="ccc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.400001;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 63.333127,106.58576 c 0.21874,2.74747 -2.769938,6.12153 -7.793597,6.13379 h -7.793596"
+       id="path43189-2-8"
+       sodipodi:nodetypes="ccc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.400001;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 48.97444,106.62216 c -0.120929,2.17798 1.53135,4.85267 4.308661,4.86239 h 4.308662"
+       id="path43189-7-5"
+       sodipodi:nodetypes="ccc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.400001;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 66.209085,106.62216 c 0.120929,2.17798 -1.53135,4.85267 -4.308661,4.86239 h -4.308661"
+       id="path43189-2-8-0"
+       sodipodi:nodetypes="ccc" />
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:3.46731px;line-height:1.25;font-family:monospace;-inkscape-font-specification:'monospace Bold';letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+       x="29.2017"
+       y="111.76311"
+       id="text49344"
+       transform="scale(0.99571604,1.0043024)"><tspan
+         sodipodi:role="line"
+         id="tspan49342"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.264583"
+         x="29.2017"
+         y="111.76311">a<tspan
    style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.25375px;font-family:Arial;-inkscape-font-specification:Arial;baseline-shift:super;stroke-width:0.264583"
    id="tspan56194">3</tspan></tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-weight:bold;font-size:3.46731px;line-height:1.25;font-family:monospace;-inkscape-font-specification:'monospace Bold';letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
-         x="68.019356"
-         y="112.44035"
-         id="text49344-06"
-         transform="scale(0.99571604,1.0043024)"><tspan
-           sodipodi:role="line"
-           id="tspan49342-1"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.264583"
-           x="68.019356"
-           y="112.44035">a<tspan
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:3.46731px;line-height:1.25;font-family:monospace;-inkscape-font-specification:'monospace Bold';letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+       x="66.743431"
+       y="111.7598"
+       id="text49344-06"
+       transform="scale(0.99571604,1.0043024)"><tspan
+         sodipodi:role="line"
+         id="tspan49342-1"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.264583"
+         x="66.743431"
+         y="111.7598">a<tspan
    style="font-size:65%;baseline-shift:super"
    id="tspan87701">4</tspan></tspan></text>
-    </g>
   </g>
 </svg>
