@@ -47,7 +47,7 @@ The empty prefix of each M matrix has to be initialized with 0.
 
 ::: {.question data-latex=""}
 
-What value has to be assigned to entries outside of the tabulated M matrices, for example element $(3,4)$ of table $M^{a_2}_{a_3}$ in exercise 2?
+What value has to be assigned to entries outside of the tabulated M matrices, for example element $(3,4)$ in the first table of exercise 2?
 
 :::
 
