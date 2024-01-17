@@ -139,7 +139,7 @@ knitr::include_graphics("assets/figures/exercise-sheet-7/e2-2.svg")
 
 <!--- --------------------------------- -->
 
-### 1.1
+### 2.1
 
 ::: {.question data-latex=""}
 
@@ -150,6 +150,22 @@ Which of the four matrices $M^{a_i}_{a_j}$ on the left corresponds to which pair
 #### {.tabset}
 
 ##### Hide
+
+##### Formula
+
+::: {.answer data-latex=""}
+
+```{r, include=knitr::is_html_output(), echo=FALSE,  fig.align='center', out.width='60%'}
+knitr::include_graphics("assets/figures/exercise-sheet-7/Jiang-algo-notation.pdf.png")
+```
+
+```{r, include=knitr::is_html_output(), echo=FALSE,  fig.align='center', out.width='60%'}
+knitr::include_graphics("assets/figures/exercise-sheet-7/Jiang-algo-recursion.png")
+```
+
+:::
+
+
 
 ##### Solution
 
@@ -166,7 +182,7 @@ d. $M^{a_1,a_3}$
 
 <!--- --------------------------------- -->
 
-### 1.2
+### 2.2
 
 ::: {.question data-latex=""}
 
