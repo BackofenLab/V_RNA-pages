@@ -151,22 +151,6 @@ Which of the four matrices $M^{a_i}_{a_j}$ on the left corresponds to which pair
 
 ##### Hide
 
-##### Formula
-
-::: {.answer data-latex=""}
-
-```{r, include=knitr::is_html_output(), echo=FALSE,  fig.align='center', out.width='60%'}
-knitr::include_graphics("assets/figures/exercise-sheet-7/Jiang-algo-notation.pdf.png")
-```
-
-```{r, include=knitr::is_html_output(), echo=FALSE,  fig.align='center', out.width='60%'}
-knitr::include_graphics("assets/figures/exercise-sheet-7/Jiang-algo-recursion.png")
-```
-
-:::
-
-
-
 ##### Solution
 
 ::: {.answer data-latex=""}
@@ -193,6 +177,20 @@ Calculate the missing values (shaded in grey) of the $M^{a_i}_{a_j}$ matrices an
 #### {.tabset}
 
 ##### Hide
+
+##### Formula
+
+::: {.answer data-latex=""}
+
+```{r, include=knitr::is_html_output(), echo=FALSE,  fig.align='center', out.width='60%'}
+knitr::include_graphics("assets/figures/exercise-sheet-7/Jiang-algo-notation.pdf.png")
+```
+
+```{r, include=knitr::is_html_output(), echo=FALSE,  fig.align='center', out.width='60%'}
+knitr::include_graphics("assets/figures/exercise-sheet-7/Jiang-algo-recursion.png")
+```
+
+:::
 
 ##### Solution
 
