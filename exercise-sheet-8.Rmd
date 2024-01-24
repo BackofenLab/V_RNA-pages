@@ -124,8 +124,7 @@ That is, as long as the overall score stays below $eInit$, intermediate bad sub-
 
 ::: {.question data-latex=""}
 
-Draw at least 3 sketches of RNA-RNA interactions (without sequence details) consisting of intra- *and* inter-molecular base pairings
-and check whether or not it is possible to produce them via a traceback based on the introduced IRIS recursion.
+Draw at least 3 sketches of RNA-RNA interactions (without sequence details) consisting of intra- *and* inter-molecular base pairing that can be produced via a traceback based on the introduced IRIS recursion.
 
 :::
 
@@ -180,6 +179,10 @@ knitr::include_graphics("assets/figures/exercise-sheet-8/e3-2.svg")
 Draw a Feynman diagram for the following RNA-RNA interaction. Decide whether this RRI can be modeled using the IRIS recursion.
 If yes, indicate a possible decomposition order, otherwise highlight the structural parts that make it impossible to decompose.
 
+```{r, include=knitr::is_html_output(), echo=FALSE,  fig.align='center', out.width='40%'}
+knitr::include_graphics("assets/figures/exercise-sheet-8/e3-3.svg")
+```
+
 :::
 
 #### {.tabset}
@@ -189,10 +192,6 @@ If yes, indicate a possible decomposition order, otherwise highlight the structu
 ##### Solution
 
 ::: {.answer data-latex=""}
-
-```{r, include=knitr::is_html_output(), echo=FALSE,  fig.align='center', out.width='40%'}
-knitr::include_graphics("assets/figures/exercise-sheet-8/e3-3.svg")
-```
 
 ```{r, include=knitr::is_html_output(), echo=FALSE,  fig.align='center', out.width='75%'}
 knitr::include_graphics("assets/figures/exercise-sheet-8/e3-4.svg")
