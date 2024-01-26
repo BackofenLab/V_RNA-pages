@@ -246,6 +246,19 @@ Alignment:
 knitr::include_graphics("assets/figures/exercise-sheet-7/e3-3.svg")
 ```
 
+Example calculations for matrix M:
+
+$$
+M(0,1) = \min \left\{
+\begin{array}{ll}
++ \infty, \\
+M(0,0) + W_{d}^{\text{end}} & = 0 + 2 = \textbf{2}, \\
++ \infty, \\
++ \infty
+\end{array}
+\right.
+$$
+
 :::
 
 #### {-}
