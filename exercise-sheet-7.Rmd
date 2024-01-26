@@ -310,7 +310,7 @@ M(6,8) = \min \left\{
 \begin{array}{ll}
 M(5,8) + W_d & = 16 + 7 = 23, \\
 M(6,7) + W_{d}^{\text{end}} & = 18 + 2 = 20, \\
-M(5,7) + W_{b}^{\text{ed}} & = 14 + 3 = \textbf{17}, \\
+M(5,7) + W_{b}^{\text{end}} & = 14 + 3 = \textbf{17}, \\
 + \infty
 \end{array}
 \right.
