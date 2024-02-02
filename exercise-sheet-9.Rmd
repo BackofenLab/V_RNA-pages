@@ -20,7 +20,7 @@ Consider now the following steps of a meta approach that predicts and combines t
 3. combine $B_1$ and $B_2$ into one prediction
 
 Note, step $1$ and $2$ are using different ED value, since step $2$ is a constraint prediction also requiring a constraint ED-value computation.
-In the following, we refer to them via $ED(B_1)$ and $ED(B_2 \mid B_1)$. Similarly, we denote respective energy $E$ and hybridization energy $E_{hyp}$ terms.
+In the following, we refer to them via $ED(B_1)$ and $ED(B_2 \mid B_1)$. Similarly, we denote respective energy $E$ and hybridization energy $E_{hyb}$ terms.
 
 In step $3$, we are combining both sets of inter-molecular base pairs into one RRI, while keeping track of the respective blocks $B_1$ and $B_2$.
 Given that, we propose that the overall energy of RRI can be approximated as follows:
