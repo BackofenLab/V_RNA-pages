@@ -177,7 +177,7 @@ d. $M^{a_1,a_3}$
 
 ::: {.question data-latex=""}
 
-Calculate the missing values (shaded in grey) of the $M^{a_i}_{a_j}$ matrices and also calculate the values of the $F$
+Calculate the missing values (shaded in grey) of the $M^{a_i}_{a_j}$ matrices and also calculate the values of the $F$ matrix.
 
 :::
 
