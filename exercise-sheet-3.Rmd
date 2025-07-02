@@ -206,7 +206,7 @@ Compute the structure probability for each structure.
 
 ::: {.answer data-latex=""}
 
-$$ Pr[P|S] = \frac{e^(-\frac{E(P)}{RT})}{\sum_{P'} e^(-\frac{E(P)}{RT})} $$
+$$ Pr[P|S] = \frac{e^{(-\frac{E(P)}{RT})}}{\sum_{P'} e^{(-\frac{E(P)}{RT})}} $$
 
 :::
 
