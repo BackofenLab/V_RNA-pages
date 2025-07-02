@@ -15,6 +15,13 @@ Please have a look at the reformulated recursion of the Jiang algorithm.
 In the lecture, some important properties have been omitted for sake of clarity.
 In this exercise your task is to explicitly state some of these properties.
 
+```{r, include=knitr::is_html_output(), echo=FALSE,  fig.align='center', out.width='60%'}
+knitr::include_graphics("assets/figures/exercise-sheet-7/Jiang-algo-notation.pdf.png")
+```
+
+```{r, include=knitr::is_html_output(), echo=FALSE,  fig.align='center', out.width='60%'}
+knitr::include_graphics("assets/figures/exercise-sheet-7/Jiang-algo-recursion.png")
+```
 :::
 
 <!--- --------------------------------- -->
