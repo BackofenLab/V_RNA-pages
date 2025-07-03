@@ -132,14 +132,14 @@ The matrix $F$ stores the final values of all $M$ matrices. The final values of 
 We would like to align the following two structures with the reformulated recursion of the Jiang algorithm:
 
 ```{r, include=knitr::is_html_output(), echo=FALSE,  fig.align='center', out.width='40%'}
-knitr::include_graphics("assets/figures/exercise-sheet-7/e2-1.pdf")
+knitr::include_graphics("assets/figures/exercise-sheet-7/e2-1.svg")
 ```
 
 The cost for the different operations are $w_d^{\text{end}}=2$, $w_b^{\text{end}}=3$, $w_{am}=6$, $w_d=7$, and $w_m=3$.
 The matrices $M^{a_i,a_j}$ and $F$ (with some missing entries) are given as follows:
 
 ```{r, include=knitr::is_html_output(), echo=FALSE,  fig.align='center', out.width='75%'}
-knitr::include_graphics("assets/figures/exercise-sheet-7/e2-2.pdf")
+knitr::include_graphics("assets/figures/exercise-sheet-7/e2-2.svg")
 ```
 
 :::
@@ -204,7 +204,7 @@ knitr::include_graphics("assets/figures/exercise-sheet-7/Jiang-algo-recursion.pn
 ::: {.answer data-latex=""}
 
 ```{r, include=knitr::is_html_output(), echo=FALSE,  fig.align='center', out.width='75%'}
-knitr::include_graphics("assets/figures/exercise-sheet-7/e2-3.pdf")
+knitr::include_graphics("assets/figures/exercise-sheet-7/e2-3.svg")
 ```
 
 :::
@@ -225,7 +225,7 @@ Technically, this is a matrix $M^{a_i}_{a_j}$ for some imaginary base pairs $a_i
 This matrix is given as:
 
 ```{r, include=knitr::is_html_output(), echo=FALSE,  fig.align='center', out.width='60%'}
-knitr::include_graphics("assets/figures/exercise-sheet-7/e3-1.pdf")
+knitr::include_graphics("assets/figures/exercise-sheet-7/e3-1.svg")
 ```
 
 A part of the final backtrace is also already given by the arrows in the matrix.
@@ -244,13 +244,13 @@ Give the missing part of the backtrace and also the alignment corresponding to t
 Traceback:
 
 ```{r, include=knitr::is_html_output(), echo=FALSE,  fig.align='center', out.width='60%'}
-knitr::include_graphics("assets/figures/exercise-sheet-7/e3-2.pdf")
+knitr::include_graphics("assets/figures/exercise-sheet-7/e3-2.svg")
 ```
 
 Alignment:
 
 ```{r, include=knitr::is_html_output(), echo=FALSE,  fig.align='center', out.width='40%'}
-knitr::include_graphics("assets/figures/exercise-sheet-7/e3-3.pdf")
+knitr::include_graphics("assets/figures/exercise-sheet-7/e3-3.svg")
 ```
 
 Example calculations for matrix M:
